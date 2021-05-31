@@ -1,8 +1,8 @@
-```{r}
+```{r include=FALSE}
 pacman::p_load(dplyr, kableExtra, knitr)
 ```
 
-```{r echo=FALSE }
+```{r include=FALSE}
 table_format = if(is_html_output()) {
   "html"
 } else if(is_latex_output()) {
