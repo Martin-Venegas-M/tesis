@@ -1,0 +1,116 @@
+```{r include=FALSE}
+pacman::p_load(dplyr, kableExtra, knitr)
+```
+
+```{r include=FALSE}
+table_format = if(is_html_output()) {
+  "html"
+} else if(is_latex_output()) {
+  "latex"
+}
+table_format2 = if(is_html_output()) {
+  T
+} else if(is_latex_output()) {
+  F
+}
+```
+
+# Metodología
+
+## Datos
+
+<div style="text-align: justify">
+
+Este estudio se basa en la información proporcionada por la base de datos del Estudio Longitudinal Social de Chile (ELSOC) del Centro de Estudios de Conflicto y Cohesión Social (COES). Estos datos son de tipo panel de aplicación anual a dos muestras independientes, una original y otra de refresco. El cuestionario contiene módulos de preguntas permanentes en todas las olas y otras intercaladas. El diseño muestral es complejo, probabilístico, por conglomerados, multietápico y estratificado según el tamaño de las ciudades. El objeto de análisis son hombres y mujeres entre 18 y 75 años en zonas urbanas, localizadas en 40 ciudades del país (92 comunas y 13 regiones). La unidad de información a utilizar son los encuestados correspondientes al año 2019 (n muestra original = 2135, n muestra refresco = 1264). A modo de énfasis, este estudio ocupara solamente los datos para la ola del 2019.  
+
+## Variables  
+
+### Variables dependientes
+
+<div style="text-align: justify">
+
+Como se puede apreciar en la Tabla N° \@ref(tab:tab-dep), las dos variables dependientes del estudio corresponden a la distinción de la violencia instrumental: la violencia por el cambio social y la violencia por el control social. Se utilizarán seis indicadores que buscan representar los conceptos, dos para la violencia por el control y cuatro para la violencia por el cambio. Los indicadores señalados en la Tabla 2 responden a la pregunta *¿En qué medida cree usted que se justifican o no se justifican las siguientes situaciones?*. Los indicadores de violencia por el control se centran en la fuerza ejercida por carabineros, en contraste, los indicadores de la violencia por el cambio consisten en la violencia como táctica de protesta, específicamente, lanzar piedras a carabineros y la destrucción a la propiedad. Todos los indicadores están medidos con una escala Likert de cinco categorías, que van desde la aseveración de que la violencia nunca se justifica, hasta que siempre se justifica.
+
+En lo que respecta a mediciones, se efectuará un análisis factorial exploratorio para ver cómo se comportan los indicadores con respecto a los conceptos planteados teóricamente. Con los resultados del análisis exploratorio se procederá a un análisis confirmatorio para analizar los ajustes de los modelo al plantear solo las relaciones propuestas por la literatura. De acuerdo a los resultados de los análisis factoriales se decidirá la técnica de análisis a utilizar. De todos modos, las opciones son: regresiones lineales con indices sumativos, regresiones logísticas binarias con indicadores por separado o regresiones con puntajes factoriales.
+
+```{r include=FALSE}
+cap1 <- "Variables dependientes"
+# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
+```
+
+```{r tab-dep, echo=FALSE}
+tab01 <- read.csv(file = "tables/table01.csv",header = 1,sep = ";",encoding = "UTF-8")
+cnames <- c("Concepto","Indicador", "Categorías de respuesta")
+
+kable(tab01,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap1) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle")
+```
+
+
+
+\begin{center}
+Fuente: elaboración propia
+\end{center}
+
+### Variables independientes
+
+<div style="text-align: justify">
+
+La Tabla N° \@ref(tab:tab-indep) muestra las variables independientes de hipótesis para este estudio, las cuales se dividen en tres: variables de estatus, de justicia procesal y de justicia distributiva. Las variables de estatus a utilizar serán ingresos, nivel educacional y satisfacción con los ingresos. En esta misma categoría se usarán variables relacionadas a la distinción grupo mayoritario-minoritario como un sinónimo de estatus, lo cual si bien no siempre es el caso (e.g. las elites son una minoría) en la literatura criminológica se ha trabajado así. Se usarán las variables de sexo y pertenencia de grupos indigenas. Para las experiencias asociadas a la justicia procesal se usarán dos indicadores que responden a la pregunta *¿Con cuánta frecuencia diría usted que personas de [grupo o clase social mencionado por el entrevistado] son tratadas con respeto…?* desde servicios de salud y desde carabineros. Estos serán entendidos como proxy de la justicia procesal, bajo el supuesto de que experimentar que otros grupos son tratados con respeto desde los servicios públicos está relacionado con el sentir que los procedimientos a partir de los cuales funciona la sociedad son justos. Los indicadores se utilizarán en su nivel de medición original. En lo que respecta a las experiencias sobre justicia distributiva se utilizarán cinco indicadores. Cuatro de ellos se refieren a la percepción de ingresos existentes y justos para distintos grupos (i.e. obreros y empresarios). Con estos se construye la función de evaluación de justicia para cada ocupación. Como se puede ver en la ecuación \@ref(eq:jef), la formula consiste en el logaritmo natural de la proporción entre la recompensa existente y la recompensa justa. Los valores negativos significan una evaluación de subrecompensa, el 0 significa un evaluación de justicia perfecta y valores positivos implican sobrerecompensa [@Jasso1980]. Para construir un indicador único se realizará una diferencia simple entre las evaluaciones de justicia de obreros y gerentes, dando por resultado la _brecha de justicia en ingresos_ [@Verwiebe2000], representada por la ecuación \@ref(eq:bj). A grandes rasgos, la lectura de este indicador sugiere que a valores positivos más altos la brecha de justicia entre ocupaciones es mayor. A diferencia de esta medición indirecta, el indicador restante busca representar de manera directa la evaluación de justicia distributiva.
+
+\begin{equation}
+   \text{Evaluación de Justicia (EFJ)}= ln(\frac{\text{ingresos reales}}{\text{ingresos justos}}) (\#eq:jef)
+\end{equation}
+
+\begin{equation}
+   \text{Brecha de justicia}= EFJ_{gerente} - EFJ_{obrero} (\#eq:bj)
+\end{equation}
+
+```{r include=FALSE}
+cap2 <- "Variables independientes"
+# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
+```
+
+```{r tab-indep, echo=FALSE}
+tab02 <- read.csv(file = "tables/table02.csv",header = 1,sep = ";",encoding = "UTF-8")
+cnames <- c("Concepto","Indicador", "Categorías de respuesta")
+kable(tab02,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap2) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle")
+```
+
+\begin{center}
+Fuente: elaboración propia.  
+\end{center}
+
+### Controles
+
+<div style="text-align: justify">
+
+
+Las variables de control corresponden a las variables sociodemográficas típicas: edad, comuna de residencia y posición política. Además, considerando el alza en las protestas masivas durante el año 2019, se incluirá la frecuencia de participación en marchas. También, se incluirá la confianza en carabineros y la religión con fines exploratorios.
+
+## Análisis
+
+<div style="text-align: justify">
+
+Los análisis a realizar se dividen en cuatro partes. Primero, se efectuarán análisis descriptivos para las variables de ambos tipos de violencia, evaluando medidas de tendencia central, de dispersión y proporciones. Segundo, se llevarán a cabo análisis bivariados a partir de matrices de correlaciones. Tercero, se utilizarán métodos de regresión de acuerdo a los resultados que se obtengan en los análisis factoriales, y así poder evaluar las hipótesis propuestas. Por último, se harán análisis de robustez para probar los modelos elaborados, específicamente: análisis de casos influyentes, de multicolinealidad y de normalidad.
+
+\pagebreak

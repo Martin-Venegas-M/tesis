@@ -1,5 +1,5 @@
 ---
-title: '¿Quién justifica qué? El papel del estatus y las experiencias de injusticia en las justificaciones de violencia en contexto de protesta'
+title: '¿Quién justifica qué? El papel del sentido de (in)justicia en las justificaciones de violencia en contexto de protesta'
 subtitle: "Tesis para optar al título de Sociólogo"
 author: "Martín Venegas Márquez"
 date: "`r Sys.Date()`" # o para fecha actual: "`r Sys.Date()`"
