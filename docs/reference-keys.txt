@@ -16,10 +16,7 @@ antecedentes-conceptuales-y-empíricos
 violencia-desglosando-el-concepto
 justificación-de-la-violencia
 determinantes-de-la-justificación-de-la-violencia
-estatus-y-minorías
-valores-autoritarios
-justicia-procesal
-otros-predictores
+sentido-de-injusticia
 violencia-y-justicia
 metodología
 datos
