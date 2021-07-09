@@ -21,18 +21,20 @@ La pregunta principal de este proyecto de tesis es la siguiente:
 
 Las hipótesis del estudio son las siguientes:
 
-- $H1_a$: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar más la violencia por el cambio social.
-- $H1_b$: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar menos la violencia por el cambio social.
+- *H1a*: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar más la violencia por el cambio social.
+- *H1b*: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar menos la violencia por el control social.
 
+- *H2a*: Personas que sientan mayor injusticia en el trato tenderán a justificar más la violencia por el cambio social.
+- *H2b*: Personas que sientan mayor injusticia en el trato tenderán a justificar menos la violencia por el control social.
 
-
-- $H3_a$: Personas de menor estatus tenderán a justificar más la violencia por el cambio social.
-- $H3_b$: Personas de menor estatus tenderán a justificar más la violencia por el cambio social.
+- *H3a*: Personas pertenecientes a grupos desventajados tenderán a justificar más la violencia por el cambio social.
+- *H3b*: Personas pertenecientes a grupos desventajados tenderán a justificar menos la violencia por el control social.
 
 Las siguientes hipótesis son de mediación:
 
-- $H4_a$: Personas de menor estatus justifican menos la violencia por el control social porque experimentan mayores niveles de injusticia en la distribución de ingresos
-- $H4_b$: Personas de menor estatus justifican más la violencia por el cambio social porque experimentan mayores niveles de injusticia en la distribución de ingresos
+- *H4a*: Personas pertenecientes a grupos desventajados justifican más la violencia por el cambio social porque experimentan mayores niveles de injusticia en la distribución de ingresos
+- *H4b*: Personas pertenecientes a grupos desventajados justifican menos la violencia por el control social porque experimentan mayores niveles de injusticia en la distribución de ingresos
+
 
 ## **3) Variable dependiente.** Describa la(s) variable(s) clave(s) especificando cómo se medirán.
 
