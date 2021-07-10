@@ -54,26 +54,26 @@ El estudio es observacional, no experimental, por lo que no aplica.
 
 ## **5) Análisis.** Especifique exactamente qué análisis se realizará para examinar la pregunta / hipótesis principal
 
-El análisis principal consistirá en regresiones lineales multiples y logísticas ordinales dependiendo las variables a analizar.
+El análisis principal consistirá en regresiones lineales múltiples y logísticas ordinales dependiendo las variables a analizar.
 
 Justificación de la violencia por el cambio social:
 - El indicador de lanzar piedras se mantendrá en su formato de medición original, y se aplicarán regresiones logísticas ordinales.
-- Los indicadores de destrucción a la propiedad se unirán en un indice simple, con el que se empleará una regresión lineal múltiple.
+- Los indicadores de destrucción a la propiedad se unirán en un índice simple, con el que se empleará una regresión lineal múltiple.
 
 Justificación de la violencia por el control social:
-- Los indicadores de carabineros se mantendran en su formato de medición original, y se aplicarán regresiones logísticas ordinales.
+- Los indicadores de carabineros se mantendrán en su formato de medición original, y se aplicarán regresiones logísticas ordinales.
 
 También se usarán análisis de mediación para las variables de estatus.
 
 ## **6) Valores atípicos y exclusiones.** Describa exactamente cómo se definirán y tratarán los valores atípicos, y su(s) regla(s) precisa(s) para excluir las observaciones
 
-Valores atipicos que denoten claramente errores de tipeo serán transformados a datos perdidos (e.g. un valor de 6 en una escala Likert que va de 1 a 5.).
+Valores atípicos que denoten claramente errores de tipeo serán transformados a datos perdidos (e.g. un valor de 6 en una escala Likert que va de 1 a 5.).
 
 La regla principal para excluir observaciones será la homogeneización de la base de datos. Esto significa la aplicación de método _listwise_ para eliminar casos perdidos en el conjunto de datos con las variables que serán utilizadas para el análisis. El objetivo de esto es trabajar con una base de datos que permita comparabilidad entre los análisis.
 
 ## **7) Tamaño de muestra.** ¿Cuántas observaciones se recopilarán o que determinará el tamaño de la muestra? No es necesario justificar la decisión, pero sea preciso sobre cómo se determinará exactamente el número.
 
-La muestra total de la fuente de datos secundaria contiene 4447 casos. Como se señaló, el tamaño de muestra final para los análisis será producto de una homogeneización del conjunto de datos de las variables a utilizar en el análisis.
+La muestra total de la fuente de datos secundaria contiene 2135 casos. Como se señaló, el tamaño de muestra final para los análisis será producto de una homogeneización del conjunto de datos de las variables a utilizar en el análisis.
 
 ## **8) Otro.** ¿Algo más que le gustaría agregar? (por ejemplo, exclusiones de datos, variables recopiladas con fines exploratorios, análisis inusuales previstos)
 
@@ -83,11 +83,11 @@ Primero, el estudio usa datos secundarios. Dado este panorama, es necesario hace
 
 - Análisis factoriales exploratorios y confirmatorios. Se realizaron modelos exploratorios con uno, dos y tres factores. Así también, se probó un modelo confirmatorio tanto a dos como a tres factores. La realización de estos análisis permitió proponer un plan de análisis más detallado, así como también una sección exploratoria.
 
-Todos los análiis aquí declarados pueden verse en el repositorio Github asociado a este preregistro.
+Todos los análisis aquí declarados pueden verse en el repositorio Github asociado a este preregistro.
 
 Segundo, se incluirá un análisis exploratorio que consistirá en modelos de regresión lineal con los puntajes factoriales de un modelo de tres factores. Este modelo incluye un indicador que hasta ahora ha sido dejado fuera por definiciones teóricas, pero que podría ser empíricamente relevante para la discusión del objeto de estudio.
 
-## **9) Nombre** Poner un título a este prerregistro de AsPredicted
+## **9) Nombre** Poner un título a este preregistro de AsPredicted
 
 Justificaciones de violencia - Tesis de Pregrado en Sociología, UCH 2021
 

@@ -1,13 +1,13 @@
-﻿concept;items_spa;cats
-Estatus;Ingresos;Valores continuos
-Estatus;Nivel educacional;(1) Sin estudios a (10) Estudios de postgrado
-Estatus;Satisfacción con los ingresos;(1) Totalmente insatisfecho a (5) Totalmente satisfecho
-Estatus;Sexo;(1) Hombre, (2) Mujer
-Estatus;Pertenencia a grupos indigenas;(1) Pertenece a pueblo Mapuche, (2) Pertenece a otro pueblo, (3) No pertenece a ningún pueblo
-Experiencias de justicia procesal;Trato respetuoso en los servicios de salud;(1) Nunca a (5) Siempre
-Experiencias de justicia procesal;Trato respetuoso por Carabineros;(1) Nunca a (5) Siempre
-Experiencias de justicia distributiva;¿Cuánto cree usted que gana al mes el gerente de una gran empresa nacional?;Valores continuos
-Experiencias de justicia distributiva;¿Cuánto cree usted que gana al mes un obrero no calificado de una fábrica?;Valores continuos
-Experiencias de justicia distributiva;¿Cuánto cree usted que debería ganar al mes el gerente de una gran empresa nacional?;Valores continuos
-Experiencias de justicia distributiva;¿Cuánto cree usted que debería ganar al mes un obrero no calificado de una fábrica?;Valores continuos
-Experiencias de justicia distributiva;Percepción de justicia en la situación de vida entre clase alta y baja;(1) Muy injusta a (5) Muy justa
+﻿concept;items_spa;cats,,
+Grupos desventajados;Ingresos;Valores continuos,,
+Grupos desventajados;Nivel educacional;(1) Sin estudios a (10) Estudios de postgrado,,
+Grupos desventajados;Satisfacción con los ingresos;(1) Totalmente insatisfecho a (5) Totalmente satisfecho,,
+Grupos desventajados;Sexo;(1) Hombre, (2) Mujer,
+Grupos desventajados;Pertenencia a grupos indigenas;(1) Pertenece a pueblo Mapuche, (2) Pertenece a otro pueblo, (3) No pertenece a ningún pueblo
+Experiencias de justicia procesal;Trato respetuoso en los servicios de salud;(1) Nunca a (5) Siempre,,
+Experiencias de justicia procesal;Trato respetuoso por Carabineros;(1) Nunca a (5) Siempre,,
+Experiencias de justicia distributiva;¿Cuánto cree usted que gana al mes el gerente de una gran empresa nacional?;Valores continuos,,
+Experiencias de justicia distributiva;¿Cuánto cree usted que gana al mes un obrero no calificado de una fábrica?;Valores continuos,,
+Experiencias de justicia distributiva;¿Cuánto cree usted que debería ganar al mes el gerente de una gran empresa nacional?;Valores continuos,,
+Experiencias de justicia distributiva;¿Cuánto cree usted que debería ganar al mes un obrero no calificado de una fábrica?;Valores continuos,,
+Experiencias de justicia distributiva;Percepción de justicia en la situación de vida entre clase alta y baja;(1) Muy injusta a (5) Muy justa,,
