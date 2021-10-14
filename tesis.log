@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.7.5)  5 JUL 2021 15:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.8.2)  5 AUG 2021 11:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **tesis.tex
 (./tesis.tex
 LaTeX2e <2021-06-01> patch level 1
-L3 programming layer <2021-06-18> (./templates/facsothesis.cls
+L3 programming layer <2021-07-12> (./templates/facsothesis.cls
 Document Class: templates/facsothesis 2004/01/27 The Reed College Thesis Class
 (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/02/12 v1.4n Standard LaTeX document class
@@ -95,9 +95,9 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \FrameRule=\dimen141
 \FrameSep=\dimen142
 )) (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2021/06/28 3.61 The Babel package
+Package: babel 2021/07/22 3.63 The Babel package
 (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2021/06/28 3.61 Babel common definitions
+File: babel.def 2021/07/22 3.63 Babel common definitions
 \babel@savecnt=\count194
 \U@D=\dimen143
 \l@unhyphenated=\language4
@@ -633,7 +633,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-
 pdftex.def
-File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2021-07-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count310
 \l__pdf_internal_box=\box73
 )
@@ -772,11 +772,42 @@ Package natbib Warning: Citation `Frazer2020' on page 5 undefined on input line
 Package natbib Warning: Citation `Weber1996' on page 5 undefined on input line 
 216.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-18.
-(c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
+
+Package natbib Warning: Citation `WHO2014' on page 5 undefined on input line 21
+8.
+
+
+Package natbib Warning: Citation `WHO2010' on page 5 undefined on input line 21
+8.
+
+
+Package natbib Warning: Citation `WHO2009' on page 5 undefined on input line 21
+8.
+
+
+Package natbib Warning: Citation `Human2019' on page 5 undefined on input line 
+218.
+
+
+Package natbib Warning: Citation `ONU2019' on page 5 undefined on input line 21
+8.
+
+
+Package natbib Warning: Citation `Defensoria2020' on page 5 undefined on input 
+line 218.
+
+
+Package natbib Warning: Citation `Amnistia2020' on page 5 undefined on input li
+ne 218.
+
+
+Package natbib Warning: Citation `Joignant2020' on page 5 undefined on input li
+ne 218.
+
+
+Package natbib Warning: Citation `ELSOC2019' on page 5 undefined on input line 
+218.
+
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
 18.
 (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -819,862 +850,900 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 218
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package natbib Warning: Citation `WHO2010' on page 5 undefined on input line 21
-8.
-
-
-Package natbib Warning: Citation `WHO2009' on page 5 undefined on input line 21
-8.
-
-
-Package natbib Warning: Citation `Joignant2020' on page 5 undefined on input li
-ne 218.
-
-
-Package natbib Warning: Citation `ELSOC2019' on page 5 undefined on input line 
-218.
-
-
 Package natbib Warning: Citation `Markowitz2001' on page 5 undefined on input l
-ine 218.
+ine 219.
 
 
 Package natbib Warning: Citation `Kalmoe2014' on page 5 undefined on input line
- 218.
+ 219.
 
 
 Package natbib Warning: Citation `Gerber2017' on page 5 undefined on input line
- 218.
+ 219.
 
 [5]
 
 Package natbib Warning: Citation `Blumenthal1972' on page 6 undefined on input 
-line 220.
+line 221.
 
 
 Package natbib Warning: Citation `Thompson2004' on page 6 undefined on input li
-ne 220.
+ne 221.
 
 
 Package natbib Warning: Citation `Sidanius1999' on page 6 undefined on input li
-ne 220.
+ne 221.
 
 
 Package natbib Warning: Citation `Altemeyer1988' on page 6 undefined on input l
-ine 220.
+ine 221.
 
 
 Package natbib Warning: Citation `Tyler2006' on page 6 undefined on input line 
-220.
+221.
 
 
 Package natbib Warning: Citation `Tyler2006' on page 6 undefined on input line 
-222.
+223.
 
 
 Package natbib Warning: Citation `Puga2016' on page 6 undefined on input line 2
-22.
+23.
 
 
 Package natbib Warning: Citation `Gerber2016' on page 6 undefined on input line
- 222.
+ 223.
 
 
 Package natbib Warning: Citation `Gerber2017a' on page 6 undefined on input lin
-e 222.
+e 223.
 
 
 Package natbib Warning: Citation `Gerber2017' on page 6 undefined on input line
- 222.
+ 223.
 
 
 Underfull \vbox (badness 1603) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 223.
-LaTeX Info: Redefining \% on input line 223.
+LaTeX Info: Redefining \. on input line 224.
+LaTeX Info: Redefining \% on input line 224.
 [6]
 
 Package natbib Warning: Citation `Bufacchi2007' on page 7 undefined on input li
-ne 224.
+ne 225.
 
 
-Package natbib Warning: Citation `Galtung1968' on page 7 undefined on input lin
-e 224.
+Package natbib Warning: Citation `Galtung1969' on page 7 undefined on input lin
+e 225.
 
 
 Package natbib Warning: Citation `BarringtonMoore1978' on page 7 undefined on i
-nput line 224.
+nput line 225.
 
 
 Package natbib Warning: Citation `Wells1970' on page 7 undefined on input line 
-224.
+225.
 
 
 Package natbib Warning: Citation `Bufacchi2007' on page 7 undefined on input li
-ne 224.
+ne 225.
 
 
 Package natbib Warning: Citation `Sabbagh2016' on page 7 undefined on input lin
-e 224.
+e 225.
 
 
 Package natbib Warning: Citation `Ostby2013' on page 7 undefined on input line 
-226.
+227.
 
 
 Package natbib Warning: Citation `Jasso1980' on page 7 undefined on input line 
-226.
+227.
 
 
 Package natbib Warning: Citation `PNUD2017' on page 7 undefined on input line 2
-28.
+29.
 
 
 Package natbib Warning: Citation `PNUD2017' on page 7 undefined on input line 2
-28.
+29.
 
 [7]
-LaTeX Info: Redefining \. on input line 237.
-LaTeX Info: Redefining \% on input line 237.
+LaTeX Info: Redefining \. on input line 238.
+LaTeX Info: Redefining \% on input line 238.
 [8]
 Cap\'{\i }tulo 2.
-
-Package natbib Warning: Citation `Kurt2008' on page 9 undefined on input line 2
-42.
-
-
-Package natbib Warning: Citation `Heitmeyer2005' on page 9 undefined on input l
-ine 242.
-
-
-Package natbib Warning: Citation `Bufacchi2009a' on page 9 undefined on input l
-ine 242.
-
-
-Package natbib Warning: Citation `Bufacchi2005' on page 9 undefined on input li
-ne 244.
-
-
-Package natbib Warning: Citation `Keane2004' on page 9 undefined on input line 
-246.
-
-
-Package natbib Warning: Citation `Coady2008' on page 9 undefined on input line 
-246.
-
-
-Package natbib Warning: Citation `Galtung1969' on page 9 undefined on input lin
-e 246.
-
-
-Package natbib Warning: Citation `Bufacchi2007' on page 9 undefined on input li
-ne 246.
-
 [9
 
-]
-
-Package natbib Warning: Citation `Hook1976' on page 10 undefined on input line 
-248.
-
-
-Package natbib Warning: Citation `Bufacchi2005' on page 10 undefined on input l
-ine 250.
-
-
-Package natbib Warning: Citation `Bufacchi2007' on page 10 undefined on input l
-ine 250.
-
-
-Package natbib Warning: Citation `Gerd1969' on page 10 undefined on input line 
-250.
-
-
-Package natbib Warning: Citation `Copoeru2020' on page 10 undefined on input li
-ne 250.
-
-
-Package natbib Warning: Citation `Demirbas2019' on page 10 undefined on input l
-ine 250.
-
-
-Package natbib Warning: Citation `Zizek2008' on page 10 undefined on input line
- 250.
-
-
-Package natbib Warning: Citation `Galtung1969' on page 10 undefined on input li
-ne 250.
-
-
-Package natbib Warning: Citation `Bourdieu1991' on page 10 undefined on input l
-ine 250.
-
-
-Package natbib Warning: Citation `Bufacchi2005' on page 10 undefined on input l
-ine 250.
-
-
-Package natbib Warning: Citation `Arostegui1994' on page 10 undefined on input 
-line 250.
-
-LaTeX Info: Redefining \. on input line 253.
-LaTeX Info: Redefining \% on input line 253.
-[10]
-
-Package natbib Warning: Citation `Basaure2020' on page 11 undefined on input li
-ne 257.
-
-
-Package natbib Warning: Citation `Frazer2019' on page 11 undefined on input lin
-e 257.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 11 undefined on input
- line 257.
-
-
-Package natbib Warning: Citation `Arendt2005' on page 11 undefined on input lin
-e 257.
-
-
-Package natbib Warning: Citation `Demirbas2019' on page 11 undefined on input l
-ine 259.
-
-
-Package natbib Warning: Citation `Frazer2019' on page 11 undefined on input lin
-e 259.
-
-
-Package natbib Warning: Citation `Gerd1969' on page 11 undefined on input line 
-259.
-
-
-Package natbib Warning: Citation `Hills2011' on page 11 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `Keane2004' on page 11 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `Magil2008' on page 11 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `Nielsen1981' on page 11 undefined on input li
-ne 259.
-
-
-Package natbib Warning: Citation `Wells1970' on page 11 undefined on input line
- 259.
-
-
-Package natbib Warning: Citation `APT2007' on page 11 undefined on input line 2
-59.
-
-
-Package natbib Warning: Citation `Bufacchi2006' on page 11 undefined on input l
-ine 259.
-
-
-Package natbib Warning: Citation `Dean2005' on page 11 undefined on input line 
-259.
-
-
-Package natbib Warning: Citation `Frazer2019' on page 11 undefined on input lin
-e 259.
-
-
-Package natbib Warning: Citation `Bufacchi2007' on page 11 undefined on input l
-ine 259.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 11 undefined on input
- line 261.
-
-
-Package natbib Warning: Citation `Gerber2012' on page 11 undefined on input lin
-e 261.
-
-
-Package natbib Warning: Citation `Gerber2016' on page 11 undefined on input lin
-e 261.
-
-
-Package natbib Warning: Citation `Puga2016' on page 11 undefined on input line 
-261.
-
-
-Package natbib Warning: Citation `Nielsen1981' on page 11 undefined on input li
-ne 261.
-
-
-Package natbib Warning: Citation `Puga2016' on page 11 undefined on input line 
-261.
-
-
-Package natbib Warning: Citation `Nielsen1981' on page 11 undefined on input li
-ne 261.
-
-
-Package natbib Warning: Citation `Nielsen1977' on page 11 undefined on input li
-ne 261.
-
-
-Package natbib Warning: Citation `Sune2010' on page 11 undefined on input line 
-261.
-
-
-Package natbib Warning: Citation `Edyvane2020' on page 11 undefined on input li
-ne 261.
-
-LaTeX Info: Redefining \. on input line 262.
-LaTeX Info: Redefining \% on input line 262.
-[11]
-
-Package natbib Warning: Citation `Jackson2013' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Gerber2016' on page 12 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Gamson1970' on page 12 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Arthur1993' on page 12 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Arthur1994' on page 12 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Thompson2004' on page 12 undefined on input l
-ine 263.
-
-
-Package natbib Warning: Citation `Perkins2006' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Johnson2009' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Barkan1998' on page 12 undefined on input lin
-e 263.
-
-
-Package natbib Warning: Citation `Jefferis2011' on page 12 undefined on input l
-ine 263.
-
-
-Package natbib Warning: Citation `Henry2005' on page 12 undefined on input line
- 263.
-
-
-Package natbib Warning: Citation `Gerber2017b' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Sidanius1999' on page 12 undefined on input l
-ine 263.
-
-
-Package natbib Warning: Citation `Altemeyer1988' on page 12 undefined on input 
-line 263.
-
-
-Package natbib Warning: Citation `Jackson2013' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Gerber2017a' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Gerber2017b' on page 12 undefined on input li
-ne 263.
-
-
-Package natbib Warning: Citation `Bradford2017' on page 12 undefined on input l
-ine 263.
-
-
-Package natbib Warning: Citation `Gerber2017a' on page 12 undefined on input li
-ne 265.
-
-
-Package natbib Warning: Citation `Gerber2017a' on page 12 undefined on input li
-ne 265.
-
-
-Package natbib Warning: Citation `Gerber2017a' on page 12 undefined on input li
-ne 265.
-
-
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 266.
-LaTeX Info: Redefining \% on input line 266.
-[12]
-
-Package natbib Warning: Citation `Chambliss1995' on page 13 undefined on input 
-line 270.
-
-
-Package natbib Warning: Citation `Quinney1971' on page 13 undefined on input li
-ne 270.
-
-
-Package natbib Warning: Citation `Turk1969' on page 13 undefined on input line 
-270.
-
-
-Package natbib Warning: Citation `Sidanius1999' on page 13 undefined on input l
-ine 270.
-
-
-Package natbib Warning: Citation `Altemeyer1988' on page 13 undefined on input 
-line 270.
-
-
-Package natbib Warning: Citation `Tyler2006' on page 13 undefined on input line
- 270.
-
-
-Package natbib Warning: Citation `Gamson1970' on page 13 undefined on input lin
-e 270.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 13 undefined on input
- line 270.
-
-
-Package natbib Warning: Citation `Arthur1994' on page 13 undefined on input lin
-e 270.
-
-
-Package natbib Warning: Citation `Thompson2004' on page 13 undefined on input l
-ine 270.
-
-
-Package natbib Warning: Citation `Gerber2017' on page 13 undefined on input lin
-e 270.
-
-
-Package natbib Warning: Citation `Bradford2017' on page 13 undefined on input l
-ine 270.
-
-
-Package natbib Warning: Citation `Gerber2017a' on page 13 undefined on input li
-ne 270.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 13 undefined on input
- line 270.
-
-
-Package natbib Warning: Citation `Puga2016' on page 13 undefined on input line 
-270.
-
-
-Package natbib Warning: Citation `Gamson1970' on page 13 undefined on input lin
-e 275.
-
-
-Package natbib Warning: Citation `Arthur1994' on page 13 undefined on input lin
-e 275.
-
-
-Package natbib Warning: Citation `Weitzer2002' on page 13 undefined on input li
-ne 275.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 13 undefined on input
- line 275.
-
-
-Package natbib Warning: Citation `Thompson2004' on page 13 undefined on input l
-ine 275.
-
-
-Package natbib Warning: Citation `Johnson2009' on page 13 undefined on input li
-ne 275.
-
-
-Package natbib Warning: Citation `Chambliss1995' on page 13 undefined on input 
-line 275.
-
-
-Package natbib Warning: Citation `Quinney1971' on page 13 undefined on input li
-ne 275.
-
-
-Package natbib Warning: Citation `Turk1969' on page 13 undefined on input line 
-275.
-
-LaTeX Info: Redefining \. on input line 276.
-LaTeX Info: Redefining \% on input line 276.
-[13]
-
-Package natbib Warning: Citation `Sidanius1999' on page 14 undefined on input l
-ine 285.
-
-
-Package natbib Warning: Citation `Altemeyer1988' on page 14 undefined on input 
-line 285.
-
-
-Package natbib Warning: Citation `Henry2005' on page 14 undefined on input line
- 285.
-
-
-Package natbib Warning: Citation `Perkins2006' on page 14 undefined on input li
-ne 285.
-
-
-Package natbib Warning: Citation `Gerber2017b' on page 14 undefined on input li
-ne 285.
-
-
-Package natbib Warning: Citation `Gonzales2007' on page 14 undefined on input l
-ine 290.
-
-
-Package natbib Warning: Citation `Vermunt2016' on page 14 undefined on input li
-ne 290.
-
-
-Package natbib Warning: Citation `Vermunt2016' on page 14 undefined on input li
-ne 290.
-
-
-Package natbib Warning: Citation `Bradford2017' on page 14 undefined on input l
-ine 290.
-
-
-Package natbib Warning: Citation `Jackson2013' on page 14 undefined on input li
-ne 290.
-
-
-Package natbib Warning: Citation `Maguire2016' on page 14 undefined on input li
-ne 290.
-
-
-Package natbib Warning: Citation `Gerber2017' on page 14 undefined on input lin
-e 290.
-
-
-Package natbib Warning: Citation `Bradford2017' on page 14 undefined on input l
-ine 290.
-
-LaTeX Info: Redefining \. on input line 291.
-LaTeX Info: Redefining \% on input line 291.
-[14]
-
-Package natbib Warning: Citation `Gamson1970' on page 15 undefined on input lin
-e 300.
-
-
-Package natbib Warning: Citation `Thomas1977' on page 15 undefined on input lin
-e 300.
-
-
-Package natbib Warning: Citation `Thompson2004' on page 15 undefined on input l
-ine 300.
-
-
-Package natbib Warning: Citation `Puga2016' on page 15 undefined on input line 
-300.
-
-
-Package natbib Warning: Citation `Gerber2017' on page 15 undefined on input lin
-e 300.
-
-
-Package natbib Warning: Citation `Gerber2017' on page 15 undefined on input lin
-e 300.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 15 undefined on input
- line 300.
-
-
-Package natbib Warning: Citation `Gerber2017b' on page 15 undefined on input li
-ne 300.
-
-
-Package natbib Warning: Citation `Bradford2017' on page 15 undefined on input l
-ine 300.
-
-
-Package natbib Warning: Citation `Puga2016' on page 15 undefined on input line 
-300.
-
-
-Package natbib Warning: Citation `Blumenthal1972' on page 15 undefined on input
- line 300.
-
-LaTeX Info: Redefining \. on input line 301.
-LaTeX Info: Redefining \% on input line 301.
-[15]
-
-Package natbib Warning: Citation `Liebig2016' on page 16 undefined on input lin
-e 305.
-
-
-Package natbib Warning: Citation `Liebig2016' on page 16 undefined on input lin
-e 305.
-
-
-Package natbib Warning: Citation `Runkle1976' on page 16 undefined on input lin
-e 307.
-
-
-Package natbib Warning: Citation `Dean2005' on page 16 undefined on input line 
-307.
-
-
-Package natbib Warning: Citation `Magil2008' on page 16 undefined on input line
- 307.
-
-
-Package natbib Warning: Citation `Galtung1969' on page 16 undefined on input li
-ne 307.
-
-
-Package natbib Warning: Citation `Nielsen1981' on page 16 undefined on input li
-ne 307.
-
-
-Package natbib Warning: Citation `Bufacchi2007' on page 16 undefined on input l
-ine 307.
-
-
-Package natbib Warning: Citation `Wells1970' on page 16 undefined on input line
- 307.
-
-
-Package natbib Warning: Citation `Stateva2009' on page 16 undefined on input li
-ne 307.
-
-
-Package natbib Warning: Citation `Frazer2019' on page 16 undefined on input lin
-e 307.
-
-
-Package natbib Warning: Citation `Honderich2014' on page 16 undefined on input 
-line 307.
-
-
-Package natbib Warning: Citation `Sorel1999' on page 16 undefined on input line
- 307.
-
-
-Package natbib Warning: Citation `Frazer2020' on page 16 undefined on input lin
-e 307.
-
-
-Package natbib Warning: Citation `Wells1970' on page 16 undefined on input line
- 307.
-
-
-Package natbib Warning: Citation `Reitan2002' on page 16 undefined on input lin
-e 307.
-
-
-Package natbib Warning: Citation `Magil2008' on page 16 undefined on input line
- 307.
-
-
-Package natbib Warning: Citation `Nielsen1981' on page 16 undefined on input li
-ne 307.
-
-
-Package natbib Warning: Citation `Stateva2009' on page 16 undefined on input li
-ne 307.
-
-
-Package natbib Warning: Citation `Bufacchi2007' on page 16 undefined on input l
-ine 307.
-
-LaTeX Info: Redefining \. on input line 308.
-LaTeX Info: Redefining \% on input line 308.
-[16]
-
-Package natbib Warning: Citation `Cohen2016' on page 17 undefined on input line
- 309.
-
-
-Package natbib Warning: Citation `Wenzel2016' on page 17 undefined on input lin
-e 309.
-
-
-Package natbib Warning: Citation `Vermunt2016' on page 17 undefined on input li
-ne 309.
-
-
-Package natbib Warning: Citation `Jasso2016' on page 17 undefined on input line
- 309.
-
-
-Package natbib Warning: Citation `Gerber2017b' on page 17 undefined on input li
-ne 309.
-
-
-Package natbib Warning: Citation `Jasso2015' on page 17 undefined on input line
- 311.
-
-
-Package natbib Warning: Citation `Castillo2009' on page 17 undefined on input l
-ine 311.
-
-
-Package natbib Warning: Citation `Castillo2011' on page 17 undefined on input l
-ine 311.
-
-
-Package natbib Warning: Citation `Adams1963' on page 17 undefined on input line
- 311.
-
-
-Package natbib Warning: Citation `Homans1961' on page 17 undefined on input lin
-e 311.
-
-
-Package natbib Warning: Citation `Runciman1966' on page 17 undefined on input l
-ine 311.
-
-
-Package natbib Warning: Citation `Berger1989' on page 17 undefined on input lin
-e 311.
-
-
-Package natbib Warning: Citation `Jasso1980' on page 17 undefined on input line
- 311.
-
-
-Package natbib Warning: Citation `Jasso2015' on page 17 undefined on input line
- 311.
-
-
-Package natbib Warning: Citation `Verwiebe2000' on page 17 undefined on input l
-ine 311.
-
-
-Underfull \vbox (badness 1603) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 312.
-LaTeX Info: Redefining \% on input line 312.
-[17]
-
-Package natbib Warning: Citation `Ostby2013' on page 18 undefined on input line
- 327.
-
-
-Package natbib Warning: Citation `Gurr1970' on page 18 undefined on input line 
-327.
-
-
-Package natbib Warning: Citation `Rustad2016' on page 18 undefined on input lin
-e 327.
-
-
-Package natbib Warning: Citation `Rustad2016' on page 18 undefined on input lin
-e 327.
-
-LaTeX Info: Redefining \. on input line 328.
-LaTeX Info: Redefining \% on input line 328.
-[18]
-LaTeX Info: Redefining \. on input line 330.
-LaTeX Info: Redefining \% on input line 330.
-[19] [20
+] [10
 
 ]
 Cap\'{\i }tulo 3.
-[21] [22
 
-]
+Package natbib Warning: Citation `Kurt2008' on page 11 undefined on input line 
+277.
+
+
+Package natbib Warning: Citation `Heitmeyer2005' on page 11 undefined on input 
+line 277.
+
+
+Package natbib Warning: Citation `Bufacchi2009a' on page 11 undefined on input 
+line 277.
+
+[11]
+
+Package natbib Warning: Citation `Bufacchi2005' on page 12 undefined on input l
+ine 279.
+
+
+Package natbib Warning: Citation `Keane2004' on page 12 undefined on input line
+ 281.
+
+
+Package natbib Warning: Citation `Coady2008' on page 12 undefined on input line
+ 281.
+
+
+Package natbib Warning: Citation `Galtung1969' on page 12 undefined on input li
+ne 281.
+
+
+Package natbib Warning: Citation `Bufacchi2007' on page 12 undefined on input l
+ine 281.
+
+
+Package natbib Warning: Citation `Hook1976' on page 12 undefined on input line 
+283.
+
+
+Package natbib Warning: Citation `Bufacchi2005' on page 12 undefined on input l
+ine 285.
+
+
+Package natbib Warning: Citation `Bufacchi2007' on page 12 undefined on input l
+ine 285.
+
+
+Package natbib Warning: Citation `Gerd1969' on page 12 undefined on input line 
+285.
+
+
+Package natbib Warning: Citation `Copoeru2020' on page 12 undefined on input li
+ne 285.
+
+
+Package natbib Warning: Citation `Demirbas2019' on page 12 undefined on input l
+ine 285.
+
+
+Package natbib Warning: Citation `Zizek2008' on page 12 undefined on input line
+ 285.
+
+
+Package natbib Warning: Citation `Galtung1969' on page 12 undefined on input li
+ne 285.
+
+
+Package natbib Warning: Citation `Bourdieu1991' on page 12 undefined on input l
+ine 285.
+
+
+Package natbib Warning: Citation `Bufacchi2005' on page 12 undefined on input l
+ine 285.
+
+
+Package natbib Warning: Citation `Arostegui1994' on page 12 undefined on input 
+line 285.
+
+LaTeX Info: Redefining \. on input line 286.
+LaTeX Info: Redefining \% on input line 286.
+[12]
+
+Package natbib Warning: Citation `Basaure2020' on page 13 undefined on input li
+ne 292.
+
+
+Package natbib Warning: Citation `Frazer2019' on page 13 undefined on input lin
+e 292.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 13 undefined on input
+ line 292.
+
+
+Package natbib Warning: Citation `Arendt2005' on page 13 undefined on input lin
+e 292.
+
+
+Package natbib Warning: Citation `Demirbas2019' on page 13 undefined on input l
+ine 294.
+
+
+Package natbib Warning: Citation `Frazer2019' on page 13 undefined on input lin
+e 294.
+
+
+Package natbib Warning: Citation `Gerd1969' on page 13 undefined on input line 
+294.
+
+
+Package natbib Warning: Citation `Hills2011' on page 13 undefined on input line
+ 294.
+
+
+Package natbib Warning: Citation `Keane2004' on page 13 undefined on input line
+ 294.
+
+
+Package natbib Warning: Citation `Magil2008' on page 13 undefined on input line
+ 294.
+
+
+Package natbib Warning: Citation `Nielsen1981' on page 13 undefined on input li
+ne 294.
+
+
+Package natbib Warning: Citation `Wells1970' on page 13 undefined on input line
+ 294.
+
+
+Package natbib Warning: Citation `APT2007' on page 13 undefined on input line 2
+94.
+
+
+Package natbib Warning: Citation `Bufacchi2006' on page 13 undefined on input l
+ine 294.
+
+
+Package natbib Warning: Citation `Dean2005' on page 13 undefined on input line 
+294.
+
+
+Package natbib Warning: Citation `Frazer2019' on page 13 undefined on input lin
+e 294.
+
+
+Package natbib Warning: Citation `Bufacchi2007' on page 13 undefined on input l
+ine 294.
+
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
+[13]
+
+Package natbib Warning: Citation `Blumenthal1972' on page 14 undefined on input
+ line 296.
+
+
+Package natbib Warning: Citation `Gerber2012' on page 14 undefined on input lin
+e 296.
+
+
+Package natbib Warning: Citation `Gerber2016' on page 14 undefined on input lin
+e 296.
+
+
+Package natbib Warning: Citation `Puga2016' on page 14 undefined on input line 
+296.
+
+
+Package natbib Warning: Citation `Nielsen1981' on page 14 undefined on input li
+ne 296.
+
+
+Package natbib Warning: Citation `Puga2016' on page 14 undefined on input line 
+296.
+
+
+Package natbib Warning: Citation `Nielsen1981' on page 14 undefined on input li
+ne 296.
+
+
+Package natbib Warning: Citation `Nielsen1977' on page 14 undefined on input li
+ne 296.
+
+
+Package natbib Warning: Citation `Sune2010' on page 14 undefined on input line 
+296.
+
+
+Package natbib Warning: Citation `Edyvane2020' on page 14 undefined on input li
+ne 296.
+
+
+Package natbib Warning: Citation `Jackson2013' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Gerber2016' on page 14 undefined on input lin
+e 298.
+
+
+Package natbib Warning: Citation `Gamson1970' on page 14 undefined on input lin
+e 298.
+
+
+Package natbib Warning: Citation `Arthur1993' on page 14 undefined on input lin
+e 298.
+
+
+Package natbib Warning: Citation `Arthur1994' on page 14 undefined on input lin
+e 298.
+
+
+Package natbib Warning: Citation `Thompson2004' on page 14 undefined on input l
+ine 298.
+
+
+Package natbib Warning: Citation `Perkins2006' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Johnson2009' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Barkan1998' on page 14 undefined on input lin
+e 298.
+
+
+Package natbib Warning: Citation `Jefferis2011' on page 14 undefined on input l
+ine 298.
+
+
+Package natbib Warning: Citation `Henry2005' on page 14 undefined on input line
+ 298.
+
+
+Package natbib Warning: Citation `Gerber2017b' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Sidanius1999' on page 14 undefined on input l
+ine 298.
+
+
+Package natbib Warning: Citation `Altemeyer1988' on page 14 undefined on input 
+line 298.
+
+
+Package natbib Warning: Citation `Jackson2013' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Gerber2017a' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Gerber2017b' on page 14 undefined on input li
+ne 298.
+
+
+Package natbib Warning: Citation `Bradford2017' on page 14 undefined on input l
+ine 298.
+
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 299.
+LaTeX Info: Redefining \% on input line 299.
+[14]
+
+Package natbib Warning: Citation `Gerber2017a' on page 15 undefined on input li
+ne 300.
+
+
+Package natbib Warning: Citation `Gerber2017a' on page 15 undefined on input li
+ne 300.
+
+
+Package natbib Warning: Citation `Gerber2017a' on page 15 undefined on input li
+ne 300.
+
+
+Package natbib Warning: Citation `Chambliss1995' on page 15 undefined on input 
+line 305.
+
+
+Package natbib Warning: Citation `Quinney1971' on page 15 undefined on input li
+ne 305.
+
+
+Package natbib Warning: Citation `Turk1969' on page 15 undefined on input line 
+305.
+
+
+Package natbib Warning: Citation `Sidanius1999' on page 15 undefined on input l
+ine 305.
+
+
+Package natbib Warning: Citation `Altemeyer1988' on page 15 undefined on input 
+line 305.
+
+
+Package natbib Warning: Citation `Tyler2006' on page 15 undefined on input line
+ 305.
+
+
+Package natbib Warning: Citation `Gamson1970' on page 15 undefined on input lin
+e 305.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 15 undefined on input
+ line 305.
+
+
+Package natbib Warning: Citation `Arthur1994' on page 15 undefined on input lin
+e 305.
+
+
+Package natbib Warning: Citation `Thompson2004' on page 15 undefined on input l
+ine 305.
+
+
+Package natbib Warning: Citation `Gerber2017' on page 15 undefined on input lin
+e 305.
+
+
+Package natbib Warning: Citation `Bradford2017' on page 15 undefined on input l
+ine 305.
+
+
+Package natbib Warning: Citation `Gerber2017a' on page 15 undefined on input li
+ne 305.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 15 undefined on input
+ line 305.
+
+
+Package natbib Warning: Citation `Puga2016' on page 15 undefined on input line 
+305.
+
+LaTeX Info: Redefining \. on input line 306.
+LaTeX Info: Redefining \% on input line 306.
+[15]
+
+Package natbib Warning: Citation `Gamson1970' on page 16 undefined on input lin
+e 307.
+
+
+Package natbib Warning: Citation `Arthur1994' on page 16 undefined on input lin
+e 307.
+
+
+Package natbib Warning: Citation `Weitzer2002' on page 16 undefined on input li
+ne 307.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 16 undefined on input
+ line 307.
+
+
+Package natbib Warning: Citation `Thompson2004' on page 16 undefined on input l
+ine 307.
+
+
+Package natbib Warning: Citation `Johnson2009' on page 16 undefined on input li
+ne 307.
+
+
+Package natbib Warning: Citation `Chambliss1995' on page 16 undefined on input 
+line 307.
+
+
+Package natbib Warning: Citation `Quinney1971' on page 16 undefined on input li
+ne 307.
+
+
+Package natbib Warning: Citation `Turk1969' on page 16 undefined on input line 
+307.
+
+
+Package natbib Warning: Citation `Sidanius1999' on page 16 undefined on input l
+ine 309.
+
+
+Package natbib Warning: Citation `Altemeyer1988' on page 16 undefined on input 
+line 309.
+
+
+Package natbib Warning: Citation `Henry2005' on page 16 undefined on input line
+ 309.
+
+
+Package natbib Warning: Citation `Perkins2006' on page 16 undefined on input li
+ne 309.
+
+
+Package natbib Warning: Citation `Gerber2017b' on page 16 undefined on input li
+ne 309.
+
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 310.
+LaTeX Info: Redefining \% on input line 310.
+[16]
+
+Package natbib Warning: Citation `Gonzales2007' on page 17 undefined on input l
+ine 311.
+
+
+Package natbib Warning: Citation `Vermunt2016' on page 17 undefined on input li
+ne 311.
+
+
+Package natbib Warning: Citation `Vermunt2016' on page 17 undefined on input li
+ne 311.
+
+
+Package natbib Warning: Citation `Bradford2017' on page 17 undefined on input l
+ine 311.
+
+
+Package natbib Warning: Citation `Jackson2013' on page 17 undefined on input li
+ne 311.
+
+
+Package natbib Warning: Citation `Maguire2016' on page 17 undefined on input li
+ne 311.
+
+
+Package natbib Warning: Citation `Gerber2017' on page 17 undefined on input lin
+e 311.
+
+
+Package natbib Warning: Citation `Bradford2017' on page 17 undefined on input l
+ine 311.
+
+
+Package natbib Warning: Citation `Gamson1970' on page 17 undefined on input lin
+e 313.
+
+
+Package natbib Warning: Citation `Thomas1977' on page 17 undefined on input lin
+e 313.
+
+
+Package natbib Warning: Citation `Thompson2004' on page 17 undefined on input l
+ine 313.
+
+
+Package natbib Warning: Citation `Puga2016' on page 17 undefined on input line 
+313.
+
+
+Package natbib Warning: Citation `Gerber2017' on page 17 undefined on input lin
+e 313.
+
+
+Package natbib Warning: Citation `Gerber2017' on page 17 undefined on input lin
+e 313.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 17 undefined on input
+ line 313.
+
+
+Package natbib Warning: Citation `Gerber2017b' on page 17 undefined on input li
+ne 313.
+
+
+Package natbib Warning: Citation `Bradford2017' on page 17 undefined on input l
+ine 313.
+
+
+Package natbib Warning: Citation `Puga2016' on page 17 undefined on input line 
+313.
+
+
+Package natbib Warning: Citation `Blumenthal1972' on page 17 undefined on input
+ line 313.
+
+
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 314.
+LaTeX Info: Redefining \% on input line 314.
+[17]
+
+Package natbib Warning: Citation `Jasso2005' on page 18 undefined on input line
+ 318.
+
+
+Package natbib Warning: Citation `Castillo2011' on page 18 undefined on input l
+ine 318.
+
+
+Package natbib Warning: Citation `Adams1963' on page 18 undefined on input line
+ 318.
+
+
+Package natbib Warning: Citation `Homans1961' on page 18 undefined on input lin
+e 318.
+
+
+Package natbib Warning: Citation `Runciman1966' on page 18 undefined on input l
+ine 318.
+
+
+Package natbib Warning: Citation `Berger1989' on page 18 undefined on input lin
+e 318.
+
+
+Package natbib Warning: Citation `Jasso1980' on page 18 undefined on input line
+ 318.
+
+
+Package natbib Warning: Citation `Jasso1980' on page 18 undefined on input line
+ 320.
+
+
+Package natbib Warning: Citation `Jasso1980' on page 18 undefined on input line
+ 320.
+
+
+Package natbib Warning: Citation `Resh2014' on page 18 undefined on input line 
+322.
+
+
+Package natbib Warning: Citation `Resh2014' on page 18 undefined on input line 
+325.
+
+LaTeX Info: Redefining \. on input line 326.
+LaTeX Info: Redefining \% on input line 326.
+[18]
+
+Package natbib Warning: Citation `Verwiebe2000' on page 19 undefined on input l
+ine 328.
+
+
+Package natbib Warning: Citation `Jasso1980' on page 19 undefined on input line
+ 330.
+
+
+Package natbib Warning: Citation `Jasso2015' on page 19 undefined on input line
+ 330.
+
+
+Package natbib Warning: Citation `Liebig2016' on page 19 undefined on input lin
+e 330.
+
+
+Package natbib Warning: Citation `Resh2014' on page 19 undefined on input line 
+330.
+
+
+Package natbib Warning: Citation `Resh2017' on page 19 undefined on input line 
+330.
+
+
+Package natbib Warning: Citation `Resh2018' on page 19 undefined on input line 
+330.
+
+
+Package natbib Warning: Citation `Dollard1939' on page 19 undefined on input li
+ne 337.
+
+
+Package natbib Warning: Citation `Gurr1970' on page 19 undefined on input line 
+337.
+
+
+Package natbib Warning: Citation `Tilly1981' on page 19 undefined on input line
+ 337.
+
+
+Package natbib Warning: Citation `Ostby2013' on page 19 undefined on input line
+ 337.
+
+LaTeX Info: Redefining \. on input line 338.
+LaTeX Info: Redefining \% on input line 338.
+[19]
+
+Package natbib Warning: Citation `PNUD2017' on page 20 undefined on input line 
+339.
+
+
+Package natbib Warning: Citation `PNUD2017' on page 20 undefined on input line 
+339.
+
+
+Package natbib Warning: Citation `Somma2020' on page 20 undefined on input line
+ 339.
+
+
+Package natbib Warning: Citation `BarringtonMoore1978' on page 20 undefined on 
+input line 341.
+
+
+Package natbib Warning: Citation `PNUD2017' on page 20 undefined on input line 
+341.
+
+LaTeX Info: Redefining \. on input line 345.
+LaTeX Info: Redefining \% on input line 345.
+[20]
+
+Package natbib Warning: Citation `Runkle1976' on page 21 undefined on input lin
+e 347.
+
+
+Package natbib Warning: Citation `Dean2005' on page 21 undefined on input line 
+347.
+
+
+Package natbib Warning: Citation `Magil2008' on page 21 undefined on input line
+ 347.
+
+
+Package natbib Warning: Citation `Galtung1969' on page 21 undefined on input li
+ne 347.
+
+
+Package natbib Warning: Citation `Nielsen1981' on page 21 undefined on input li
+ne 347.
+
+
+Package natbib Warning: Citation `Bufacchi2007' on page 21 undefined on input l
+ine 347.
+
+
+Package natbib Warning: Citation `Wells1970' on page 21 undefined on input line
+ 347.
+
+
+Package natbib Warning: Citation `Stateva2009' on page 21 undefined on input li
+ne 347.
+
+
+Package natbib Warning: Citation `Frazer2019' on page 21 undefined on input lin
+e 347.
+
+
+Package natbib Warning: Citation `Honderich2014' on page 21 undefined on input 
+line 347.
+
+
+Package natbib Warning: Citation `Sorel1999' on page 21 undefined on input line
+ 347.
+
+
+Package natbib Warning: Citation `Frazer2020' on page 21 undefined on input lin
+e 347.
+
+
+Package natbib Warning: Citation `Wells1970' on page 21 undefined on input line
+ 347.
+
+
+Package natbib Warning: Citation `Reitan2002' on page 21 undefined on input lin
+e 347.
+
+
+Package natbib Warning: Citation `Magil2008' on page 21 undefined on input line
+ 347.
+
+
+Package natbib Warning: Citation `Nielsen1981' on page 21 undefined on input li
+ne 347.
+
+
+Package natbib Warning: Citation `Stateva2009' on page 21 undefined on input li
+ne 347.
+
+
+Package natbib Warning: Citation `Bufacchi2007' on page 21 undefined on input l
+ine 347.
+
+
+Package natbib Warning: Citation `Rustad2016' on page 21 undefined on input lin
+e 349.
+
+
+Package natbib Warning: Citation `PNUD2017' on page 21 undefined on input line 
+359.
+
+
+Package natbib Warning: Citation `Mac-Clure2016' on page 21 undefined on input 
+line 359.
+
+LaTeX Info: Redefining \. on input line 360.
+LaTeX Info: Redefining \% on input line 360.
+[21]
+
+Package natbib Warning: Citation `Resh2010' on page 22 undefined on input line 
+379.
+
+LaTeX Info: Redefining \. on input line 390.
+LaTeX Info: Redefining \% on input line 390.
+[22]
 Cap\'{\i }tulo 4.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-67.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+03.
 (c:/Users/Mar/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-LaTeX Warning: Reference `tab:tab-dep' on page 23 undefined on input line 367.
+LaTeX Warning: Reference `tab:tab-dep' on page 23 undefined on input line 403.
 
-[23]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 376.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 376.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 376.
 
-Overfull \vbox (24.0pt too high) detected at line 392
+LaTeX Warning: Reference `tab:tab-dep' on page 23 undefined on input line 403.
+
+[23
+
+]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 412.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 412.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 412.
+
+Overfull \vbox (24.0pt too high) detected at line 428
  []
 
 
-Overfull \vbox (2.20007pt too high) detected at line 392
+Overfull \vbox (2.20007pt too high) detected at line 428
  []
 
 
-LaTeX Warning: Reference `tab:tab-indep' on page 24 undefined on input line 402
+LaTeX Warning: Reference `tab:tab-indep' on page 24 undefined on input line 438
 .
 
 
-LaTeX Warning: Reference `eq:jef' on page 24 undefined on input line 402.
+LaTeX Warning: Reference `eq:jef' on page 24 undefined on input line 438.
 
 
 Package natbib Warning: Citation `Jasso1980' on page 24 undefined on input line
- 402.
+ 438.
 
 
 Package natbib Warning: Citation `Verwiebe2000' on page 24 undefined on input l
-ine 402.
+ine 438.
 
 
-LaTeX Warning: Reference `eq:bj' on page 24 undefined on input line 402.
+LaTeX Warning: Reference `eq:bj' on page 24 undefined on input line 438.
 
-LaTeX Info: Redefining \. on input line 403.
-LaTeX Info: Redefining \% on input line 403.
+LaTeX Info: Redefining \. on input line 439.
+LaTeX Info: Redefining \% on input line 439.
 [24]
-Overfull \vbox (12.0pt too high) detected at line 445
+Overfull \vbox (12.0pt too high) detected at line 481
  []
 
 
-Overfull \vbox (12.0pt too high) detected at line 445
+Overfull \hbox (3.48367pt too wide) in paragraph at lines 481--481
+\T1/lmr/m/n/10 desventajados|  
+ []
+
+
+Overfull \vbox (12.0pt too high) detected at line 481
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Info: Redefining \. on input line 461.
-LaTeX Info: Redefining \% on input line 461.
+LaTeX Info: Redefining \. on input line 499.
+LaTeX Info: Redefining \% on input line 499.
 [25]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
+LaTeX Info: Redefining \. on input line 501.
+LaTeX Info: Redefining \% on input line 501.
 [26]
 Cap\'{\i }tulo 5.
 ! Missing number, treated as zero.
 <to be read again> 
                    (
-l.477 L
+l.517 L
        abel & Stats / Values & Freqs (\% of Valid) & Graph & Valid \\ 
 Here is how much of TeX's memory you used:
- 14941 strings out of 480459
- 225366 string characters out of 5896832
- 561979 words of memory out of 5000000
- 32262 multiletter control sequences out of 15000+600000
- 470394 words of font info for 81 fonts, out of 8000000 for 9000
+ 15031 strings out of 480484
+ 229254 string characters out of 5897333
+ 559787 words of memory out of 5000000
+ 32337 multiletter control sequences out of 15000+600000
+ 470076 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,16n,69p,2631b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,16n,69p,2632b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 !  ==> Fatal error occurred, no output PDF file produced!
