@@ -81,7 +81,7 @@ df <- df %>% rename(jv_cast1_2016 = f05_01_w01, # Perseguir y golpear delincuent
 view(dfSummary(df, headings=FALSE))
 ```
 
-```{r NA Recode}
+las de```{r NA Recode}
 df$jv_cast1_2016 <- car::recode(df$jv_cast1_2016, "-888=NA; -999=NA")
 df$jv_cast1_2017 <- car::recode(df$jv_cast1_2017, "-888=NA; -999=NA")
 df$jv_cast1_2018 <- car::recode(df$jv_cast1_2018, "-888=NA; -999=NA")
