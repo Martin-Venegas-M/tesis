@@ -447,9 +447,9 @@ Indice de destrucción a la propiedad
 
 # Probando modelos simples con variables importantes
 
-prop_index.modelsimp1 <- lm(prop_index ~ sj_ceo, data = procjv_conf_nona)
-prop_index.modelsimp2 <- lm(prop_index ~ sj_obrero, data = procjv_conf_nona)
-prop_index.modelsimp3 <- lm(prop_index ~ sj_entrevistado, data = procjv_conf_nona)
+prop_index.modelsimp1 <- lm(prop_index ~ sj_ceo_cat_factor, data = procjv_conf_nona)
+prop_index.modelsimp2 <- lm(prop_index ~ sj_obrero_cat_factor, data = procjv_conf_nona)
+prop_index.modelsimp3 <- lm(prop_index ~ sj_entrevistado_cat_factor, data = procjv_conf_nona)
 prop_index.modelsimp4 <- lm(prop_index ~ bj, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(prop_index.modelsimp1,
@@ -464,16 +464,16 @@ sjPlot::tab_model(list(prop_index.modelsimp1,
 
 # Probando efectos diferenciados
 
-prop_index.modelmul1 <- lm(prop_index ~ bj, data = procjv_conf_nona)
-prop_index.modelmul2 <- lm(prop_index ~ bj + sj_entrevistado, data = procjv_conf_nona)
-prop_index.modelmul3<- lm(prop_index ~ bj + sj_entrevistado + ingreso, data = procjv_conf_nona)
-prop_index.modelmul4 <- lm(prop_index ~ bj + sj_entrevistado + educ_rec_factor, data = procjv_conf_nona)
-prop_index.modelmul5 <- lm(prop_index ~ bj + sj_entrevistado + sexo_factor, data = procjv_conf_nona)
-prop_index.modelmul6 <- lm(prop_index ~ bj + sj_entrevistado + ingreso_satisfact_factor, data = procjv_conf_nona)
-prop_index.modelmul7 <- lm(prop_index ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-prop_index.modelmul8<- lm(prop_index ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-prop_index.modelmul9<- lm(prop_index ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-prop_index.modelmul10<- lm(prop_index ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+prop_index.modelmul1 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+prop_index.modelmul2 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+prop_index.modelmul3<- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso, data = procjv_conf_nona)
+prop_index.modelmul4 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + educ_rec_factor, data = procjv_conf_nona)
+prop_index.modelmul5 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + sexo_factor, data = procjv_conf_nona)
+prop_index.modelmul6 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+prop_index.modelmul7 <- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+prop_index.modelmul8<- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+prop_index.modelmul9<- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+prop_index.modelmul10<- lm(prop_index ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(prop_index.modelmul1,
                        prop_index.modelmul2,
@@ -490,27 +490,6 @@ sjPlot::tab_model(list(prop_index.modelmul1,
   dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7", "Modelo 8", "Modelo 9", "Modelo 10"), # etiquetas de modelos o variables dep.
   string.pred = "Predictores", string.est = "β", title = "Regresiones lineales ED - Indice de destruccion a la propiedad", file = "../output/tables/prop_index_ed.html") # nombre predictores y símbolo beta en tabla
 
-# Crear modelos para publicación
-
-prop_index.modelmulpub1 <- lm(prop_index ~ bj, data = procjv_conf_nona)
-prop_index.modelmulpub2 <- lm(prop_index ~ bj + sj_entrevistado, data = procjv_conf_nona)
-prop_index.modelmulpub3<- lm(prop_index ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-prop_index.modelmulpub4<- lm(prop_index ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-prop_index.modelmulpub5<- lm(prop_index ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
-prop_index.modelmulpub6 <- lm(prop_index ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-prop_index.modelmulpub7 <- lm(prop_index ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
-
-sjPlot::tab_model(list(prop_index.modelmulpub1,
-                       prop_index.modelmulpub2,
-                       prop_index.modelmulpub3,
-                       prop_index.modelmulpub4,
-                       prop_index.modelmulpub5,
-                       prop_index.modelmulpub6,
-                       prop_index.modelmulpub7), # los modelos estimados
-  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
-  p.style = "stars", # asteriscos de significación estadística 
-  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
-  string.pred = "Predictores", string.est = "β", title = "Regresiones lineales - Indice de destruccion a la propiedad", file = "../output/tables/prop_index.html") # nombre predictores y símbolo beta en tabla
 
 # NOTA: El p value de BJ en el modelo final es 0.035
 ```
@@ -521,9 +500,9 @@ Justificación de que estudiantes lancen piedras
 
 # Probando modelos simples con variables importantes
 
-jv_est_2019.modelsimp1 <- clm(jv_est_2019_factor ~ sj_ceo, data = procjv_conf_nona)
-jv_est_2019.modelsimp2 <- clm(jv_est_2019_factor ~ sj_obrero, data = procjv_conf_nona)
-jv_est_2019.modelsimp3 <- clm(jv_est_2019_factor ~ sj_entrevistado, data = procjv_conf_nona)
+jv_est_2019.modelsimp1 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor, data = procjv_conf_nona)
+jv_est_2019.modelsimp2 <- clm(jv_est_2019_factor ~ sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_est_2019.modelsimp3 <- clm(jv_est_2019_factor ~ sj_entrevistado_cat_factor, data = procjv_conf_nona)
 jv_est_2019.modelsimp4 <- clm(jv_est_2019_factor ~ bj, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_est_2019.modelsimp1,
@@ -538,16 +517,16 @@ sjPlot::tab_model(list(jv_est_2019.modelsimp1,
 
 # Probando efectos diferenciados
 
-jv_est_2019.modelmul1 <- clm(jv_est_2019_factor ~ bj, data = procjv_conf_nona)
-jv_est_2019.modelmul2 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_est_2019.modelmul3<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + ingreso, data = procjv_conf_nona)
-jv_est_2019.modelmul4 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + educ_rec_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul5 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + sexo_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul6 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul7 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul8<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul9<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_est_2019.modelmul10<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul1 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul2 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul3<- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso, data = procjv_conf_nona)
+jv_est_2019.modelmul4 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + educ_rec_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul5 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + sexo_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul6 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul7 <- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul8<- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul9<- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_est_2019.modelmul10<- clm(jv_est_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_est_2019.modelmul1,
                        jv_est_2019.modelmul2,
@@ -564,28 +543,6 @@ sjPlot::tab_model(list(jv_est_2019.modelmul1,
   dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7", "Modelo 8", "Modelo 9", "Modelo 10"), # etiquetas de modelos o variables dep.
   string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit ED - Justificacion estudiantes tiren piedras", file = "../output/tables/jv_est_ed.html") # nombre predictores y símbolo beta en tabla
 
-# Crear modelos para publicación
-
-jv_est_2019.modelmulpub1 <- clm(jv_est_2019_factor ~ bj, data = procjv_conf_nona)
-jv_est_2019.modelmulpub2 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_est_2019.modelmulpub3<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_est_2019.modelmulpub4<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
-jv_est_2019.modelmulpub6 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_est_2019.modelmulpub7 <- clm(jv_est_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
-
-sjPlot::tab_model(list(jv_est_2019.modelmulpub1,
-                       jv_est_2019.modelmulpub2,
-                       jv_est_2019.modelmulpub3,
-                       jv_est_2019.modelmulpub4,
-                       jv_est_2019.modelmulpub5,
-                       jv_est_2019.modelmulpub6,
-                       jv_est_2019.modelmulpub7), # los modelos estimados
-  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
-  p.style = "stars", # asteriscos de significación estadística 
-  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
-  string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit - Justificacion estudiantes tiren piedras", file = "../output/tables/jv_est.html") # nombre predictores y símbolo beta en tabla
-
 # NOTA: El p value de BJ en el modelo final es 0.035
 ```
 
@@ -595,9 +552,9 @@ Justificación de carabineros reprime marchas
 
 # Probando modelos simples con variables importantes
 
-jv_carab1_2019.modelsimp1 <- clm(jv_carab1_2019_factor ~ sj_ceo, data = procjv_conf_nona)
-jv_carab1_2019.modelsimp2 <- clm(jv_carab1_2019_factor ~ sj_obrero, data = procjv_conf_nona)
-jv_carab1_2019.modelsimp3 <- clm(jv_carab1_2019_factor ~ sj_entrevistado, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp2 <- clm(jv_carab1_2019_factor ~ sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp3 <- clm(jv_carab1_2019_factor ~ sj_entrevistado_cat_factor, data = procjv_conf_nona)
 jv_carab1_2019.modelsimp4 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelsimp1,
@@ -612,16 +569,16 @@ sjPlot::tab_model(list(jv_carab1_2019.modelsimp1,
 
 # Probando efectos diferenciados
 
-jv_carab1_2019.modelmul1 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
-jv_carab1_2019.modelmul2 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_carab1_2019.modelmul3<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso, data = procjv_conf_nona)
-jv_carab1_2019.modelmul4 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + educ_rec_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul5 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + sexo_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul6 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul7 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul8<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul9<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul10<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul2 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul3<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso, data = procjv_conf_nona)
+jv_carab1_2019.modelmul4 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + educ_rec_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul5 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + sexo_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul6 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul7 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul8<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul9<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul10<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelmul1,
                        jv_carab1_2019.modelmul2,
@@ -640,13 +597,13 @@ sjPlot::tab_model(list(jv_carab1_2019.modelmul1,
 
 # Crear modelos para publicación
 
-jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub2 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub6 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub7 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub2 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub6 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub7 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelmulpub1,
                        jv_carab1_2019.modelmulpub2,
@@ -669,9 +626,9 @@ Justificación de carabineros desaloje tomas
 
 # Probando modelos simples con variables importantes
 
-jv_carab1_2019.modelsimp1 <- clm(jv_carab1_2019_factor ~ sj_ceo, data = procjv_conf_nona)
-jv_carab1_2019.modelsimp2 <- clm(jv_carab1_2019_factor ~ sj_obrero, data = procjv_conf_nona)
-jv_carab1_2019.modelsimp3 <- clm(jv_carab1_2019_factor ~ sj_entrevistado, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp2 <- clm(jv_carab1_2019_factor ~ sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelsimp3 <- clm(jv_carab1_2019_factor ~ sj_entrevistado_cat_factor, data = procjv_conf_nona)
 jv_carab1_2019.modelsimp4 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelsimp1,
@@ -686,16 +643,16 @@ sjPlot::tab_model(list(jv_carab1_2019.modelsimp1,
 
 # Probando efectos diferenciados
 
-jv_carab1_2019.modelmul1 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
-jv_carab1_2019.modelmul2 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_carab1_2019.modelmul3<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso, data = procjv_conf_nona)
-jv_carab1_2019.modelmul4 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + educ_rec_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul5 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + sexo_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul6 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul7 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul8<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul9<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmul10<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul2 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul3<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso, data = procjv_conf_nona)
+jv_carab1_2019.modelmul4 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + educ_rec_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul5 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + sexo_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul6 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul7 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul8<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul9<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmul10<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelmul1,
                        jv_carab1_2019.modelmul2,
@@ -714,13 +671,13 @@ sjPlot::tab_model(list(jv_carab1_2019.modelmul1,
 
 # Crear modelos para publicación
 
-jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ bj, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub2 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub6 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
-jv_carab1_2019.modelmulpub7 <- clm(jv_carab1_2019_factor ~ bj + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub2 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub6 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub7 <- clm(jv_carab1_2019_factor ~ sj_ceo_cat_factor + sj_obrero_cat_factor + sj_entrevistado_cat_factor + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
 
 sjPlot::tab_model(list(jv_carab1_2019.modelmulpub1,
                        jv_carab1_2019.modelmulpub2,
@@ -734,25 +691,130 @@ sjPlot::tab_model(list(jv_carab1_2019.modelmulpub1,
   dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
   string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit - Justificacion carabineros reprime marchas", file = "../output/tables/jv_carab2.html") # nombre predictores y símbolo beta en tabla
 ```
+
 ```{r}
 # Guardar modelos como imagenes
 
 #webshot("../output/tables/prop_index.html","../output/tables/prop_index.png")
 ```
 
+### Modelos para publicación: variable númerica
+
+```{r}
+# Prop index
+
+prop_index.modelmulpub1 <- lm(prop_index ~ sj_ceo + sj_obrero, data = procjv_conf_nona)
+prop_index.modelmulpub2 <- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_conf_nona)
+prop_index.modelmulpub3<- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
+prop_index.modelmulpub4<- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
+prop_index.modelmulpub5<- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+prop_index.modelmulpub6 <- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+prop_index.modelmulpub7 <- lm(prop_index ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+
+sjPlot::tab_model(list(prop_index.modelmulpub1,
+                       prop_index.modelmulpub2,
+                       prop_index.modelmulpub3,
+                       prop_index.modelmulpub4,
+                       prop_index.modelmulpub5,
+                       prop_index.modelmulpub6,
+                       prop_index.modelmulpub7), # los modelos estimados
+  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
+  p.style = "stars", # asteriscos de significación estadística 
+  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
+  string.pred = "Predictores", string.est = "β", title = "Regresiones lineales - Indice de destruccion a la propiedad", file = "../output/tables/prop_index_num.html") # nombre predictores y símbolo beta en tabla
+
+# Estudiantes tiren piedras
+
+# Crear modelos para publicación
+
+jv_est_2019.modelmulpub1 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero, data = procjv_conf_nona)
+jv_est_2019.modelmulpub2 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_conf_nona)
+jv_est_2019.modelmulpub3<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
+jv_est_2019.modelmulpub4<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
+jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_est_2019.modelmulpub6 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_est_2019.modelmulpub7 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+
+sjPlot::tab_model(list(jv_est_2019.modelmulpub1,
+                       jv_est_2019.modelmulpub2,
+                       jv_est_2019.modelmulpub3,
+                       jv_est_2019.modelmulpub4,
+                       jv_est_2019.modelmulpub5,
+                       jv_est_2019.modelmulpub6,
+                       jv_est_2019.modelmulpub7), # los modelos estimados
+  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
+  p.style = "stars", # asteriscos de significación estadística 
+  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
+  string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit - Justificacion estudiantes tiren piedras", file = "../output/tables/jv_est_num.html") # nombre predictores y símbolo beta en tabla
+
+# Carabineros 1
+
+# Crear modelos para publicación
+
+jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub2 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub6 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab1_2019.modelmulpub7 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+
+sjPlot::tab_model(list(jv_carab1_2019.modelmulpub1,
+                       jv_carab1_2019.modelmulpub2,
+                       jv_carab1_2019.modelmulpub3,
+                       jv_carab1_2019.modelmulpub4,
+                       jv_carab1_2019.modelmulpub5,
+                       jv_carab1_2019.modelmulpub6,
+                       jv_carab1_2019.modelmulpub7), # los modelos estimados
+  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
+  p.style = "stars", # asteriscos de significación estadística 
+  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
+  string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit - Justificacion carabineros reprime marchas", file = "../output/tables/jv_carab1_num.html") # nombre predictores y símbolo beta en tabla
+
+# NOTA: El p value de BJ en el modelo final es 0.035
+
+# Carabineros 2
+
+# Crear modelos para publicación
+
+jv_carab1_2019.modelmulpub1 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub2 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub3<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub4<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_carab_factor, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub5<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub6 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor, data = procjv_conf_nona)
+jv_carab2_2019.modelmulpub7 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + trato_salud_factor + trato_carab_factor + ingreso + educ_rec_factor + sexo_factor + ingreso_satisfact_factor + edad + pos_pol_factor + frec_marcha_factor + conf_carab_factor + religion_factor, data = procjv_conf_nona)
+
+sjPlot::tab_model(list(jv_carab2_2019.modelmulpub1,
+                       jv_carab2_2019.modelmulpub2,
+                       jv_carab2_2019.modelmulpub3,
+                       jv_carab2_2019.modelmulpub4,
+                       jv_carab2_2019.modelmulpub5,
+                       jv_carab2_2019.modelmulpub6,
+                       jv_carab2_2019.modelmulpub7), # los modelos estimados
+  show.ci=FALSE, # no mostrar intervalo de confianza (por defecto lo hace)
+  p.style = "stars", # asteriscos de significación estadística 
+  dv.labels = c("Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6", "Modelo 7"), # etiquetas de modelos o variables dep.
+  string.pred = "Predictores", string.est = "β", title = "Regresiones ordinales logit - Justificacion carabineros reprime marchas", file = "../output/tables/jv_carab2_num.html") # nombre predictores y símbolo beta en tabla
+
+# NOTA: El p value de BJ en el modelo final es 0.035
+```
+
+
+
 ## Seccion exploratoria
 
 ### Correlaciones entre variables dependientes y justicia distributiva (n 1889)
 ```{r}
-sjPlot::tab_corr(dplyr::select(
-  procjv_confdj_nona, 
-  jv_carab1_2019,
-  jv_carab2_2019,
-  jv_est_2019,
-  prop_index,
-  sj_ceo, 
-  sj_obrero, 
-  bj,
-  sj_entrevistado),
-  triangle = "lower", encoding = "Windows-1252")
+# sjPlot::tab_corr(dplyr::select(
+#   procjv_confdj_nona, 
+#   jv_carab2_2019,
+#   jv_carab2_2019,
+#   jv_est_2019,
+#   prop_index,
+#   sj_ceo, 
+#   sj_obrero, 
+#   sj_ceo + sj_obrero,
+#   sj_entrevistado),
+#   triangle = "lower", encoding = "Windows-1252")
 ```
