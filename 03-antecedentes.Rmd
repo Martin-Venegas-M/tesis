@@ -113,7 +113,7 @@ knitr::include_graphics("images/absmodel.png")
 Combinando los tres planteamientos, nace el modelo teórico de una situación de violencia (ver Figura \@ref(fig:absmodel)). Este modelo cuenta con tres actores principales: Perpretador, Víctima y Observador. Es el Perpetrador quien ejerce un daño en la Víctima, a través de un medio y guiado por determinados propósitos. Ante este ejercicio del daño, el Observador entrega razones de por qué la acción del Perpetrador a la Víctima estaría justificada. En la Figura 3 se puede observar la aplicación de este modelo a la situación que este trabajo busca estudiar.
 
 
-```{r espmodel,echo=FALSE,out.width='75%',fig.cap='Situaciones de violencia del presente estudio'}
+```{r espmodel,echo=FALSE,out.width='100%',fig.cap='Situaciones de violencia del presente estudio'}
 knitr::include_graphics("images/espmodel.png") 
 ```
 
