@@ -1,13 +1,14 @@
 ---
-title: '¿Quién justifica qué? El papel del sentido de (in)justicia en las justificaciones de violencia en contexto de protesta'
+title: '¿Quién justifica qué? El rol del sentido de injusticia en las justificaciones de violencia en contexto de protesta'
 subtitle: "Tesis para optar al título de Sociólogo"
 author: "Martín Venegas Márquez"
 date: "`r Sys.Date()`" # o para fecha actual: "`r Sys.Date()`"
 institution: "Universidad de Chile"
 degree: "Memoria de Título - Carrera de Sociología"
-advisor: "Profesor/a guía: Juan Carlos Castillo"
+advisor: "Profesor/a guía: Dr. Juan Carlos Castillo"
 bibliography: [tesis.bib]
 biblio-style: apalike
+csl: apa.csl
 link-citations: yes
 site: bookdown::bookdown_site
 output: bookdown::gitbook
