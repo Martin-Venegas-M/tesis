@@ -7,8 +7,11 @@ fig:sjsecond
 eq:jef
 fig:multilevel
 tab:tab-dep
-eq:bj
+eq:jen
+eq:job
+eq:jge
 tab:tab-indep
+tab:tab-controls
 introducción
 preguntas-y-objetivos-de-investigación
 antecedentes-conceptuales-y-empíricos
@@ -31,5 +34,5 @@ variables-dependientes
 variables-independientes
 controles
 análisis
-análisis-1
+resultados
 conclusiones

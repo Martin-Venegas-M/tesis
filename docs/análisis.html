@@ -24,7 +24,7 @@
 <meta name="author" content="Martín Venegas Márquez" />
 
 
-<meta name="date" content="2022-05-21" />
+<meta name="date" content="2022-05-23" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="variables.html"/>
-<link rel="next" href="análisis-1.html"/>
+<link rel="next" href="resultados.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -100,6 +100,7 @@ div.csl-indent {
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Resumen</a></li>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="" data-path="agradecimientos.html"><a href="agradecimientos.html"><i class="fa fa-check"></i>Agradecimientos</a></li>
 <li class="chapter" data-level="1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
 <li class="chapter" data-level="2" data-path="preguntas-y-objetivos-de-investigación.html"><a href="preguntas-y-objetivos-de-investigación.html"><i class="fa fa-check"></i><b>2</b> Preguntas y Objetivos de Investigación</a></li>
@@ -133,7 +134,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="análisis.html"><a href="análisis.html"><i class="fa fa-check"></i><b>5.3</b> Análisis</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="análisis-1.html"><a href="análisis-1.html"><i class="fa fa-check"></i><b>6</b> Análisis</a></li>
+<li class="chapter" data-level="6" data-path="resultados.html"><a href="resultados.html"><i class="fa fa-check"></i><b>6</b> Resultados</a></li>
 <li class="chapter" data-level="7" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>7</b> Conclusiones</a></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
 <li class="divider"></li>
@@ -160,8 +161,8 @@ div.csl-indent {
 <h2><span class="header-section-number">5.3</span> Análisis</h2>
 <div style="text-align: justify">
 
-<p>Se efectúan dos tipos de análisis previo a la sección multivariada. Primero, análisis descriptivos como tablas de proporciones o correlaciones para analizar el comportamiento de las variables a nivel muestral. Segundo, análisis factoriales para evaluar la consistencia interna de los indicadores. A raíz de este último análisis, se decide trabajar con los indicadores separados para el análisis principal, y con puntajes factoriales para un análisis exploratorio.</p>
-<p>El análisis principal se basará en dos técnicas: regresiones lineales múltiples y regresiones logísticas ordinales. Las regresiones lineales se utilizarán para analizar el índice de destrucción a la propiedad (justificación de la violencia por el cambio social), en tanto, las regresiones logísticas ordinales se utilizarán para los indicadores que se mantuvieron en su formato original.</p>
+<p>A fin de responder los objetivos de investigación y probar las hipótesis plateadas en el presente estudio se emplearán dos tipos de análisis. En primer lugar, se realizarán análisis descriptivos como tablas uni y bivariadas de las variables principales, asi como también correlaciones para analizar el comportamiento de las variables a nivel muestral. En segundo lugar, considerando la naturaleza de las variables dependientes (i.e. ordinales) se efectuará un análisis multivariado empleando como técnica principal de análisis modelos de regresión logística ordinal. Estos modelos permiten calcular la probabilidad acumulada de que un individuo responda hasta <span class="math inline">\(C\)</span> en los indicadores justificación de la violencia, siendo <span class="math inline">\(Y_{ci}\)</span> una respuesta categórica ordenada de un individuo <span class="math inline">\(i^{th}\)</span> con <span class="math inline">\(C\)</span> categorías ordenadas, codificadas como <span class="math inline">\(C = 1,2,3,4,5\)</span>. Esta probabilidad se calculará en función de: el intercepto por cada categoría <span class="math inline">\(a_c\)</span>, los coeficientes <span class="math inline">\(\gamma_1\)</span> y <span class="math inline">\(\gamma_2\)</span> para <span class="math inline">\(J_{entrevistado}\)</span>, <span class="math inline">\(J_{obrero}\)</span> y <span class="math inline">\(J_{gerente}\)</span> respectivamente y <span class="math inline">\(\gamma_n\)</span> para las variables de control y <span class="math inline">\(e_{i}\)</span> como error de la estimación para el individuo <span class="math inline">\(i\)</span>.</p>
+<p>Además de los análisis principales, se efectuará un análisis factorial confirmatorio de las escalas de SDO y RWA a fin de confirmar que los indicadores que se utilizarán en el presente estudio permiten representar ambos constructos. Este análisis factorial será detallado en la sección de Anexos.</p>
 <div style="page-break-after: always;"></div>
 
 </div>
@@ -172,7 +173,7 @@ div.csl-indent {
         </div>
       </div>
 <a href="variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="análisis-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="resultados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -203,7 +204,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-metod.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-method.Rmd",
 "text": "Edit"
 },
 "history": {

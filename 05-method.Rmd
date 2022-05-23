@@ -1,0 +1,155 @@
+```{r include=FALSE}
+pacman::p_load(dplyr, kableExtra, knitr)
+```
+
+```{r include=FALSE}
+table_format = if(is_html_output()) {
+  "html"
+} else if(is_latex_output()) {
+  "latex"
+}
+table_format2 = if(is_html_output()) {
+  T
+} else if(is_latex_output()) {
+  F
+}
+```
+
+# Metodología
+
+## Datos
+
+<div style="text-align: justify">
+
+Este estudio se basa en la información proporcionada por la base de datos del Estudio Longitudinal Social de Chile (ELSOC) del Centro de Estudios de Conflicto y Cohesión Social (COES). Estos datos son de tipo panel de aplicación anual a dos muestras independientes, una original y otra de refresco. El cuestionario contiene módulos de preguntas permanentes en todas las olas y otras intercaladas. El diseño muestral es complejo, probabilístico, por conglomerados, multietápico y estratificado según el tamaño de las ciudades. El objeto de análisis son hombres y mujeres entre 18 y 75 años en zonas urbanas, localizadas en 40 ciudades del país (92 comunas y 13 regiones). La unidad de información a utilizar son los encuestados correspondientes al año 2019 (n muestra original = 2135, n muestra refresco = 1264). A modo de énfasis, este estudio ocupara solamente los datos para la ola del 2019.
+
+## Variables
+
+### Variables dependientes
+
+<div style="text-align: justify">
+
+Como se puede apreciar en la Tabla \@ref(tab:tab-dep), las variables dependientes del estudio corresponden a la distinción que se ha hecho en la literatura respecto a los fines de la violencia: por el cambio social y por el control social. Se utilizarán tres indicadores que buscan representar los conceptos, dos para la violencia por el control social y uno para la violencia por el cambio. Los indicadores señalados en la Tabla \@ref(tab:tab-dep) responden a la pregunta *¿En qué medida cree usted que se justifican o no se justifican las siguientes situaciones?*. Los indicadores de violencia por el control se centran en la fuerza ejercida por carabineros, en contraste, los indicadores de la violencia por el cambio consisten en la violencia como táctica de protesta, específicamente, lanzar piedras a carabineros. Todos los indicadores están medidos con una escala Likert de cinco categorías, que van desde la aseveración de que la violencia nunca se justifica, hasta que siempre se justifica. En síntesis, se utilizarán tres variables dependientes en el estudio, dos para medir la justificación de la violencia por el control social y una para medir la justificación de la violencia por el cambio social.
+
+```{r include=FALSE}
+cap1 <- "Variables dependientes"
+# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
+```
+
+```{r tab-dep, echo=FALSE}
+tab01 <- read.csv(file = "tables/table01.csv",header = 1,sep = ";",encoding = "UTF-8")
+cnames <- c("Concepto","Indicador", "Categorías de respuesta")
+
+kable(tab01,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap1) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle")
+```
+
+\begin{center}
+<font size="1"> Fuente: Elaboración propia. </font>
+\end{center}
+
+### Variables independientes
+
+<div style="text-align: justify">
+
+El sentido de injusticia se mide en base a la Evaluación de Justicia (_J_) propuesta por @Jasso1980. La evaluación de justicia consiste en el logaritmo natural de la proporción entre la recompensa existente y la recompensa justa (ver Ecuación \@ref(eq:jef)). Estas evaluaciones pueden ser reflexivas (e.g. cuando un observador evalúa la justicia de sus ingresos) o pueden ser no reflexivas (e.g. cuando un observador evalúa la justicia en los ingresos de otra persona). En este estudio se incorporarán ambos tipos de evaluaciones. Por un lado, está la evaluación del observador respecto a sus propios ingresos (ver Ecuación \@ref(eq:jen)). Esta variable se construye a partir de dos indicadores: los ingresos que recibe el entrevistado y los ingresos que considera que sería justo que recibiera (ver Tabla \@ref(tab:tab-indep)). Por otro lado, están las evaluaciones del observador respecto a los ingresos de un obrero no calificado (ver Ecuación \@ref(eq:job) y un gerente de una gran empresa (ver Ecuación \@ref(eq:jge). Ambas variables se construyen preguntándole a los entrevistados cuánto creen que gana y cuánto debería ganar cada ocupación (ver Tabla \@ref(tab:tab-indep)). Los valores de  _J_ se leen de la siguiente manera: valores negativos representan una situación de injusticia por subrecompensa, valores iguales a 0 representan una situación de justicia perfecta y valores positivos representan una situación de injusticia por sobrerecompensa. En una suma, el presente estudio cuenta con tres variables independientes de hipótesis: las evaluaciones de justicia del entrevistado, las evaluaciones de justicia para un obrero no calificado y las evaluaciones de justicia para un gerente de una gran empresa.
+
+
+\begin{equation}
+  J_{entrevistado}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
+  (\#eq:jen)
+\end{equation}
+
+\begin{equation}
+  J_{obrero}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
+  (\#eq:job)
+\end{equation}
+
+\begin{equation}
+  J_{gerente}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
+  (\#eq:jge)
+\end{equation}
+
+```{r include=FALSE}
+cap2 <- "Varables Independientes"
+# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
+```
+
+```{r tab-indep, echo=FALSE}
+tab02 <- read.csv(file = "tables/table02.csv",header = 1,sep = ";",encoding = "UTF-8")
+cnames <- c("Concepto","Indicador", "Categorías de respuesta")
+
+kable(tab02,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap2) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle")
+```
+
+\begin{center}
+<font size="1"> Fuente: Elaboración propia. </font>
+\end{center}
+
+### Controles
+
+<div style="text-align: justify">
+
+La Tabla \@ref(tab:tab-controls) muestra las variables de control para este estudio. A fin de entender mejor el rol de las variables de control, se separan en dos tipos: por literatura y exploratorias. Por un lado, las variables que se incluyen por literatura consisten en aquellas que han mostrado ser un factor determinantes de las justificaciones de violencia, estas son: pertenencia a grupos desaventajados, ideología (SDO y RWA) y percepciones de justicia procesal. Los indicadores que se incluirán para medir la pertenencia a grupos desaventajados son: ingresos, nivel educacional, satisfacción con los ingresos, genero y pertenencia a pueblo Mapuche. En el caso de la ideología, se incluyen versiones recortadas de las escalas de SDO y RWA. Para las percepciones de justicia procesal, se incluyen dos indicadores que responden a la pregunta: *¿Con cuánta frecuencia diría usted que personas de [grupo o clase social mencionado por el entrevistado] son tratadas con respeto…?* desde servicios de salud y por parte de carabineros. Por otro lado, las variables que se incluyen con fines exploratorios son: edad, posición política, confianza en carabineros y frecuencia de participación en marchas.
+
+<div style="text-align: justify">
+
+La mayoría de las variables de control se utilizarán en su nivel de medición original, a excepción de tres. Primero, las variables de ideología se trabajarán como variables latentes. Segundo, el nivel educacional fue recodificado en base a categorías CINE 2011. Tercero, la pertenencia a pueblos indigenas fue recodfificada a _(1) Pertenece a pueblo Mapuche, (2) Pertenece a otro pueblo - (3) No pertenece a ningún pueblo_, tal y como se observa en la Tabla \@ref(tab:tab-controls).
+
+```{r include=FALSE}
+cap3 <- "Variables de control"
+# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
+```
+
+```{r tab-controls, echo=FALSE}
+tab03 <- read.csv(file = "tables/table03.csv",header = 1,sep = ";",encoding = "UTF-8")
+cnames <- c("Tipo de control","Concepto","Indicador", "Categorías de respuesta")
+
+kable(tab03,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap3) %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 10,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2, width = "2 cm", ) %>%
+  column_spec(column = 3,width = "7 cm") %>%
+  column_spec(column = 4,width = "4 cm") %>%
+  collapse_rows(columns = 1:2,valign = "middle")
+```
+
+\begin{center}
+<font size="1"> Fuente: Elaboración propia. </font>
+\end{center}
+
+
+## Análisis
+
+<div style="text-align: justify">
+
+A fin de responder los objetivos de investigación y probar las hipótesis plateadas en el presente estudio se emplearán dos tipos de análisis. En primer lugar, se realizarán análisis descriptivos como tablas uni y bivariadas de las variables principales, asi como también correlaciones para analizar el comportamiento de las variables a nivel muestral. En segundo lugar, considerando la naturaleza de las variables dependientes (i.e. ordinales) se efectuará un análisis multivariado empleando como técnica principal de análisis modelos de regresión logística ordinal.  Estos modelos permiten calcular la probabilidad acumulada de que un individuo responda hasta $C$ en los indicadores justificación de la violencia, siendo $Y_{ci}$ una respuesta categórica ordenada de un individuo $i^{th}$ con $C$ categorías ordenadas, codificadas como $C = 1,2,3,4,5$. Esta probabilidad se calculará en función de: el intercepto por cada categoría $a_c$, los coeficientes $\gamma_1$ y $\gamma_2$ para $J_{entrevistado}$, $J_{obrero}$ y $J_{gerente}$ respectivamente y $\gamma_n$ para las variables de control y $e_{i}$ como error de la estimación para el individuo $i$.
+
+Además de los análisis principales, se efectuará un análisis factorial confirmatorio de las escalas de SDO y RWA a fin de confirmar que los indicadores que se utilizarán en el presente estudio permiten representar ambos constructos. Este análisis factorial será detallado en la sección de Anexos.
+
+
+\pagebreak

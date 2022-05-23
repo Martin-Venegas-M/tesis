@@ -19,12 +19,18 @@ lot: True
 
 ---
 
-
 # Resumen {-}
 
 <div style="text-align: justify">
 
-La vida en democracia consiste en convivir con la violencia al plantear limites para su uso, tornándose la justificación de la violencia una discusión relevante en la agenda pública. En Chile, en los últimos años y especialmente desde el _estallido social_ se ha visto un incremento en las justificaciones de violencia asociadas a las tácticas de protesta (violencia por el cambio social), y una baja en la violencia asociada a la represión policial (violencia por el control social). Considerando que la justificación de la violencia amenaza con la convivencia pacífica, es que se torna relevante hacerse la pregunta por ¿qué lleva a las personas a justificar la violencia?. La literatura empírica ha generado evidencia en torno a las teorías del conflicto con enfoque criminológico, las teorías de la dominancia social y del autoritarismo de derecha y la de justicia procesal. La literatura teórica ha relevado el rol que tienen las experiencias de injusticia. En base en los hallazgos hasta ahora, se propone la aplicación del marco de la justicia distributiva para ampliar el estudio empírico entre la justicia y las justificaciones de violencia. El argumento principal del estudio es que el sentido de (in)justicia en la distribución de ingresos lleva a justificar más la violencia por el cambio y menos por el control social. También se estudiará el rol de la justicia procesal y el carácter de grupos desventajados.
+La vida en democracia consiste en convivir con la violencia al plantear limites para su uso, tornándose la justificación de la violencia una discusión relevante en la agenda pública. En Chile, en los últimos años y especialmente desde el _estallido social_ se ha visto un incremento en las justificaciones de violencia asociadas a las tácticas de protesta (violencia por el cambio social), y una baja en la violencia asociada a la represión policial (violencia por el control social). Considerando que la justificación de la violencia amenaza con la convivencia pacífica, es que se torna relevante hacerse la pregunta por quienes y por qué las personas justifican la violencia. Existe una incipiente agenda de investigación que ha generado evidencia sistemática respecto al efecto de la justicia procesal, sin embargo, la justicia no es un fenómeno unidimensional, sino que uno multidimensional. Este trabajo abre la pregunta sobre el efecto de la justicia distributiva en la justificación de la violencia. El argumento principal del estudio es que el sentido de injusticia en la distribución de ingresos lleva a justificar más la violencia por el cambio y menos por el control social. Por lo demás, se plantea que el pertenecer a grupos desaventajados modera esta relación.
 
+# Abstract {-}
+
+<div style="text-align: justify">
+
+Life in a democracy consists of living with violence by setting limits for its use, making the justification of violence a relevant discussion on the public agenda. In Chile, in recent years and especially since the _social outburst_, there has been an increase in justifications for violence associated with protest tactics (violence for social change), and a decrease in violence associated with police repression (violence for social control). Considering that the justification of violence threatens peaceful coexistence, it becomes relevant to ask the question by whom and why people justify violence. There is an incipient research agenda that has generated systematic evidence regarding the effect of procedural justice, however, justice is not a one-dimensional phenomenon, but a multidimensional one. This paper opens the question about the effect of distributive justice on the justification of violence. The main argument of the study is that the sense of injustice in income distribution leads to justifying violence more for change and less for social control. Moreover, it is proposed that belonging to disadvantaged groups moderates this relationship.
 
 # Agradecimientos {-}
+
+Por redactar...
