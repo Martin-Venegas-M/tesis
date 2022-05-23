@@ -1,7 +1,7 @@
 # Martin's Thesis
-## ¿Quién justifica qué? El papel del sentido de (in)justicia en las justificaciones de violencia en contexto de protesta
+## ¿Quién justifica qué? El rol del sentido de injusticia en las justificaciones de violencia en contexto de protesta
 
-Link para avances aquí: https://martin-venegas-m.github.io/tesis/
+Link para avances aquí: https://thesis-justification-of-violence.github.io/thesis-report/index.html
 
 Plantilla (template) para escritura y publicación de tesis/seminarios/memorias en FACSO UChile en formato pdf/html vía bookdown  (R)
 [https://juancarloscastillo.github.io/tesisfacsodown/](https://juancarloscastillo.github.io/tesisfacsodown/)
@@ -17,37 +17,22 @@ Sí, se utilizan datos secundarios. Los datos corresponden al Estudio Longitudin
 
 La pregunta principal de este proyecto de tesis es la siguiente:
 
-> ¿Cuál es la relación entre el sentido de (in)justicia y las justificaciones de la violencia en contexto de protesta, tanto por el cambio social, como por el control social, en Chile al año 2019?
-
+> ¿Cuál es la relación entre el sentido de injusticia y las justificaciones de la violencia en contexto de protesta, tanto por el cambio social, como por el control social, en Chile al año 2019?
 
 Las hipótesis del estudio son las siguientes:
 
-- *H1a*: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar más la violencia por el cambio social.
-- *H1b*: Personas que evalúen mayor injusticia en la distribución de ingresos del país tenderán a justificar menos la violencia por el control social.
-
-- *H2a*: Personas que sientan mayor injusticia en el trato tenderán a justificar más la violencia por el cambio social.
-- *H2b*: Personas que sientan mayor injusticia en el trato tenderán a justificar menos la violencia por el control social.
-
-- *H3a*: Personas pertenecientes a grupos desventajados tenderán a justificar más la violencia por el cambio social.
-- *H3b*: Personas pertenecientes a grupos desventajados tenderán a justificar menos la violencia por el control social.
-
-Las siguientes hipótesis son de mediación:
-
-- *H4a*: Personas pertenecientes a grupos desventajados justifican más la violencia por el cambio social porque experimentan mayores niveles de injusticia en la distribución de ingresos
-- *H4b*: Personas pertenecientes a grupos desventajados justifican menos la violencia por el control social porque experimentan mayores niveles de injusticia en la distribución de ingresos
-
+- *H1a*: Individuos que evalúen mayor injusticia en la distribución de ingresos tenderán a justificar más la violencia por el cambio social.
+- *H1b*: Individuos que evalúen mayor injusticia en la distribución de ingresos tenderán a justificar menos la violencia por el control social.
+- *H2a*: Individuos pertenecientes a grupos desaventajados justifican más la violencia por el cambio social cuando evalúan  mayores niveles de injusticia en la distribución de ingresos
+- *H2b*: Individuos pertenecientes a grupos desaventajados justifican menos la violencia por el control social cuando evalúan mayores niveles de injusticia en la distribución de ingresos
 
 ## **3) Variable dependiente.** Describa la(s) variable(s) clave(s) especificando cómo se medirán.
 
 La variable principal de este estudio son las justificaciones de violencia en contexto de protesta. Esta variable se divide en dos tipos: por el cambio social y por el control social.
 
-En el caso de la justificación de violencia por el cambio social, se utilizarán cuatro indicadores:
+En el caso de la justificación de violencia por el cambio social, se utilizará un indicador:
 
 - Que estudiantes tiren piedras a Carabineros en una marcha por la educación del país
-- Que algunas personas incendien o dañen inmobiliario público (edificios, semáforos, luminaria pública, etc.) para exigir cambios sociales
-- Que algunas personas incendien o dañen medios de transporte (metro, microbuses, paraderos) para exigir cambios sociales
-- Que algunas personas incendien o dañen negocios y locales comerciales para exigir cambios sociales
-
 
 En el caso de la justificación de la violencia por el control social, se usarán dos indicadores:
 
@@ -61,16 +46,7 @@ El estudio es observacional, no experimental, por lo que no aplica.
 
 ## **5) Análisis.** Especifique exactamente qué análisis se realizará para examinar la pregunta / hipótesis principal
 
-El análisis principal consistirá en regresiones lineales múltiples y logísticas ordinales dependiendo las variables a analizar.
-
-Justificación de la violencia por el cambio social:
-- El indicador de lanzar piedras se mantendrá en su formato de medición original, y se aplicarán regresiones logísticas ordinales.
-- Los indicadores de destrucción a la propiedad se unirán en un índice simple, con el que se empleará una regresión lineal múltiple.
-
-Justificación de la violencia por el control social:
-- Los indicadores de carabineros se mantendrán en su formato de medición original, y se aplicarán regresiones logísticas ordinales.
-
-También se usarán análisis de mediación para las variables de estatus.
+El análisis principal consistirá en regresiones logísticas ordinales, ibncluyendo un efecto de interacción para las hipótesis *H2a* y *H2b*.
 
 ## **6) Valores atípicos y exclusiones.** Describa exactamente cómo se definirán y tratarán los valores atípicos, y su(s) regla(s) precisa(s) para excluir las observaciones
 
@@ -88,7 +64,7 @@ Primero, el estudio usa datos secundarios. Dado este panorama, es necesario hace
 
 - Análisis descriptivos de la variable dependiente. Específicamente, se han analizado las frecuencias de cada indicador y las correlaciones entre los mismos. Cabe señalar que no se ha calculado la significancia estadística de las correlaciones. Este análisis descriptivo ha permitido plantear un plan de análisis más detallado.
 
-- Análisis factoriales exploratorios y confirmatorios. Se realizaron modelos exploratorios con uno, dos y tres factores. Así también, se probó un modelo confirmatorio tanto a dos como a tres factores. La realización de estos análisis permitió proponer un plan de análisis más detallado, así como también una sección exploratoria.
+- Análisis factoriales exploratorios. Se realizaron modelos exploratorios con uno, dos y tres factores. Así también, se probó un modelo confirmatorio tanto a dos como a tres factores. La realización de estos análisis permitió proponer un plan de análisis más detallado, así como también una sección exploratoria.
 
 Todos los análisis aquí declarados pueden verse en el repositorio Github asociado a este preregistro.
 
@@ -96,7 +72,7 @@ Segundo, se incluirá un análisis exploratorio que consistirá en modelos de re
 
 ## **9) Nombre** Poner un título a este preregistro de AsPredicted
 
-Justificaciones de violencia - Tesis de Pregrado en Sociología, UCH 2021
+Justificaciones de violencia - Tesis de Pregrado en Sociología, UCH 2022
 
 ## Finalmente. A efectos de registro, indíquenos el tipo de estudio que está preinscribiendo.
 
