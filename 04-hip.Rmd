@@ -4,7 +4,7 @@ Las hipótesis del presente estudio son las siguientes:
 
 - $H1a$: Individuos que evalúen mayor injusticia en la distribución de ingresos tenderán a justificar más la violencia por el cambio social.  
 
-- $H1b$: Individuos que evalúen mayor injusticia en la distribución de ingresos tenderán a justificar menos la violencia por el control social.  
+- $H1b$: Individuos que evalúen menor injusticia en la distribución de ingresos tenderán a justificar más la violencia por el control social.  
 
 - $H2a$: Individuos pertenecientes a grupos desaventajados justifican más la violencia por el cambio social cuando evalúan  mayores niveles de injusticia en la distribución de ingresos.  
 

@@ -12,6 +12,11 @@ eq:job
 eq:jge
 tab:tab-indep
 tab:tab-controls
+fig:pjv
+fig:den-sj
+tab:jv-est-model
+tab:jv-carab1-model
+tab:jv-carab2-model
 introducción
 preguntas-y-objetivos-de-investigación
 antecedentes-conceptuales-y-empíricos
@@ -36,4 +41,5 @@ controles
 análisis
 resultados
 descriptivos
+multivariados
 conclusiones
