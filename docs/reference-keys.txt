@@ -35,4 +35,5 @@ variables-independientes
 controles
 análisis
 resultados
+descriptivos
 conclusiones
