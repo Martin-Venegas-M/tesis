@@ -17,9 +17,9 @@ En la sección de descriptivos se busca hacer una primera aproximación de respu
 
 ```{r pjv, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Frecuencias de justificación de la violencia"}
 
-load("input/data/procjv_analysis_nona.RData")
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
 
-load("input/data/procjv_nums_nona.RData")
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_nums_nona.RData"))
 
 if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
 if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
@@ -74,6 +74,29 @@ options(knitr.kable.NA = '') # NA en kable = ''
 En la Figura \@ref(fig:pjv) se presentan las frecuencias de las tres variables dependientes del estudio. En general, se observa que en las tres situaciones de violencia predomina que estas nunca o pocas veces se justifican. En detalle, el 89.2% de los entrevistados que componen la muestra responden que nunca o pocas veces se justifica que carabineros use la fuerza para reprimir marchas pacificas. Así también, un 83.1% de los entrevistados señalan que nunca o pocas veces se justifica que carabineros desaloje liceos en toma. Por último, en lo que refiere a la violencia por el cambio social, se observa que un 85.7% de los entrevistados responde que nunca o pocas veces se justifica que estudiantes tiren piedras a carabineros. No obstante esta tendencia general, se observan algunas diferencias entre las situaciones: los entrevistados justifican más que carabineros desaloje liceos a que reprima marchas pacificas y justifican más que estudiantes tiren piedras a que carabineros repriman marchas pacificas.
 
 ```{r den-sj, echo=FALSE, fig.cap="Distribución del sentido de injusticia"}
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_nums_nona.RData"))
+
+if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
+if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
+pacman::p_load(knitr, summarytools, kableExtra, dplyr, lavaan, haven, htmlwidgets, webshot, sjPlot, VIM, GGally, finalfit, table1, psych, ordinal, sjmisc, ggrepel) # librerias
+knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
+                      message = FALSE,  # mensajes/avisos de librerias  
+                      cache = FALSE,    # cache de los chunks,usar analisis pesados
+                      # out.width = '50%',# largo de imagen en %
+                      fig.pos= "H",     # posicion figuras H = HERE
+                      echo = FALSE      # incluir chunk en output
+)
+
+# Otras configuraciones
+options(scipen=999) # notacion cientifica
+options(knitr.kable.NA = '') # NA en kable = ''
+
+
+
+
+
  # update.packages("sjPlot") # please install version 2.8.9 or above
   ggplot2::theme_set(ggplot2::theme(panel.background = ggplot2::element_rect(fill = "gray85",
                                                                              colour = "gray85"),
@@ -86,7 +109,7 @@ En la Figura \@ref(fig:pjv) se presentan las frecuencias de las tres variables d
                                     plot.caption = ggplot2::element_text(size = 10,
                                                                          face = "plain",
                                                                          hjust = 1)))
-a <- data.frame(procjv_nums_nona$sj_obrero);
+a <- data.frame(procjv_nums_nona$sj_obrero_rec);
 a$grupo <- "Obrero"
 names(a) <- c("promedio","Recompensado:")
 
@@ -94,7 +117,7 @@ b <- data.frame(procjv_nums_nona$sj_ceo);
 b$grupo <- "Gerente"
 names(b) <- c("promedio","Recompensado:")
 
-c <- data.frame(procjv_nums_nona$sj_entrevistado);
+c <- data.frame(procjv_nums_nona$sj_entrevistado_rec);
 c$grupo <- "Entrevistado"
 names(c) <- c("promedio","Recompensado:")
 
@@ -102,47 +125,124 @@ df_sj<- rbind(c,b,a)
   ggplot(df_sj) +
   geom_density(aes(x=promedio,fill=`Recompensado:`
 ), alpha=0.4) +
-  scale_x_continuous(name = "Distribución Sentido de Injusticia",
+  scale_x_continuous(name = "Sentido de Injusticia",
                      breaks=-5:5,
                      labels = as.character(-5:5)) +
   ylab("Density")+
-  theme(legend.position="bottom")
+  theme(legend.position="bottom") + theme_classic()
   
 ```
 
 <div style="text-align: justify">
 
 En la Figura \@ref(fig:den-sj) se presenta la distribución de las tres variables que representan el sentido de injusticia: para el entrevistado (reflexivo), gerente y el obrero (no reflexivo). En lo que respecta al sentido de injusticia no reflexivo, se identifican patrones consistentes con la literatura, donde las evaluaciones de justicia para el gerente de una gran empresa se concentran en el área de la sobre recompensa y las evaluaciones para el obrero no calificado se concentran en el área de la injusticia por subrecompensa. Dicho de otra forma, la mayoría de los entrevistados evalúa que los gerentes están sobrerecompensados con sus ingresos y que los obreros están subrecompensados. En lo que respecta al sentido de injusticia reflexivo, se observa que la distribución de las respuestas se concentra en los valores negativos. Es decir, la mayoría de los entrevistados de la muestra evalúan que están injustamente subrecompensados con sus ingresos. No obstante, esta evaluación de injusticia por subrecompensa es un poco menos acentuada que en el caso de la evaluación para la figura del obrero.
+"
+```{r sj-jvcamb, fig.cap="Medias del Sentido de Injusticia por Jusitificación de la Violencia por el Cambio Social"}
+# table1::table1(~sj_obrero + sj_ceo + sj_entrevistado | jv_est_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Cambio. - Que estudiantes lancen piedras a carabineros")
 
-```{r sj-jvcamb}
-table1::table1(~sj_obrero + sj_ceo + sj_entrevistado | jv_est_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Cambio. - Que estudiantes lancen piedras a carabineros")
+# df_plot_jvest <- procjv_analysis_nona %>%
+#   group_by(jv_est_2019_factor) %>%
+#   summarise_at(vars(sj_ceo, sj_obrero_rec, sj_entrevistado_rec), list(name = mean))
+
+df <- data.frame(x=c(1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5),
+                 y=c(1.08, 1.02, 1.36, 1.52, 1.86, 
+                     0.62, 0.72, 0.71, 0.62, 0.61, 
+                     0.47, 0.51, 0.52, 0.50, 0.51),
+                 Recompensado = c("Gerente", "Gerente","Gerente","Gerente","Gerente",
+                       "Obrero", "Obrero", "Obrero", "Obrero", "Obrero", 
+                       "Entrevistado", "Entrevistado","Entrevistado","Entrevistado","Entrevistado"))
+
+#create scatterplot with a label on every point
+ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensado)) +
+  geom_line(color = "gray")+
+  geom_point(aes(colour = Recompensado), size = 4) +
+  geom_text_repel(aes(label = y)) +
+  labs(y = "Sentido de Injusticia", x = "Justificación Violencia: Estudiantes lancen piedras", Recompensado="") + theme_classic() +
+  ggtitle("") + 
+  scale_x_continuous(breaks = c(1,2,3,4,5), labels=c("Nunca", 
+                            "Pocas veces", 
+                            "Algunas veces", 
+                            "Muchas veces",
+                            "Siempre"))
+
+
+
 
 ```
 
 <div style="text-align: justify">
 
-Al observar las medias del sentido de injusticia por las categorías de la justificación de la violencia por el cambio social, se observa apoyo parcial a la hipótesis **H1a**. En detalle, en la Tabla \@ref(tab:sj-jvcamb) se observa que el sentido de injusticia para el gerente sigue una distribución esperada según la hipótesis **H1a**, donde a mayor evaluación de injusticia en los ingresos más se justifica la violencia por el cambio social. Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes tiren piedras a carabineros. No obstante, además de este hallazgo descriptivo los otros indicadores del sentido de injusticia (entrevistado y obreros) no siguen una distribución consistente con la hipótesis **H1a**.
+Al observar las medias del sentido de injusticia por las categorías de la justificación de la violencia por el cambio social, se observa apoyo parcial a la hipótesis **H1a**. En detalle, en la Tabla \@ref(fig:sj-jvcamb) se observa que el sentido de injusticia para el gerente sigue una distribución esperada según la hipótesis **H1a**, donde a mayor evaluación de injusticia en los ingresos más se justifica la violencia por el cambio social. Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes tiren piedras a carabineros. No obstante, además de este hallazgo descriptivo los otros indicadores del sentido de injusticia (entrevistado y obreros) no siguen una distribución consistente con la hipótesis **H1a**.
 
-```{r sj-jvcon1, echo=FALSE}
+```{r sj-jvcon1, fig.cap = "Medias del Sentido de Injusticia por Jusitificación de la Violencia por el Control Social 1"}
 
-table1::table1(~sj_obrero + sj_ceo + sj_entrevistado | jv_carab1_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Control - Carabineros reprima marchas")
+#table1::table1(~sj_obrero_rec + sj_ceo + sj_entrevistado_rec | jv_carab1_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Control - Carabineros reprima marchas")
+
+df <- data.frame(x=c(1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5),
+                 y=c(1.16, 0.97, 1.08, 1.19, 0.50, 
+                     0.68, 0.56, 0.54, 0.59, 0.41, 
+                     0.51, 0.39, 0.44, 0.56, 0.29),
+                 Recompensado = c("Gerente", "Gerente","Gerente","Gerente","Gerente",
+                       "Obrero", "Obrero", "Obrero", "Obrero", "Obrero", 
+                       "Entrevistado", "Entrevistado","Entrevistado","Entrevistado","Entrevistado"))
+
+#create scatterplot with a label on every point
+ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensado)) +
+  geom_line(color = "gray")+
+  geom_point(aes(colour = Recompensado), size = 4) +
+  geom_text_repel(aes(label = y)) +
+  labs(y = "Sentido de Injusticia", x = "Justificación Violencia: Carabineros repriman marchas", Recompensado="") + theme_classic() +
+  ggtitle("") + 
+  scale_x_continuous(breaks = c(1,2,3,4,5), labels=c("Nunca", 
+                            "Pocas veces", 
+                            "Algunas veces", 
+                            "Muchas veces",
+                            "Siempre"))
 
 
 ```
 
 <div style="text-align: justify">
 
-La distribución de medias por categorías en la Tabla \@ref(tab:sj-jvcon1) no entrega evidencia consistente con **H1b**. En detalle, ninguno de los tres indicadores del sentido de injusticia muestra una distribución de medias esperadas, por lo que no hay evidencia descriptiva que sustente que a menor evaluación de injusticia mayor es la justificación de que carabineros reprima marchas pacificas.
+La distribución de medias por categorías en la Tabla \@ref(fig:sj-jvcon1) no entrega evidencia consistente con **H1b**. En detalle, ninguno de los tres indicadores del sentido de injusticia muestra una distribución de medias esperadas, por lo que no hay evidencia descriptiva que sustente que a menor evaluación de injusticia mayor es la justificación de que carabineros reprima marchas pacificas.
 
-```{r sj-jvcon2, echo=FALSE}
+```{r sj-jvcon2, fig.cap = "Medias del Sentido de Injusticia por Jusitificación de la Violencia por el Control Social 2"}
 
-table1::table1(~sj_obrero + sj_ceo + sj_entrevistado | jv_carab2_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Control - Carabineros desaloje liceos en toma")
+#table1::table1(~sj_obrero_rec + sj_ceo + sj_entrevistado_rec | jv_carab2_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Control - Carabineros desaloje liceos en toma")
+
+df <- data.frame(x=c(1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5, 
+                     1, 2, 3, 4, 5),
+                 y=c(1.19, 0.99, 1.07, 1.24, 0.77, 
+                     0.69, 0.61, 0.57, 0.46, 0.50, 
+                     0.53, 0.44, 0.43, 0.39, 0.29),
+                 Recompensado = c("Gerente", "Gerente","Gerente","Gerente","Gerente",
+                       "Obrero", "Obrero", "Obrero", "Obrero", "Obrero", 
+                       "Entrevistado", "Entrevistado","Entrevistado","Entrevistado","Entrevistado"))
+
+#create scatterplot with a label on every point
+ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensado)) +
+  geom_line(color = "gray")+
+  geom_point(aes(colour = Recompensado), size = 4) +
+  geom_text_repel(aes(label = y)) +
+  labs(y = "Sentido de Injusticia", x = "Justificación Violencia: Carabineros desaloje liceos", Recompensado="") + theme_classic() +
+  ggtitle("") + 
+  scale_x_continuous(breaks = c(1,2,3,4,5), labels=c("Nunca", 
+                            "Pocas veces", 
+                            "Algunas veces", 
+                            "Muchas veces",
+                            "Siempre"))
+
 
 ```
 
 <div style="text-align: justify">
 
-En lo que respecta a la justificación de que carabineros desaloje liceos en toma, existe evidencia descriptiva para sostener **H1b**. En la Tabla \@ref(tab:sj-jvcon2) se observa que a medida que disminuye la justificación de que carabineros desalojen liceos en toma, se registra una mayor media del sentido de injusticia para obreros. Por ejemplo, quienes consideran que nunca se justifica que carabineros desalojen liceos en toma reportan una media de -.687 (más injusticia por subrecompensa), en tanto quienes consideran que muchas veces se justifica esta situación de violencia reportan una media de -.464 (menos injusticia por subrecompensa). En la misma linea, el sentido de injusticia para el entrevistado también muestra una distribución consistente con la hipótesis **H1b**. Se observa que a medida que disminuye la justificación de la violencia por el control social, aumenta la evaluación de los entrevistados de que están injustamente subrecompensados respecto a sus ingresos.
+En lo que respecta a la justificación de que carabineros desaloje liceos en toma, existe evidencia descriptiva para sostener **H1b**. En la Tabla \@ref(fig:sj-jvcon2) se observa que a medida que disminuye la justificación de que carabineros desalojen liceos en toma, se registra una mayor media del sentido de injusticia para obreros. Por ejemplo, quienes consideran que nunca se justifica que carabineros desalojen liceos en toma reportan una media de -.687 (más injusticia por subrecompensa), en tanto quienes consideran que muchas veces se justifica esta situación de violencia reportan una media de -.464 (menos injusticia por subrecompensa). En la misma linea, el sentido de injusticia para el entrevistado también muestra una distribución consistente con la hipótesis **H1b**. Se observa que a medida que disminuye la justificación de la violencia por el control social, aumenta la evaluación de los entrevistados de que están injustamente subrecompensados respecto a sus ingresos.
 
 
 ```{r jvcor, echo=FALSE}
@@ -151,9 +251,9 @@ sjPlot::tab_corr(dplyr::select(
   jv_est_2019,
   jv_carab1_2019,
   jv_carab2_2019,
-  sj_obrero,
+  sj_obrero_rec,
   sj_ceo, 
-  sj_entrevistado),
+  sj_entrevistado_rec),
   triangle = "lower", encoding = "Windows-1252")
 ```
 
@@ -174,17 +274,17 @@ En la sección se análisis multivariados se busca poner a prueba las hipótesis
 
 
 ```{r jv-est-model, echo=FALSE, results='asis', cache = T}
-jv_est_2019.modelmulpub1 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_analysis_nona)
+jv_est_2019.modelmulpub1 <- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado, data = procjv_analysis_nona)
  
- jv_est_2019.modelmulpub2<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
+ jv_est_2019.modelmulpub2<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
  
-jv_est_2019.modelmulpub3<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
+jv_est_2019.modelmulpub3<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
   
-jv_est_2019.modelmulpub4<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
+jv_est_2019.modelmulpub4<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
 
-jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*sexo_factor + sj_ceo*ingreso_satisfact_factor, data = procjv_analysis_nona)
+jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*sexo_factor + sj_ceo*ingreso_satisfact_factor, data = procjv_analysis_nona)
 
-jv_est_2019.modelmulpub6<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*sexo_factor + sj_ceo*ingreso_satisfact_factor + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
+jv_est_2019.modelmulpub6<- clm(jv_est_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*sexo_factor + sj_ceo*ingreso_satisfact_factor + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
 
 
 omit_coef="(Intercept)|(educ_rec_factor)|(indigena_rec_factor)|(sdo_indice)|(rwa_indice)|(trato_salud_factor)|(trato_carab_factor)|(pos_pol_rec_factor)|(frec_marcha_factor)|(conf_carab_factor)"
@@ -272,20 +372,20 @@ En lo que respecta a los efectos de interacción, se introdujeron dos términos:
 El ajuste de los modelos muestra dos resultados a destacar. En primer lugar, el modelo que introduce las variables de justicia en el trato presenta un ajuste considerablemente mejor que el modelo que introduce las variables de grupos desaventajados e ideología (*R2 Nagelkerke: .103 para Modelo 3 y R2 Nagelkerke: .157 para Modelo 4*). En segundo lugar, el modelo que incluye las variables de control exploratorias presenta un ajuste considerablemente mejor que el modelo que incluye las interacciones (*R2 Nagelkerke: .176 para Modelo 5 y R2 Nagelkerke: .276 para el Modelo 6*). En suma, estos hallazgos evidencian el rol explicativo que tiene el trato justo y los controles exploratorios (i.e confianza en carabineros, frecuencia participación en marchas y posición política) en la justificación de la violencia por el cambio social.
 
 ```{r jv-carab1-model, echo=FALSE, results='asis', cache = T}
-jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_analysis_nona)
+jv_carab1_2019.modelmulpub1 <- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado, data = procjv_analysis_nona)
  
- jv_carab1_2019.modelmulpub2<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
+ jv_carab1_2019.modelmulpub2<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
  
-jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
+jv_carab1_2019.modelmulpub3<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
   
-jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
+jv_carab1_2019.modelmulpub4<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
 
-jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + educ_rec_factor*sj_obrero, data = procjv_analysis_nona)
+jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + educ_rec_factor*sj_obrero_rec, data = procjv_analysis_nona)
 
-jv_carab1_2019.modelmulpub6<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + educ_rec_factor*sj_obrero + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
+jv_carab1_2019.modelmulpub6<- clm(jv_carab1_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + educ_rec_factor*sj_obrero_rec + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
 
                    
-omit_coef="(Intercept)|(ingreso)|(sexo_factor)|(ingreso_satisfact_factor)|(indigena_rec_factor)|(sdo_indice)|(rwa_indice)|(trato_salud_factor)|(trato_carab_factor)|(pos_pol_rec_factor)|(frec_marcha_factor)|(conf_carab_factor)"
+omit_coef="(Intercept)|(ingreso)|(sexo_factor)|(ingreso_satisfact_factor)|(indigena_rec_factor)|(trato_salud_factor)|(trato_carab_factor)|(pos_pol_rec_factor)|(frec_marcha_factor)|(conf_carab_factor)"
 
 cap1 <- "Modelos de regresión logística para justificación de que carabineros repriman marchas pacificas" # Título tabla
 
@@ -305,8 +405,8 @@ coef_names <- c(
   "Terciaria y postgrado",
   # "Indigena - Otro pueblo (ref: No pertenece a ningón pueblo",
   # "Mapuche",
-  # "Ideol. SDO",
-  # "Ideol. RWA",
+  "SDO",
+  "RWA",
   # "Trato Resp. Salud - Casi Nunca (ref: Nunca)",
   # "A veces",
   # "Casi siempre",
@@ -347,7 +447,8 @@ texreg::knitreg(list(jv_carab1_2019.modelmulpub1,
         custom.gof.rows=list(Controles=c("No","Desv.","Ideol.","Trato", "Lit.", "Lit. y Exp.")),
         groups=list("Sentido de Injusticia"=1:3,
                     "Educación (ref: Primaria incompleta menos)"=4:7,
-                    "Interacciones:"=8:11),
+                    "Ideologia" = 8:9,
+                    "Interacciones:"=10:13),
         custom.coef.names=coef_names,
         scalebox = 0.75,
         threeparttable = T,
@@ -370,19 +471,19 @@ A partir del ajuste de los modelos se observa que las variables de ideología cu
 
 ```{r jv-carab2-model, echo=FALSE, results='asis', cache = T}
 
- jv_carab2_2019.modelmulpub1 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado, data = procjv_analysis_nona)
+ jv_carab2_2019.modelmulpub1 <- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec, data = procjv_analysis_nona)
  
- jv_carab2_2019.modelmulpub2<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
+ jv_carab2_2019.modelmulpub2<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor, data = procjv_analysis_nona)
  
-jv_carab2_2019.modelmulpub3<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
+jv_carab2_2019.modelmulpub3<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice, data = procjv_analysis_nona)
   
-jv_carab2_2019.modelmulpub4<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
+jv_carab2_2019.modelmulpub4<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor, data = procjv_analysis_nona)
 
-jv_carab2_2019.modelmulpub5<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*ingreso + sj_ceo*ingreso_satisfact_factor, data = procjv_analysis_nona)
+jv_carab2_2019.modelmulpub5<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + sj_ceo*ingreso + sj_ceo*ingreso_satisfact_factor, data = procjv_analysis_nona)
 
-jv_carab2_2019.modelmulpub6<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero + sj_entrevistado + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + ingreso*sj_ceo + ingreso_satisfact_factor*sj_ceo* + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
+jv_carab2_2019.modelmulpub6<- clm(jv_carab2_2019_factor ~ sj_ceo + sj_obrero_rec + sj_entrevistado_rec + ingreso + sexo_factor + ingreso_satisfact_factor + educ_rec_factor + indigena_rec_factor + sdo_indice + rwa_indice + trato_salud_factor + trato_carab_factor + ingreso*sj_ceo + ingreso_satisfact_factor*sj_ceo* + pos_pol_rec_factor + frec_marcha_factor + conf_carab_factor, data = procjv_analysis_nona)
 
-omit_coef="(Intercept)|(educ_rec_factor)|(sexo_factor)|(indigena_rec_factor)|(sdo_indice)|(rwa_indice)|(trato_salud_factor)|(trato_carab_factor)|(pos_pol_rec_factor)|(frec_marcha_factor)|(conf_carab_factor)"
+omit_coef="(Intercept)|(educ_rec_factor)|(sexo_factor)|(indigena_rec_factor)|(trato_salud_factor)|(trato_carab_factor)|(pos_pol_rec_factor)|(frec_marcha_factor)|(conf_carab_factor)"
 
 cap1 <- "Modelos de regresión logística para justificación de carabineros desalojen tomas" # Título tabla
 
@@ -402,8 +503,8 @@ coef_names <- c(
   # "Terciaria y postgrado",
   # "Indigena - Otro pueblo (ref: No pertenece a ningón pueblo",
   # "Mapuche",
-  # "Ideol. SDO",
-  # "Ideol. RWA",
+  "SDO",
+  "RWA",
   # "Trato Resp. Salud - Casi Nunca (ref: Nunca)",
   # "A veces",
   # "Casi siempre",
@@ -444,8 +545,9 @@ texreg::knitreg(list(jv_carab2_2019.modelmulpub1,
         include.thresholds=FALSE,
         custom.gof.rows=list(Controles=c("No","Desv.","Ideol.","Trato", "Lit.", "Lit. y Exp.")),
         groups=list("Sentido de Injusticia"=1:3,
-                    "Satisfacción Ingresos (ref: Totalmente insatisfecho)" = 5:8,
-                    "Interacciones:"=9:13),
+                    "Educación (ref: Primaria incompleta menos)"=4:7,
+                    "Ideologia" = 8:9,
+                    "Interacciones:"=10:13),
         custom.coef.names=coef_names,
         scalebox = 0.75,
         threeparttable = T,
