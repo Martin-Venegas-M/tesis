@@ -17,6 +17,7 @@ fig:den-sj
 fig:sj-jvcamb
 fig:sj-jvcon1
 fig:sj-jvcon2
+tab:jvcor
 tab:jv-est-model
 tab:jv-carab1-model
 tab:jv-carab2-model
