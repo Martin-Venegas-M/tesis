@@ -46,4 +46,4 @@ análisis
 resultados
 descriptivos
 multivariados
-conclusiones
+discusión-y-conclusiones

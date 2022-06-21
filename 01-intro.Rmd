@@ -18,12 +18,57 @@ El que las sociedades democráticas tengan la tarea de disminuir los niveles de 
 El que la población justifique la violencia en los tiempos de las democracias contemporáneas parece algo paradójico, más aún considerando los esfuerzos a nivel internacional que se han hecho para erradicar la violencia [@WHO2014; @WHO2010; @WHO2009]. No obstante, las movilizaciones masivas del 2019 en Chile hacen pensar que esta no es una idea tan lejana a la realidad. El llamado _estallido social_ fue un proceso caracterizado por violaciones sistemáticas a los derechos humanos por parte de la policía [@Human2019; @ONU2019; @Defensoria2020; @Amnistia2020], así como también por un alza en la cantidad de protesta violenta, en comparación a otro tipo de conflictos en los últimos 10 años en el país [@Joignant2020]. Este evento permite plantear dos reflexiones. Por un lado, pareciese ser que la violencia ejercida por agentes estatales no siempre está justificada. Por otro lado, gran parte de la población consideró a la violencia como una vía de manifestación justificada. De hecho, encuestas recientes muestran que la violencia como forma de protesta tuvo un incremento en sus niveles de justificación, mientras que la justificación a la violencia policial disminuyó considerablemente [@ELSOC2019] (ver Figura \@ref(fig:justintro)). El ascenso en los niveles de justificación de la violencia se torna especialmente relevante si se tiene en consideración que aquellos que justifican la violencia son más tendientes a ejercerla [@Nunes2021], o a condonar el actuar violento de otros miembros de la sociedad [@Kalmoe2014]. La consecuencia de esta relación es una potencial escalada de violencia que amenaza la convivencia pacífica [@Gerber2017]. Ante esta problemática, se abren las interrogantes sobre quiénes y por qué razones las personas justifican la violencia.
 
 
-```{r justintro,echo=FALSE,out.width='75%',fig.cap='Justificación de la Violencia de Carabineros y Manifestantes por año'}
-knitr::include_graphics("images/jvintro.png") 
+```{r justintro, echo=FALSE, message=FALSE, warning=FALSE, fig.cap="Justificación de la Violencia de Carabineros y Manifestantes por año"}
+
+pacman::p_load(tidyverse,sjPlot, sjmisc, sjlabelled, elsoc, ggplot2, ggrepel) # librerias
+knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
+                      message = FALSE,  # mensajes/avisos de librerias  
+                      cache = FALSE,    # cache de los chunks,usar analisis pesados
+                      # out.width = '50%',# largo de imagen en %
+                      fig.pos= "H",     # posicion figuras H = HERE
+                      echo = FALSE      # incluir chunk en output
+)
+
+elsoc::load_elsoc('long')
+
+elsoc_long_2016_2021 <-elsoc_long_2016_2021[!(elsoc_long_2016_2021$ola == 5),]
+
+elsoc_long_2016_2021 %>% 
+  filter(tipo_atricion == 1 & muestra == 1 & 
+           !f05_03 %in% c(-888, -999) & !f05_04 %in% c(-888, -999) & !f05_07 %in% c(-888, -999)) %>% 
+  select(f05_03, f05_04, f05_07, ola, ponderador02, segmento_disenno, estrato_disenno) %>% 
+  pivot_longer(cols = c(f05_03, f05_04, f05_07)) %>% 
+  prop(value %in% 4:5, by = c(ola, name), na.rm = TRUE) %>% 
+  mutate(name = factor(name,
+                       levels = c('f05_03', 'f05_04', 'f05_07'),
+                       labels = c('Carabineros use la fuerza para\n reprimir manifestación pacífica',
+                                  'Carabineros desaloje a la fuerza\na estudiantes de liceo en toma',
+                                  'Estudiantes tiren piedras a Carabi-\nneros en marcha por la educación'))) %>%
+  sjlabelled::as_label(ola) %>% 
+  ggplot(aes(y = prop, x = ola, color = name, group = name,
+             label = scales::percent(prop, accuracy = .1))) +
+  theme_bw() + 
+  geom_point(size = 1.75) + 
+  geom_line() +
+  scale_y_continuous(labels = scales::percent,
+                     limits = c(0, .5)) +
+  ylab(label = NULL) +
+  xlab(label = NULL) +
+  scale_color_viridis_d(begin = 0, end = .7, option = 'viridis') + 
+  ggrepel::geom_text_repel(size = 3, nudge_y = .02) +
+  theme(plot.caption = element_text(hjust = 0),
+        legend.position = 'top',
+        legend.title = element_blank()) +
+  
+    scale_x_continuous(breaks = c(1,2,3,4), labels=c("2016", 
+                            "2017", 
+                            "2018", 
+                            "2019")) +
+  ggtitle(NULL,
+        subtitle = 'Porcentaje que responde que Muchas veces o Siempre se justifica' ) +
+  labs(caption = 'Fuente: COES (2022) Radiografía del Cambio Social: Análisis de Resultados Longitudinales ELSOC 2016-2021. Presentación de Resultados COES. Enero, Santiago de Chile.\nNota: Se consideran observaciones de individuos sin atrición entre olas. N=7.507 (1.513 individuos)')
 ```
 
-
-<font size="1"> Fuente: COES (2022) Radiografía del Cambio Social: Análisis de Resultados Longitudinales ELSOC 2016-2021. Presentación de Resultados COES. Enero, Santiago de Chile. </font>
 
 <div style="text-align: justify">
 
