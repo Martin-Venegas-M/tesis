@@ -82,7 +82,7 @@ options(knitr.kable.NA = '') # NA en kable = ''
     # guides(colour = guide_legend(reverse = TRUE))
     theme(legend.position="right") +
     labs(caption =
-           paste0("Fuente: ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")")) + guides(colour = guide_legend(reverse = TRUE))
+           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")")) + guides(colour = guide_legend(reverse = TRUE))
   
   sjPlot::plot_grid(list(pjv),tags = c("",""))
 ```
@@ -149,7 +149,7 @@ df_sj<- rbind(c,b,a)
   ylab("Density")+
   theme(legend.position="bottom") + theme_classic() +
     labs(caption =
-           paste0("Fuente: ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
   
 ```
 
@@ -199,7 +199,7 @@ ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensad
                             "Muchas veces",
                             "Siempre")) +
     labs(caption =
-           paste0("Fuente: ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
 
 
 
@@ -249,7 +249,7 @@ ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensad
                             "Muchas veces",
                             "Siempre")) +
     labs(caption =
-           paste0("Fuente: ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
 
 
 ```
@@ -296,7 +296,7 @@ ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensad
                             "Muchas veces",
                             "Siempre")) +
     labs(caption =
-           paste0("Fuente: ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
 
 
 ```
@@ -499,11 +499,13 @@ texreg::knitreg(list(jv_est_2019.modelmulpub1,
 
 <div style="text-align: justify">
 
-En la Tabla \@ref(tab:jv-est-model) se presentan las regresiones logísticas ordinales para la justificación de la violencia por el cambio social, específicamente, para aquella situación en la que estudiantes lanzan piedras a carabineros. Consistente con lo planteado en **H1a**, se observa un efecto significativo positivo del sentido de injusticia hacia el gerente en la justificación de la violencia por el cambio social (*Log-Odds: .22, p < 0.01, para el Modelo 1*). Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes lancen piedras a carabineros. Este efecto se mantiene en términos de magnitud y significancia cuando se controla por la pertenencia a grupos desaventajados, ideología y percepción de justicia procesal, lo que entrega evidencia para sostener que el sentido de injusticia respecto a la figura del gerente podría instalarse como una determinante a profundizar en los estudios de justificación de la violencia. No obstante, el efecto del sentido de injusticia del gerente se pierde una vez controlada por los efectos de interacción y los controles exploratorios.
+En la Tabla \@ref(tab:jv-est-model) se presentan las regresiones logísticas ordinales para la justificación de la violencia por el cambio social, específicamente, para aquella situación en la que estudiantes lanzan piedras a carabineros. Consistente con lo planteado en **H1a**, se observa un efecto significativo positivo del sentido de injusticia hacia el gerente en la justificación de la violencia por el cambio social (*Log-Odds: .22, p < 0.01, para el Modelo 1*). Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes lancen piedras a carabineros. Este efecto se mantiene en términos de magnitud y significancia cuando se controla por la pertenencia a grupos desaventajados, ideología, percepción de justicia procesal, interacciones y controles exploratorios (*Log-Odds: 1.95, p < 0.01, para el Modelo 6*). Este hallazgo entrega evidencia para sostener que el sentido de injusticia respecto a la figura del gerente podría instalarse como una determinante a profundizar en los estudios de justificación de la violencia.
 
 <div style="text-align: justify">
 
-En lo que respecta a los efectos de interacción, se introdujeron dos términos: sexo por sentido de injusticia para gerente e insatisfacción con los ingresos por sentido de injusticia para gerente. Se escojen estos efectos ya que presentan relaciones directas significativas en los modelos anteriores. Los resultados muestran evidencia suficiente para sostener la hipótesis **H2a** para la satisfacción con los ingresos, pero muestran un efecto contrario al esperado para el caso del sexo. En detalle... 
+En lo que respecta a los efectos de interacción, se introdujeron dos términos: sexo por sentido de injusticia para gerente e insatisfacción con los ingresos por sentido de injusticia para gerente. Se escojen estos efectos ya que presentan relaciones directas significativas en los modelos anteriores. Por ejemplo, los efectos directos muestran que 
+
+Los resultados muestran evidencia suficiente para sostener la hipótesis **H2a** para la satisfacción con los ingresos, pero muestran un efecto contrario al esperado para el caso del sexo. En detalle... 
 
 <div style="text-align: justify">
 
