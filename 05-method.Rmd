@@ -108,7 +108,18 @@ El sentido de injusticia se mide en base a la Evaluación de Justicia ($J$) prop
 
 <div style="text-align: justify">
 
-A fin de facilitar la interpretación de las variables independientes, se efectúa un proceso de recodificación para que las tres variables compartan una escala común. Siguiendo los trabajos previos que han utilizado esta variable [@Resh2017; @Sabbagh2018], se multiplican por -1 las evaluaciones de justicia para el entrevistado ($J_{entrevistado}*-1$) y para el obrero ($J_{obrero}*-1$). Esta recodificación permite interpretar todos los valores de la misma manera, donde a mayor valor en el indicador, más injusticia representa. La única diferencia es que, en el caso de la evaluación de injusticia del gerente, esta injusticia se debe a la sobrerecompensa, en cambio, en las evaluaciones para el entrevistado y el obrero, la injusticia se debe a la subrecompensa. En síntesis, las variables que se analizarán son: $J_{gerente}$, $-J_{obrero}$ y $-J_{entrevistado}$, donde a mayor valor de $J$, mayor es la injusticia que se evalúa.
+A fin de facilitar la interpretación de las variables independientes, se efectúa un proceso de recodificación para que las tres variables compartan una escala común. Siguiendo los trabajos previos que han utilizado esta variable [@Resh2017; @Sabbagh2018], se multiplican por -1 las evaluaciones de justicia para el entrevistado (ver Ecuación \@ref(eq:jen2)) y para el obrero (ver Ecuación \@ref(eq:job2)). Esta recodificación permite interpretar todos los valores de la misma manera, donde a mayor valor en el indicador, más injusticia representa. La única diferencia es que, en el caso de la evaluación de injusticia del gerente, esta injusticia se debe a la sobrerecompensa, en cambio, en las evaluaciones para el entrevistado y el obrero, la injusticia se debe a la subrecompensa. En síntesis, las variables que se analizarán son: $J_{gerente}$, $J'_{obrero}$ y $J'_{entrevistado}$, donde a mayor valor de $J$, mayor es la injusticia que se evalúa.
+
+\begin{equation}
+  J'_{entrevistado}=J_{entrevistado}*-1 
+  (\#eq:jen2)
+\end{equation}
+
+\begin{equation}
+  J'_{obrero}=J_{obrero}*-1 
+  (\#eq:job2)
+\end{equation}
+
 
 \begin{center}
 <font size="1"> Fuente: Elaboración propia. </font>
@@ -172,6 +183,8 @@ kable(print(df_con), caption = "Variables de Control")
 <div style="text-align: justify">
 
 A fin de responder los objetivos de investigación y probar las hipótesis plateadas en el presente estudio se emplearán dos tipos de análisis. En primer lugar, se realizarán análisis descriptivos como tablas uni y bivariadas de las variables principales, asi como también correlaciones para analizar el comportamiento de las variables a nivel muestral. En segundo lugar, considerando la naturaleza de las variables dependientes (i.e. ordinales) se efectuará un análisis multivariado empleando como técnica principal de análisis modelos de regresión logística ordinal.  Estos modelos permiten calcular la probabilidad acumulada de que un individuo responda hasta $C$ en los indicadores justificación de la violencia, siendo $Y_{ci}$ una respuesta categórica ordenada de un individuo $i^{th}$ con $C$ categorías ordenadas, codificadas como $C = 1,2,3,4,5$. Esta probabilidad se calculará en función de: el intercepto por cada categoría $a_c$, los coeficientes $\gamma_1$ y $\gamma_2$ para $J_{entrevistado}$, $J_{obrero}$ y $J_{gerente}$ respectivamente y $\gamma_n$ para las variables de control y $e_{i}$ como error de la estimación para el individuo $i$.
+
+A fin de generar la evidencia necesaria para corroborar las hipótesis, se calculan seis modelos. El primer modelo corresponde a las variables de sentido de injusticia. El segundo modelo incorpora las variables de control correspondientes a la pertenencia a grupos desaventajados. El tercer modelo incorpora las variables de ideología (SDO y RWA). El cuarto modelo incorpora las variables sobre justicia en el trato. El quinto modelo incorpora los efectos de interacción entre la pertenencia a grupos desaventajados y el sentido de injusticia. El sexto y último modelo incorpora las variables de control exploratorias. Se calcularán estos seis modelos para las tres variables dependientes del estudio, a saber: la justificación de que estudiantes lancen piedras a carabineros, la justificación de que carabineros repriman marchas pacificas y la justificación de que carabineros desalojen liceos en toma. En suma, se sigue una estrategia de complejidad creciente para el calculo de los modelos, identificando si existe un efecto del sentido de injusticia en las distintas formas de justificación de la violencia y si estas relaciones se mantienen a medida que se van incorporando distintos determinantes de la justificación de la violencia.
 
 
 \pagebreak
