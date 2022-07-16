@@ -21,3 +21,11 @@ sjmisc
 hrbrthemes
 ggrepel
 sjlabelled
+tidyverse
+tibble
+tidyr
+readr
+purrr
+stringr
+forcats
+elsoc

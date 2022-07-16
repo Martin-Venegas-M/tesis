@@ -23,7 +23,7 @@
 <meta name="author" content="Martín Venegas Márquez" />
 
 
-<meta name="date" content="2022-07-11" />
+<meta name="date" content="2022-07-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,10 +52,6 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 
@@ -127,9 +123,9 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>5.1</b> Datos</a></li>
 <li class="chapter" data-level="5.2" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>5.2</b> Variables</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="variables.html"><a href="variables.html#variables-dependientes"><i class="fa fa-check"></i><b>5.2.1</b> Variables dependientes</a></li>
-<li class="chapter" data-level="5.2.2" data-path="variables.html"><a href="variables.html#variables-independientes"><i class="fa fa-check"></i><b>5.2.2</b> Variables independientes</a></li>
-<li class="chapter" data-level="5.2.3" data-path="variables.html"><a href="variables.html#controles"><i class="fa fa-check"></i><b>5.2.3</b> Controles</a></li>
+<li class="chapter" data-level="5.2.1" data-path="variables.html"><a href="variables.html#variables-dependientes"><i class="fa fa-check"></i><b>5.2.1</b> Variables Dependientes</a></li>
+<li class="chapter" data-level="5.2.2" data-path="variables.html"><a href="variables.html#variables-independientes"><i class="fa fa-check"></i><b>5.2.2</b> Variables Independientes</a></li>
+<li class="chapter" data-level="5.2.3" data-path="variables.html"><a href="variables.html#variables-de-control"><i class="fa fa-check"></i><b>5.2.3</b> Variables de Control</a></li>
 </ul></li>
 <li class="chapter" data-level="5.3" data-path="análisis.html"><a href="análisis.html"><i class="fa fa-check"></i><b>5.3</b> Análisis</a></li>
 </ul></li>
@@ -151,7 +147,7 @@ div.csl-indent {
 <li class="chapter" data-level="7.4" data-path="proyecciones-de-investigación.html"><a href="proyecciones-de-investigación.html"><i class="fa fa-check"></i><b>7.4</b> Proyecciones de investigación</a></li>
 <li class="chapter" data-level="7.5" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>7.5</b> Conclusiones</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
 
@@ -179,7 +175,7 @@ div.csl-indent {
 <p>En la sección de análisis multivariados se busca poner a prueba las hipótesis del estudio controlando los hallazgos que han sido presentados la sección descriptiva, con las variables que han demostrado ser predicadores relevantes según la literatura. A fin de generar la evidencia necesaria para corroborar las hipótesis, se calculan seis modelos. El primer modelo corresponde a las variables de sentido de injusticia. El segundo modelo incorpora las variables de control correspondientes a la pertenencia a grupos desaventajados. El tercer modelo incorpora las variables de ideología (SDO y RWA). El cuarto modelo incorpora las variables sobre justicia en el trato. El quinto modelo incorpora los efectos de interacción entre la pertenencia a grupos desaventajados y el sentido de injusticia. El sexto y último modelo incorpora las variables de control exploratorias. Se calcularán estos seis modelos para las tres variables dependientes del estudio, a saber: la justificación de que estudiantes lancen piedras a carabineros, la justificación de que carabineros repriman marchas pacificas y la justificación de que carabineros desalojen liceos en toma. En suma, se sigue una estrategia de complejidad creciente para el calculo de los modelos, identificando si existe un efecto del sentido de injusticia en las distintas formas de justificación de la violencia y si estas relaciones se mantienen a medida que se van incorporando distintos determinantes de la justificación de la violencia.</p>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 2px solid #000000;">
 <caption>
-<span id="tab:jv-est-model">Tabla 6.2: </span> Modelos de regresión logística para justificación de que estudianten lancen pierdras
+<span id="tab:jv-est-model">Tabla 6.2: </span> Modelos de regresión logística ordinal para justificación de que estudianten lancen pierdras
 </caption>
 <thead>
 <tr>
@@ -270,10 +266,10 @@ Sentido de Injusticia (J)
 0.22<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.17
+1.86<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.01
+1.95<sup>**</sup>
 </td>
 </tr>
 <tr>
@@ -293,10 +289,10 @@ Sentido de Injusticia (J)
 (0.09)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.26)
+(0.60)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.28)
+(0.64)
 </td>
 </tr>
 <tr>
@@ -531,7 +527,7 @@ Sexo (ref: Hombre)
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-Satisfacción Ingresos (ref: Totalmente insatisfecho)
+Satisfacción Ingresos (ref: Totalmente satisfecho)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -573,98 +569,6 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     Insatisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.46
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.54
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.36
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.82
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.72
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.27)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.28)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.29)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.43)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.45)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     Ni satisfecho ni insatisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.27
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.33
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.12
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.40
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
--0.29
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.32)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.33)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.34)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.51)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.52)
 </td>
 </tr>
 <tr>
@@ -675,19 +579,65 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.69<sup>*</sup>
+-0.41
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.69<sup>*</sup>
+-0.26
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.46
+-0.26
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.54
+2.06
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.34
+2.38
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.56)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.13)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.24)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     Ni satisfecho ni insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.02
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.10
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.08
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.20
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.43
 </td>
 </tr>
 <tr>
@@ -698,42 +648,88 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.33)
+(0.56)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.34)
+(0.58)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.34)
+(0.60)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.49)
+(1.15)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.51)
+(1.26)
 </td>
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     Totalmente Satisfecho
+     Insatisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.28
+-0.18
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.43
+-0.11
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.19
+-0.17
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--2.60<sup>*</sup>
+1.78
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--2.72<sup>*</sup>
+2.00
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.55)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.57)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.58)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.13)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.24)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     Totalmente insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.28
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.43
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.19
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.60<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+2.72<sup>*</sup>
 </td>
 </tr>
 <tr>
@@ -853,7 +849,7 @@ Interacciones:
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Insatisfecho
+     J Gerente x Satisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -868,10 +864,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.36
+-1.68<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.43
+-1.75<sup>**</sup>
 </td>
 </tr>
 <tr>
@@ -891,10 +887,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.28)
+(0.62)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.29)
+(0.67)
 </td>
 </tr>
 <tr>
@@ -914,56 +910,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.23
+-1.46<sup>*</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.37
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.34)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.34)
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Satisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.01
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.19
+-1.56<sup>*</sup>
 </td>
 </tr>
 <tr>
@@ -983,10 +933,56 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.31)
+(0.64)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.33)
+(0.68)
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     J Gerente x insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-1.33<sup>*</sup>
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-1.51<sup>*</sup>
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.61)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.65)
 </td>
 </tr>
 <tr>
@@ -1006,10 +1002,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1.69<sup>**</sup>
+-1.69<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1.94<sup>**</sup>
+-1.94<sup>**</sup>
 </td>
 </tr>
 <tr>
@@ -1066,7 +1062,7 @@ R2Nagelkerke
 0.018
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.047
+0.046
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
 0.103
@@ -1194,7 +1190,7 @@ Nota: ‘Desv.’ refiere a la introducción de variables sobre grupos desaventa
 <p>El ajuste de los modelos muestra dos resultados a destacar. En primer lugar, el modelo que introduce las variables de justicia en el trato presenta un ajuste considerablemente mejor que el modelo que introduce las variables de grupos desaventajados e ideología (<em>R2 Nagelkerke: .103 para Modelo 3 y R2 Nagelkerke: .156 para Modelo 4</em>). En segundo lugar, el modelo que incluye las variables de control exploratorias presenta un ajuste considerablemente mejor que el modelo que incluye las interacciones (<em>R2 Nagelkerke: .176 para Modelo 5 y R2 Nagelkerke: .276 para el Modelo 6</em>). En suma, estos hallazgos evidencian el rol explicativo que tiene el trato justo y los controles exploratorios (i.e confianza en carabineros, frecuencia participación en marchas y posición política) en la justificación de la violencia por el cambio social.</p>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 2px solid #000000;">
 <caption>
-<span id="tab:jv-carab1-model">Tabla 6.3: </span> Modelos de regresión logística para justificación de que carabineros repriman marchas pacificas
+<span id="tab:jv-carab1-model">Tabla 6.3: </span> Modelos de regresión logística ordinal para justificación de que carabineros repriman marchas pacificas
 </caption>
 <thead>
 <tr>
@@ -2163,7 +2159,7 @@ Nota: ‘Desv.’ refiere a la introducción de variables sobre grupos desaventa
 <p>A partir del ajuste de los modelos se observa que las variables de ideología cuentan con un alto rol explicativo en comparación a la introducción de otras variables. En detalle, el modelo que incluye las variables de ideología ofrece un ajuste considerablemente mayor que el modelo que solo incluye variables del sentido de injusticia y pertenencia a grupos desaventajados (<em>R2 Nagelkerke: .067 para Modelo 2 y R2 Nagelkerke: .146 para el Modelo 3</em>). De esta manera, y consistente con la literatura, las variables de ideología corresponden a predictores relevantes para la justificación de la violencia por el control social.</p>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 2px solid #000000;">
 <caption>
-<span id="tab:jv-carab2-model">Tabla 6.4: </span> Modelos de regresión logística para justificación de carabineros desalojen tomas
+<span id="tab:jv-carab2-model">Tabla 6.4: </span> Modelos de regresión logística ordinal para justificación de carabineros desalojen tomas
 </caption>
 <thead>
 <tr>
@@ -2254,10 +2250,10 @@ Sentido de Injusticia (J)
 -0.08
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.11
+-0.08
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.10
+-0.04
 </td>
 </tr>
 <tr>
@@ -2277,7 +2273,7 @@ Sentido de Injusticia (J)
 (0.09)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.27)
+(0.09)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2300,10 +2296,10 @@ Sentido de Injusticia (J)
 -0.78<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.81<sup>**</sup>
+2.54
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.70
+2.76
 </td>
 </tr>
 <tr>
@@ -2323,7 +2319,7 @@ Sentido de Injusticia (J)
 (0.27)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.27)
+(1.70)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2392,7 +2388,7 @@ Ingresos
 0.00<sup>*</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.00
+0.00<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
 0.00
@@ -2423,7 +2419,7 @@ Ingresos
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-Satisfacción Ingresos (ref: Totalmente insatisfecho)
+Satisfacción Ingresos (ref: Totalmente satisfecho)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2462,98 +2458,6 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     Insatisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.50
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.57
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.49
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.28
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.17
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.31)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.32)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.33)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.46)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     Ni satisfecho ni insatisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.51
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.50
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.44
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.09
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.04
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.36)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.37)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.38)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.54)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2567,19 +2471,19 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.81<sup>*</sup>
+0.15
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.84<sup>*</sup>
+-0.09
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.76<sup>*</sup>
+-0.11
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.58
+0.92
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.43
+0.97
 </td>
 </tr>
 <tr>
@@ -2590,42 +2494,134 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.35)
+(0.48)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.35)
+(0.51)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.37)
+(0.51)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.08)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     Ni satisfecho ni insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.15
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.43
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.43
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.19
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.45
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.51)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.54)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.19)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     Insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.16
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.36
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.38
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.20
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+1.37
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
 (0.49)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(0.52)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.11)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
  
 </td>
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     Totalmente Satisfecho
+     Totalmente insatisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.66
+-0.66
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.93
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-0.87
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+0.43
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
 0.93
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.87
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-2.47<sup>*</sup>
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-2.33
 </td>
 </tr>
 <tr>
@@ -2645,7 +2641,7 @@ Satisfacción Ingresos (ref: Totalmente insatisfecho)
 (0.60)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(1.12)
+(1.27)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2714,10 +2710,10 @@ Ideologia
 2.05<sup>***</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-2.09<sup>***</sup>
+2.11<sup>***</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1.95
+1.98
 </td>
 </tr>
 <tr>
@@ -2760,10 +2756,10 @@ Ideologia
 2.46<sup>***</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-2.58<sup>***</sup>
+2.50<sup>***</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1.83
+1.76
 </td>
 </tr>
 <tr>
@@ -2837,7 +2833,7 @@ Interacciones:
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Ingreso
+     J Obrero x Ingreso
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2852,7 +2848,7 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--0.00
+-0.00<sup>**</sup>
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
 -0.00
@@ -2883,7 +2879,7 @@ Interacciones:
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Insatisfecho
+     J Obrero x Satisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2898,10 +2894,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.19
+-1.71
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.21
+-1.86
 </td>
 </tr>
 <tr>
@@ -2921,7 +2917,7 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.29)
+(1.52)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2929,7 +2925,7 @@ Interacciones:
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Ni satisfecho ni insatisfecho
+     J Obrero x Ni satisfecho ni insatisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -2944,56 +2940,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.35
+-2.84
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.34
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-(0.36)
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-</tr>
-<tr>
-<td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Satisfecho
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
- 
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.21
-</td>
-<td style="padding-left: 5px;padding-right: 5px;">
-0.14
+-3.07
 </td>
 </tr>
 <tr>
@@ -3013,7 +2963,7 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.31)
+(1.74)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -3021,7 +2971,7 @@ Interacciones:
 </tr>
 <tr>
 <td style="padding-left: 5px;padding-right: 5px;">
-     J Gerente x Totalmente satisfecho
+     J Obrero x Insatisfecho
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -3036,10 +2986,10 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--1.04
+-2.77
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--1.06
+-2.94
 </td>
 </tr>
 <tr>
@@ -3059,7 +3009,53 @@ Interacciones:
  
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-(0.74)
+(1.61)
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+     J Obrero x Totalmente insatisfecho
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-2.33
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+-2.82
+</td>
+</tr>
+<tr>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+ 
+</td>
+<td style="padding-left: 5px;padding-right: 5px;">
+(1.74)
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
  
@@ -3108,7 +3104,7 @@ R2Nagelkerke
 0.214
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-0.262
+0.263
 </td>
 </tr>
 <tr>
@@ -3128,10 +3124,10 @@ AIC
 1442.58
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1443.76
+1443.81
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1427.48
+1426.90
 </td>
 </tr>
 <tr>
@@ -3151,10 +3147,10 @@ BIC
 1575.01
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1599.02
+1599.07
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
-1632.98
+1632.40
 </td>
 </tr>
 <tr>
@@ -3174,10 +3170,10 @@ Log Likelihood
 -692.29
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--687.88
+-687.90
 </td>
 <td style="padding-left: 5px;padding-right: 5px;">
--668.74
+-668.45
 </td>
 </tr>
 <tr style="border-bottom: 2px solid #000000;">

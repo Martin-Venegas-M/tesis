@@ -10,7 +10,6 @@ tab:tab-dep
 eq:jen
 eq:job
 eq:jge
-tab:tab-indep
 tab:tab-controls
 fig:pjv
 fig:den-sj
@@ -41,7 +40,7 @@ datos
 variables
 variables-dependientes
 variables-independientes
-controles
+variables-de-control
 análisis
 resultados
 descriptivos

@@ -25,39 +25,70 @@ Este estudio se basa en la información proporcionada por la base de datos del E
 
 ## Variables
 
-### Variables dependientes
+### Variables Dependientes
 
 <div style="text-align: justify">
 
 Como se puede apreciar en la Tabla \@ref(tab:tab-dep), las variables dependientes del estudio corresponden a la distinción que se ha hecho en la literatura respecto a los fines de la violencia: por el cambio social y por el control social. Se utilizarán tres indicadores que buscan representar los conceptos, dos para la violencia por el control social y uno para la violencia por el cambio. Los indicadores señalados en la Tabla \@ref(tab:tab-dep) responden a la pregunta *¿En qué medida cree usted que se justifican o no se justifican las siguientes situaciones?*. Los indicadores de violencia por el control se centran en la fuerza ejercida por carabineros, en contraste, los indicadores de la violencia por el cambio consisten en la violencia como táctica de protesta, específicamente, lanzar piedras a carabineros. Todos los indicadores están medidos con una escala Likert de cinco categorías, que van desde la aseveración de que la violencia nunca se justifica, hasta que siempre se justifica. En síntesis, se utilizarán tres variables dependientes en el estudio, dos para medir la justificación de la violencia por el control social y una para medir la justificación de la violencia por el cambio social.
 
-```{r include=FALSE}
-cap1 <- "Variables dependientes"
-# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
-```
+```{r tab-dep, results='asis'}
 
-```{r tab-dep, echo=FALSE}
-tab01 <- read.csv(file = "tables/table01.csv",header = 1,sep = ";",encoding = "UTF-8")
-cnames <- c("Concepto","Indicador", "Categorías de respuesta")
+if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
+if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
+pacman::p_load(knitr, kableExtra, dplyr, lavaan, sjPlot, ordinal, sjmisc, sjlabelled, ggrepel, summarytools) # librerias
+knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
+                      message = FALSE,  # mensajes/avisos de librerias  
+                      cache = FALSE,    # cache de los chunks,usar analisis pesados
+                      # out.width = '50%',# largo de imagen en %
+                      fig.pos= "H",     # posicion figuras H = HERE
+                      echo = FALSE      # incluir chunk en output
+)
 
-kable(tab01,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap1) %>%
-  kable_styling(
-    full_width = T,
-    latex_options = c("hold_position"),
-    position = "center",
-    font_size = 10,
-    bootstrap_options=c("striped", "bordered")) %>%
-  column_spec(column = 1, width = "2 cm", ) %>%
-  column_spec(column = 2,width = "7 cm") %>%
-  column_spec(column = 3,width = "4 cm") %>%
-  collapse_rows(columns = 1:2,valign = "middle")
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+procjv_analysis_nona_lab <- procjv_analysis_nona
+
+procjv_analysis_nona_lab$jv_est_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_est_2019_factor, label = "Que estudiantes tiren piedras a Carabineros en una marcha por la educación del país")
+
+procjv_analysis_nona_lab$jv_carab1_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_carab1_2019_factor, label = "Que Carabineros use la fuerza para reprimir una manifestación pacifica")
+
+procjv_analysis_nona_lab$jv_carab2_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_carab2_2019_factor, label = "Que Carabineros desaloje a la fuerza a los estudiantes de un liceo en toma")
+
+# procjv_analysis_nona_lab$jv_est_2019_factor <- car::recode(procjv_analysis_nona_lab$jv_est_2019_factor, "
+#                                                            'Nunca se justifica' == 'Nunca';
+#                                                            'Pocas veces se justifica' == 'Pocas veces';
+#                                                            'Algunas veces se justifica' == 'Algunas veces';
+#                                                            'Muchas veces se justifica' == 'Muchas veces';
+#                                                            'Siempre se justifica' == 'Siempre'
+#                                                            ")
+
+df_vdep<- dfSummary(dplyr::select(procjv_analysis_nona_lab, jv_est_2019_factor, jv_carab1_2019_factor, jv_carab2_2019_factor),
+               plain.ascii = FALSE,
+               style = "grid",
+               tmp.img.dir = "tmp",
+               graph.magnif = TRUE,
+               headings = F,  # encabezado
+               varnumbers = F, # num variable
+               labels.col = T, # etiquetas
+               na.col = F,    # missing
+               graph.col = T, # plot
+               valid.col = F, # n valido
+               col.widths = c(1000,10,10,10,10)
+               )
+df_vdep$Variable <- c("Violencia por el Cambio Social", "Violencia por el Control Social", "Violencia por el Control Social")
+
+df_vdep <- rename(df_vdep,
+                 Concept = Variable,
+                 Indicator = Label)
+kable(print(df_vdep), caption = "Variables Dependientes")
 ```
 
 \begin{center}
 <font size="1"> Fuente: Elaboración propia. </font>
 \end{center}
 
-### Variables independientes
+### Variables Independientes
 
 <div style="text-align: justify">
 
@@ -84,33 +115,12 @@ El sentido de injusticia se mide en base a la Evaluación de Justicia ($J$) prop
 
 A fin de facilitar la interpretación de las variables independientes, se efectúa un proceso de recodificación para que las tres variables compartan una escala común. Siguiendo los trabajos previos que han utilizado esta variable [@Resh2017; @Sabbagh2018], se calcula el valor absoluto de las evaluaciones de justicia para el entrevistado ($|J_{entrevistado}|$) y para el obrero ($|J_{obrero}|$). Esta recodificación permite interpretar todos los valores de la misma manera, donde a mayor valor en el indicador, más injusticia representa. La única diferencia es que, en el caso de la evaluación de injusticia del gerente, esta injusticia se debe a la sobrerecompensa, en cambio, en las evaluaciones para el entrevistado y el obrero, la injusticia se debe a la subrecompensa. En síntesis, las variables que se analizarán son: $J_{gerente}$, $|J_{obrero}|$ y $|J_{entrevistado}|$, donde a mayor valor de $J$, mayor es la injusticia que se evalúa.
 
-```{r include=FALSE}
-cap2 <- "Varables Independientes"
-# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
-```
-
-```{r tab-indep, echo=FALSE}
-tab02 <- read.csv(file = "tables/table02.csv",header = 1,sep = ";",encoding = "UTF-8")
-cnames <- c("Concepto","Indicador", "Categorías de respuesta")
-
-kable(tab02,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap2) %>%
-  kable_styling(
-    full_width = T,
-    latex_options = c("hold_position"),
-    position = "center",
-    font_size = 10,
-    bootstrap_options=c("striped", "bordered")) %>%
-  column_spec(column = 1, width = "2 cm", ) %>%
-  column_spec(column = 2,width = "7 cm") %>%
-  column_spec(column = 3,width = "4 cm") %>%
-  collapse_rows(columns = 1:2,valign = "middle")
-```
 
 \begin{center}
 <font size="1"> Fuente: Elaboración propia. </font>
 \end{center}
 
-### Controles
+### Variables de Control
 
 <div style="text-align: justify">
 
@@ -120,27 +130,42 @@ La Tabla \@ref(tab:tab-controls) muestra las variables de control para este estu
 
 La mayoría de las variables de control se utilizarán en su nivel de medición original, a excepción de tres. Primero, se calcularon dos indices a partir de los indicadores de ideología: uno para medir SDO y otro para medir RWA. Ambos indices tienen como valor mínimo 0 y valor máximo 1, donde a mayor valor mayor es la presencia de ideología SDO o RWA. Segundo, el nivel educacional fue recodificado en base a categorías CINE 2011. Tercero, la pertenencia a pueblos indigenas fue recodfificada a _(1) Pertenece a pueblo Mapuche, (2) Pertenece a otro pueblo - (3) No pertenece a ningún pueblo_, tal y como se observa en la Tabla \@ref(tab:tab-controls).
 
-```{r include=FALSE}
-cap3 <- "Variables de control"
-# if (knitr::is_html_output()) {tb <- table_nums("tb",cap)} else {tb <- cap}
-```
 
-```{r tab-controls, echo=FALSE}
-tab03 <- read.csv(file = "tables/table03.csv",header = 1,sep = ";",encoding = "UTF-8")
-cnames <- c("Tipo de control","Concepto","Indicador", "Categorías de respuesta")
+```{r tab-controls, results='asis'}
 
-kable(tab03,table_format,booktabs = T, linesep = "",col.names = cnames, caption = cap3) %>%
-  kable_styling(
-    full_width = T,
-    latex_options = c("hold_position"),
-    position = "center",
-    font_size = 10,
-    bootstrap_options=c("striped", "bordered")) %>%
-  column_spec(column = 1, width = "2 cm", ) %>%
-  column_spec(column = 2, width = "2 cm", ) %>%
-  column_spec(column = 3,width = "7 cm") %>%
-  column_spec(column = 4,width = "4 cm") %>%
-  collapse_rows(columns = 1:2,valign = "middle")
+if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
+if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
+pacman::p_load(knitr, kableExtra, dplyr, lavaan, sjPlot, ordinal, sjmisc, sjlabelled, ggrepel, summarytools) # librerias
+knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
+                      message = FALSE,  # mensajes/avisos de librerias  
+                      cache = FALSE,    # cache de los chunks,usar analisis pesados
+                      # out.width = '50%',# largo de imagen en %
+                      fig.pos= "H",     # posicion figuras H = HERE
+                      echo = FALSE      # incluir chunk en output
+)
+
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+ df_con <- dfSummary(dplyr::select(procjv_analysis_nona, ingreso, sexo_factor, educ_rec_factor, ingreso_satisfact_factor, indigena_rec_factor, sdo_indice, rwa_indice, trato_salud_factor, trato_carab_factor),
+               plain.ascii = FALSE,
+               style = "grid",
+               tmp.img.dir = "tmp",
+               graph.magnif = TRUE,
+               headings = F,  # encabezado
+               varnumbers = F, # num variable
+               labels.col = T, # etiquetas
+               na.col = F,    # missing
+               graph.col = T, # plot
+               valid.col = F, # n valido
+               col.widths = c(1000,10,10,10,10)
+               )
+df_con$Variable <- c("Grupo Desaventajado", "Grupo Desaventajado", "Grupo Desaventajado", "Grupo Desaventajado", "Grupo Desaventajado", "Ideologia", "Ideologia", "Trato Justo", "Trato Justo")
+
+df_con <- rename(df_con,
+                 Concept = Variable,
+                 Indicator = Label)
+kable(print(df_con), caption = "Variables de Control")
 ```
 
 \begin{center}
