@@ -80,7 +80,7 @@ options(knitr.kable.NA = '') # NA en kable = ''
                         reverse.scale = F,
                         show.n = FALSE) +
     # guides(colour = guide_legend(reverse = TRUE))
-    theme(legend.position="right") +
+    theme(legend.position="bottom") +
     labs(caption =
            paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")")) + guides(colour = guide_legend(reverse = TRUE))
   
@@ -144,8 +144,8 @@ df_sj<- rbind(c,b,a)
   geom_density(aes(x=promedio,fill=`Recompensado:`
 ), alpha=0.4) +
   scale_x_continuous(name = "Sentido de Injusticia (J)",
-                     breaks=0:5,
-                     labels = as.character(0:5)) +
+                     breaks=-5:5,
+                     labels = as.character(-5:5)) +
   ylab("Density")+
   theme(legend.position="bottom") + theme_classic() +
     labs(caption =
@@ -155,7 +155,7 @@ df_sj<- rbind(c,b,a)
 
 <div style="text-align: justify">
 
-En la Figura \@ref(fig:den-sj) se presenta la distribución de las tres variables que representan el sentido de injusticia: para el entrevistado (reflexivo), gerente y el obrero (no reflexivo). En lo que respecta al sentido de injusticia no reflexivo, se observa que gran parte de los entrevistados considera que los gerentes están injustamente sobrerecompensados ($J_{gerente}>0$) y que los obreros están injustamente subrecompensados ($|J_{obrero}|>0$). Al comparar ambos indicadores, destaca que la magnitud de injusticia evaluada es distinta en ambas ocupaciones, es decir, los entrevistados consideran que los gerentes están más injustamente sobrerecompensados de lo que los obreros están injustamente subrecompensados. En lo que respecta al sentido de injusticia reflexivo, la mayoría de los entrevistados evalúan que están injustamente subrecompensados con sus ingresos ($|J_{entrevistado}|>0$), aunque existe una proporción considerable de entrevistados que evalúan sus ingresos como justos ($|J_{entrevistado}|=0$). Al comparar la situación del entrevistado y la figura del obrero, se observa una magnitud de injusticia levemente mayor para la evaluación del obrero.
+En la Figura \@ref(fig:den-sj) se presenta la distribución de las tres variables que representan el sentido de injusticia: para el entrevistado (reflexivo), gerente y el obrero (no reflexivo). En lo que respecta al sentido de injusticia no reflexivo, se observa que gran parte de los entrevistados considera que los gerentes están injustamente sobrerecompensados ($J_{gerente}>0$) y que los obreros están injustamente subrecompensados ($-J_{obrero}>0$). Al comparar ambos indicadores, destaca que la magnitud de injusticia evaluada es distinta en ambas ocupaciones, es decir, los entrevistados consideran que los gerentes están más injustamente sobrerecompensados de lo que los obreros están injustamente subrecompensados. En lo que respecta al sentido de injusticia reflexivo, la mayoría de los entrevistados evalúan que están injustamente subrecompensados con sus ingresos ($-J_{entrevistado}>0$), aunque existe una proporción considerable de entrevistados que evalúan sus ingresos como justos ($-J_{entrevistado}=0$). Al comparar la situación del entrevistado y la figura del obrero, se observa una magnitud de injusticia levemente mayor para la evaluación del obrero.
 
 ```{r sj-jvcamb, fig.cap="Medias del Sentido de Injusticia por Justificación de la Violencia por el Cambio Social"}
 # table1::table1(~sj_obrero + sj_ceo + sj_entrevistado | jv_est_2019_factor, data = procjv_analysis_nona, caption = "Just. Viol. Cambio. - Que estudiantes lancen piedras a carabineros")
@@ -296,7 +296,7 @@ ggplot(df, aes(x,y,group =Recompensado, name = Recompensado, color = Recompensad
                             "Muchas veces",
                             "Siempre")) +
     labs(caption =
-           paste0("Fuente: Elaboración propia  a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
 
 
 ```
@@ -484,7 +484,7 @@ texreg::knitreg(list(jv_est_2019.modelmulpub1,
         omit.coef=omit_coef,
         include.thresholds=FALSE,
         custom.gof.rows=list(Controles=c("No","Desv.","Ideol.","Trato", "Lit.", "Lit. y Exp."),
-                             R2Nagelkerke=c("0.026",	"0.054",	"0.110",	"0.162",	"0.181",	"0.280")),
+                             R2Nagelkerke=c("0.019",	"0.047",	"0.103",	"0.157",	"0.176",	"0.276")),
         groups=list("Sentido de Injusticia (J)"=1:3,
                     "Sexo (ref: Hombre)"=5,
                     "Satisfacción Ingresos (ref: Totalmente satisfecho)" = 6:9,
@@ -499,17 +499,103 @@ texreg::knitreg(list(jv_est_2019.modelmulpub1,
 
 <div style="text-align: justify">
 
-En la Tabla \@ref(tab:jv-est-model) se presentan las regresiones logísticas ordinales para la justificación de la violencia por el cambio social, específicamente, para aquella situación en la que estudiantes lanzan piedras a carabineros. Consistente con lo planteado en **H1a**, se observa un efecto significativo positivo del sentido de injusticia hacia el gerente en la justificación de la violencia por el cambio social (*Log-Odds: .30, p < 0.01, para el Modelo 1*). Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes lancen piedras a carabineros. Este efecto se mantiene en términos de magnitud y significancia cuando se controla por la pertenencia a grupos desaventajados, ideología, percepción de justicia procesal, interacciones y controles exploratorios (*Log-Odds: 1.96, p < 0.01, para el Modelo 6*). Este hallazgo entrega evidencia para sostener que el sentido de injusticia respecto a la figura del gerente podría instalarse como una determinante a profundizar en los estudios de justificación de la violencia.
+En la Tabla \@ref(tab:jv-est-model) se presentan las regresiones logísticas ordinales para la justificación de la violencia por el cambio social, específicamente, para aquella situación en la que estudiantes lanzan piedras a carabineros. Consistente con lo planteado en **H1a**, se observa un efecto significativo positivo del sentido de injusticia hacia el gerente en la justificación de la violencia por el cambio social (*Log-Odds: .22, p < 0.01, para el Modelo 1*). Dicho de otra forma, a medida que aumenta la evaluación de que los gerentes están injustamente sobrerecompensados, más se justifica que estudiantes lancen piedras a carabineros. Este efecto se mantiene en términos de magnitud y significancia cuando se controla por la pertenencia a grupos desaventajados, ideología, percepción de justicia procesal, interacciones y controles exploratorios (*Log-Odds: 1.95, p < 0.01, para el Modelo 6*). Este hallazgo entrega evidencia para sostener que el sentido de injusticia respecto a la figura del gerente podría instalarse como una determinante a profundizar en los estudios de justificación de la violencia.
 
 <div style="text-align: justify">
 
 En lo que respecta a los efectos de interacción, se introdujeron dos términos: sexo por sentido de injusticia para gerente e insatisfacción con los ingresos por sentido de injusticia para gerente. Se escojen estos efectos ya que presentan relaciones directas significativas en los modelos anteriores. Por ejemplo, los efectos directos muestran que 
 
-Los resultados muestran evidencia suficiente para sostener la hipótesis **H2a** para la satisfacción con los ingresos, pero muestran un efecto contrario al esperado para el caso del sexo. En detalle... 
+Los resultados muestran evidencia suficiente para sostener la hipótesis **H2a** para la satisfacción con los ingresos, pero muestran un efecto contrario al esperado para el caso del sexo. En detalle... en la Figura \@ref(fig:intsex) y en la figura \@ref(fig:intsatisfact) 
+
+```{r intsatisfact, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Interacción entre Justificación de Violencia por el Cambio Social, Satisfacción con los Ingresos y Sentido de Injusticia"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+
+jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ 
+                                 sj_ceo_rec + 
+                                 sj_obrero_rec + 
+                                 sj_entrevistado + 
+                                 ingreso + 
+                                 sexo_factor + 
+                                 ingreso_satisfact_factor + 
+                                 educ_rec_factor + 
+                                 indigena_rec_factor + 
+                                 sdo_indice + 
+                                 rwa_indice + 
+                                 trato_salud_factor + 
+                                 trato_carab_factor + 
+                                 sexo_factor*sj_ceo_rec + 
+                                 ingreso_satisfact_factor*sj_ceo_rec, 
+                               data = procjv_analysis_nona)
+
+plot_it2<- plot_model(jv_est_2019.modelmulpub5, type = "pred", terms = c("ingreso_satisfact_factor", "sj_ceo_rec"), mdrt.values = "meansd", title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha") +  scale_x_continuous(breaks = c(1,2,3,4,5), labels=c("TS", 
+                            "", 
+                            "", 
+                            "",
+                            "TI")) 
+
+
+plot_it2$data$response.level[plot_it2$data$response.level == 1] <- "1. Nunca"
+plot_it2$data$response.level[plot_it2$data$response.level == 2] <- "2. Pocas veces"
+plot_it2$data$response.level[plot_it2$data$response.level == 3] <- "3. Algunas veces"
+plot_it2$data$response.level[plot_it2$data$response.level == 4] <- "4. Muchas veces"
+plot_it2$data$response.level[plot_it2$data$response.level == 5] <- "5. Siempre"
+
+plot_it2$data$group <- factor(plot_it2$data$group, levels = c(0.13, 1.13, 2.13), labels = c("Media-DE","Media","Media+DE"))
+plot_it2$data$group_col <- factor(plot_it2$data$group_col, levels = c(0.13, 1.13, 2.13), labels = c("Media-DE","Media","Media+DE"))
+
+plot_it2$data <- plot_it2$data %>% filter(x == 1 | x == 5)
+
+plot_it2 + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],"). Nota: 'TS' refiere a 'Totalmente Satisfecho' y 'TI' refiere a 'Totalmente Insatisfecho'"))
+```
+
+
+```{r intsex, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Interacción entre Justificación de Violencia por el Cambio Social, Sexo y Sentido de Injusticia"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+
+jv_est_2019.modelmulpub5<- clm(jv_est_2019_factor ~ 
+                                 sj_ceo_rec + 
+                                 sj_obrero_rec + 
+                                 sj_entrevistado + 
+                                 ingreso + 
+                                 sexo_factor + 
+                                 ingreso_satisfact_factor + 
+                                 educ_rec_factor + 
+                                 indigena_rec_factor + 
+                                 sdo_indice + 
+                                 rwa_indice + 
+                                 trato_salud_factor + 
+                                 trato_carab_factor + 
+                                 sexo_factor*sj_ceo_rec + 
+                                 ingreso_satisfact_factor*sj_ceo_rec, 
+                               data = procjv_analysis_nona)
+
+plot_it1<- plot_model(jv_est_2019.modelmulpub5, type = "pred", terms = c("sexo_factor", "sj_ceo_rec"), mdrt.values = "meansd", title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha")
+
+
+plot_it1$data$response.level[plot_it1$data$response.level == 1] <- "1. Nunca"
+plot_it1$data$response.level[plot_it1$data$response.level == 2] <- "2. Pocas veces"
+plot_it1$data$response.level[plot_it1$data$response.level == 3] <- "3. Algunas veces"
+plot_it1$data$response.level[plot_it1$data$response.level == 4] <- "4. Muchas veces"
+plot_it1$data$response.level[plot_it1$data$response.level == 5] <- "5. Siempre"
+
+plot_it1$data$group <- factor(plot_it1$data$group, levels = c(0.13, 1.13, 2.13), labels = c("Media-DE","Media","Media+DE"))
+plot_it1$data$group_col <- factor(plot_it1$data$group_col, levels = c(0.13, 1.13, 2.13), labels = c("Media-DE","Media","Media+DE"))
+
+plot_it1 + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+
+```
 
 <div style="text-align: justify">
 
-El ajuste de los modelos muestra dos resultados a destacar. En primer lugar, el modelo que introduce las variables de justicia en el trato presenta un ajuste considerablemente mejor que el modelo que introduce las variables de grupos desaventajados e ideología (*R2 Nagelkerke: .110 para Modelo 3 y R2 Nagelkerke: .162 para Modelo 4*). En segundo lugar, el modelo que incluye las variables de control exploratorias presenta un ajuste considerablemente mejor que el modelo que incluye las interacciones (*R2 Nagelkerke: .181 para Modelo 5 y R2 Nagelkerke: .280 para el Modelo 6*). En suma, estos hallazgos evidencian el rol explicativo que tiene el trato justo y los controles exploratorios (i.e confianza en carabineros, frecuencia participación en marchas y posición política) en la justificación de la violencia por el cambio social.
+El ajuste de los modelos muestra dos resultados a destacar. En primer lugar, el modelo que introduce las variables de justicia en el trato presenta un ajuste considerablemente mejor que el modelo que introduce las variables de grupos desaventajados e ideología (*R2 Nagelkerke: .103 para Modelo 3 y R2 Nagelkerke: .157 para Modelo 4*). En segundo lugar, el modelo que incluye las variables de control exploratorias presenta un ajuste considerablemente mejor que el modelo que incluye las interacciones (*R2 Nagelkerke: .176 para Modelo 5 y R2 Nagelkerke: .276 para el Modelo 6*). En suma, estos hallazgos evidencian el rol explicativo que tiene el trato justo y los controles exploratorios (i.e confianza en carabineros, frecuencia participación en marchas y posición política) en la justificación de la violencia por el cambio social.
 
 ```{r jv-carab1-model, echo=FALSE, results='asis', cache = T}
 
@@ -656,7 +742,7 @@ texreg::knitreg(list(jv_carab1_2019.modelmulpub1,
         omit.coef=omit_coef,
         include.thresholds=FALSE,
         custom.gof.rows=list(Controles=c("No","Desv.","Ideol.","Trato", "Lit.", "Lit. y Exp."),
-                             R2Nagelkerke=c("0.035",	"0.068",	"0.147",	"0.165",	"0.172",	"0.199")), # ESTOS VALORES SE EXTRAEN DEL CALCULO DE MODELOS EN EL RMD DE ANÁLISIS MULTIVARIADO.
+                             R2Nagelkerke=c("0.033",	"0.065",	"0.145",	"0.163",	"0.171",	"0.198")), # ESTOS VALORES SE EXTRAEN DEL CALCULO DE MODELOS EN EL RMD DE ANÁLISIS MULTIVARIADO.
         groups=list("Sentido de Injusticia (J)"=1:3,
                     "Educación (ref: Primaria incompleta menos)"=4:7,
                     "Ideologia" = 8:9,
@@ -671,7 +757,7 @@ texreg::knitreg(list(jv_carab1_2019.modelmulpub1,
 
 <div style="text-align: justify">
 
-En lo que respecta a la violencia por el control social, en la Tabla \@ref(tab:jv-carab1-model) se presentan las regresiones logísticas ordinales para la justificación de que carabineros reprima marchas pacificas. Aquí se observa un efecto significativo negativo del sentido de injusticia de obreros en la justificación de la violencia por el control social (*Log-Odds: -1.02, p < 0.01, para el Modelo 1*). Este efecto se puede interpretar como que a menor evaluación de que los obreros están injustamente recompensados, más se justifica la violencia por el control social, lo cual es consistente con la hipótesis **H1b**. Este efecto se mantiene significativo al controlar por la pertenencia a grupos desaventajados. Dicho de otra forma, independiente de si los individuos pertenecen a grupos desaventajados, estos justifican la violencia de carabineros en función de qué tan justa consideran que es la distribución de ingresos de la figura del obrero. No obstante, el efecto desaparece una vez se controla por la ideología (SDO y RWA) de los individuos, lo que indica la relevancia de la ideología para explicar las justificaciones de violencia por el control social.
+En lo que respecta a la violencia por el control social, en la Tabla \@ref(tab:jv-carab1-model) se presentan las regresiones logísticas ordinales para la justificación de que carabineros reprima marchas pacificas. Aquí se observa un efecto significativo negativo del sentido de injusticia de obreros en la justificación de la violencia por el control social (*Log-Odds: -.89, p < 0.01, para el Modelo 1*). Este efecto se puede interpretar como que a menor evaluación de que los obreros están injustamente recompensados, más se justifica la violencia por el control social, lo cual es consistente con la hipótesis **H1b**. Este efecto se mantiene significativo al controlar por la pertenencia a grupos desaventajados. Dicho de otra forma, independiente de si los individuos pertenecen a grupos desaventajados, estos justifican la violencia de carabineros en función de qué tan justa consideran que es la distribución de ingresos de la figura del obrero. No obstante, el efecto desaparece una vez se controla por la ideología (SDO y RWA) de los individuos, lo que indica la relevancia de la ideología para explicar las justificaciones de violencia por el control social.
 
 <div style="text-align: justify">
 
@@ -679,7 +765,7 @@ En lo que respecta a las interacciones, no se encuentran efectos significativos 
 
 <div style="text-align: justify">
 
-A partir del ajuste de los modelos se observa que las variables de ideología cuentan con un alto rol explicativo en comparación a la introducción de otras variables. En detalle, el modelo que incluye las variables de ideología ofrece un ajuste considerablemente mayor que el modelo que solo incluye variables del sentido de injusticia y pertenencia a grupos desaventajados (*R2 Nagelkerke: .068 para Modelo 2 y R2 Nagelkerke: .147 para el Modelo 3*). De esta manera, y consistente con la literatura, las variables de ideología corresponden a predictores relevantes para la justificación de la violencia por el control social.
+A partir del ajuste de los modelos se observa que las variables de ideología cuentan con un alto rol explicativo en comparación a la introducción de otras variables. En detalle, el modelo que incluye las variables de ideología ofrece un ajuste considerablemente mayor que el modelo que solo incluye variables del sentido de injusticia y pertenencia a grupos desaventajados (*R2 Nagelkerke: .065 para Modelo 2 y R2 Nagelkerke: .145 para el Modelo 3*). De esta manera, y consistente con la literatura, las variables de ideología corresponden a predictores relevantes para la justificación de la violencia por el control social.
 
 ```{r jv-carab2-model, echo=FALSE, results='asis', cache = T}
 
@@ -830,7 +916,7 @@ texreg::knitreg(list(jv_carab2_2019.modelmulpub1,
         omit.coef=omit_coef,
         include.thresholds=FALSE,
         custom.gof.rows=list(Controles=c("No","Desv.","Ideol.","Trato", "Lit.", "Lit. y Exp."),
-                             R2Nagelkerke=	c("0.054",	"0.089",	"0.159",	"0.201",	"0.213",	"0.262")),
+                             R2Nagelkerke=c("0.051",	"0.085",	"0.155",	"0.198",	"0.211",	"0.261")),
         groups=list("Sentido de Injusticia (J)"=1:3,
                     "Satisfacción Ingresos (ref: Totalmente satisfecho)"=5:8,
                     "Ideologia" = 9:10,
@@ -844,15 +930,56 @@ texreg::knitreg(list(jv_carab2_2019.modelmulpub1,
 
 <div style="text-align: justify">
 
-La Tabla \@ref(tab:jv-carab2-model) muestra los resultados del análisis de regresión logística ordinal para la justificación de que carabineros desalojen liceos en toma. Aquí se observa un efecto significativo y negativo del sentido de injusticia de obrero (*Log-Odds: -.97, p < 0.001, para el Modelo 1*) y del sentido de injusticia del entrevistado (*Log-Odds: -.66, p < 0.01, para el Modelo 1*). Es decir, quienes evalúan menor injusticia en la distribución de ingresos tanto en la figura del obrero, como en sus propios ingresos, justifican más la violencia por el control social. No obstante, al momento de controlar por las variables relevantes según la literatura, la mantención de los efectos varía según el tipo de sentido de injusticia. En el caso del sentido de injusticia del entrevistado, el efecto desaparece al controlar por la pertenencia a grupos desaventajados. En cambio, el efecto del sentido de injusticia para el obrero se mantiene al controlar por todas las variables relevantes por literatura (*Log-Odds: -.75, p < 0.01, para el Modelo 4*), aunque desaparece en el modelo que incluye los efectos de interacción. Pese a lo anterior, los resultados entregan evidencia para la hipótesis **H1b**.
+La Tabla \@ref(tab:jv-carab2-model) muestra los resultados del análisis de regresión logística ordinal para la justificación de que carabineros desalojen liceos en toma. Aquí se observa un efecto significativo y negativo del sentido de injusticia de obrero (*Log-Odds: -.83, p < 0.001, para el Modelo 1*) y del sentido de injusticia del entrevistado (*Log-Odds: -.67, p < 0.01, para el Modelo 1*). Es decir, quienes evalúan menor injusticia en la distribución de ingresos tanto en la figura del obrero, como en sus propios ingresos, justifican más la violencia por el control social. No obstante, al momento de controlar por las variables relevantes según la literatura, la mantención de los efectos varía según el tipo de sentido de injusticia. En el caso del sentido de injusticia del entrevistado, el efecto desaparece al controlar por la pertenencia a grupos desaventajados. En cambio, el efecto del sentido de injusticia para el obrero se mantiene al controlar por todas las variables relevantes por literatura (*Log-Odds: -.59, p < 0.01, para el Modelo 4*), aunque desaparece en el modelo que incluye los efectos de interacción. Pese a lo anterior, los resultados entregan evidencia para la hipótesis **H1b**.
 
 <div style="text-align: justify">
 
 En lo que respecta a las interacciones, no se encuentran efectos significativos en ninguno de los términos introducidos en los modelos, por lo que no hay evidencia para sostener la hipótesis **H2b**.
 
+```{r intingreso, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Interacción entre Justificación de Violencia por el Control Social, Ingresos y Sentido de Injusticia"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+jv_carab2_2019.modelmulpub5<- clm(jv_carab2_2019_factor ~ 
+                                    sj_ceo_rec + 
+                                    sj_obrero_rec + 
+                                    sj_entrevistado_rec + 
+                                    ingreso +
+                                    sexo_factor + 
+                                    ingreso_satisfact_factor +
+                                    educ_rec_factor + 
+                                    indigena_rec_factor + 
+                                    sdo_indice + 
+                                    rwa_indice +
+                                    trato_salud_factor + 
+                                    trato_carab_factor + 
+                                    ingreso*sj_obrero_rec + 
+                                    ingreso_satisfact_factor*sj_obrero_rec,
+                                  data = procjv_analysis_nona)
+
+plot_it3<- plot_model(jv_carab2_2019.modelmulpub5, type = "pred", terms = c("ingreso[all]", "sj_obrero_rec"), mdrt.values = "meansd", title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha")
+
+
+plot_it3$data$response.level[plot_it3$data$response.level == 1] <- "1. Nunca"
+plot_it3$data$response.level[plot_it3$data$response.level == 2] <- "2. Pocas veces"
+plot_it3$data$response.level[plot_it3$data$response.level == 3] <- "3. Algunas veces"
+plot_it3$data$response.level[plot_it3$data$response.level == 4] <- "4. Muchas veces"
+plot_it3$data$response.level[plot_it3$data$response.level == 5] <- "5. Siempre"
+
+plot_it3$data$group <- factor(plot_it3$data$group, levels = c(0.22, 0.64, 1.06), labels = c("Media-DE","Media","Media+DE"))
+plot_it3$data$group_col <- factor(plot_it3$data$group_col, levels = c(0.22, 0.64, 1.06), labels = c("Media-DE","Media","Media+DE"))
+
+plot_it3 + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+
+```
+
+oalala en la Figura \@ref(fig:intingreso)
+
 <div style="text-align: justify">
 
-El ajuste de los modelos muestra evidencia respecto al rol explicativo de la ideología para la justificación de que carabineros desalojen tomas. En detalle, se observa que el ajuste del modelo que introduce las variables de ideología es considerablemente mayor que el modelo que solo incluye el sentido de injusticia y la pertenencia a grupos desaventajados (*R2 Nagelkerke: .089 para Modelo 2 y R2 Nagelkerke: .159 para el Modelo 3*). De esta manera, se evidencia la relevancia que tienen variables ideológicas para explicar la justificación de la violencia por el control social.
+El ajuste de los modelos muestra evidencia respecto al rol explicativo de la ideología para la justificación de que carabineros desalojen tomas. En detalle, se observa que el ajuste del modelo que introduce las variables de ideología es considerablemente mayor que el modelo que solo incluye el sentido de injusticia y la pertenencia a grupos desaventajados (*R2 Nagelkerke: .085 para Modelo 2 y R2 Nagelkerke: .155 para el Modelo 3*). De esta manera, se evidencia la relevancia que tienen variables ideológicas para explicar la justificación de la violencia por el control social.
 
 
 
