@@ -21,7 +21,7 @@ table_format2 = if(is_html_output()) {
 
 <div style="text-align: justify">
 
-Este estudio se basa en la información proporcionada por la base de datos del Estudio Longitudinal Social de Chile (ELSOC) del Centro de Estudios de Conflicto y Cohesión Social (COES). Estos datos son de tipo panel de aplicación anual a dos muestras independientes, una original y otra de refresco. El cuestionario contiene módulos de preguntas permanentes en todas las olas y otras intercaladas. El diseño muestral es complejo, probabilístico, por conglomerados, multietápico y estratificado según el tamaño de las ciudades. El objeto de análisis son hombres y mujeres entre 18 y 75 años en zonas urbanas, localizadas en 40 ciudades del país (92 comunas y 13 regiones). La unidad de información a utilizar son los encuestados correspondientes al año 2019 (n muestra original = 2135, n muestra refresco = 1264). A modo de énfasis, este estudio ocupara solamente los datos para la ola del 2019.
+Este estudio se basa en la información proporcionada por la base de datos del Estudio Longitudinal Social de Chile (ELSOC) del Centro de Estudios de Conflicto y Cohesión Social (COES). Estos datos son de tipo panel de aplicación anual a dos muestras independientes, una original y otra de refresco. El cuestionario contiene módulos de preguntas permanentes en todas las olas y otras intercaladas. El diseño muestral es complejo, probabilístico, por conglomerados, multietápico y estratificado según el tamaño de las ciudades. El objeto de análisis son hombres y mujeres entre 18 y 75 años en zonas urbanas, localizadas en 40 ciudades del país (92 comunas y 13 regiones). La unidad de información a utilizar son los encuestados correspondientes al año 2019 (n muestra original = 2135, n muestra refresco = 1264). En este estudio se utilizará solamente la ola 4, correspondiente a los datos del año 2019. La muestra efectiva de este estudio corresponde a 711 casos, siendo estos los casos validos una vez extraidos los casos en los que había al menos un dato perdido en las variables de hipótesis o de control.
 
 ## Variables
 
@@ -51,17 +51,12 @@ procjv_analysis_nona_lab <- procjv_analysis_nona
 
 procjv_analysis_nona_lab$jv_est_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_est_2019_factor, label = "Que estudiantes tiren piedras a Carabineros en una marcha por la educación del país")
 
+
 procjv_analysis_nona_lab$jv_carab1_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_carab1_2019_factor, label = "Que Carabineros use la fuerza para reprimir una manifestación pacifica")
+
 
 procjv_analysis_nona_lab$jv_carab2_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_carab2_2019_factor, label = "Que Carabineros desaloje a la fuerza a los estudiantes de un liceo en toma")
 
-# procjv_analysis_nona_lab$jv_est_2019_factor <- car::recode(procjv_analysis_nona_lab$jv_est_2019_factor, "
-#                                                            'Nunca se justifica' == 'Nunca';
-#                                                            'Pocas veces se justifica' == 'Pocas veces';
-#                                                            'Algunas veces se justifica' == 'Algunas veces';
-#                                                            'Muchas veces se justifica' == 'Muchas veces';
-#                                                            'Siempre se justifica' == 'Siempre'
-#                                                            ")
 
 df_vdep<- dfSummary(dplyr::select(procjv_analysis_nona_lab, jv_est_2019_factor, jv_carab1_2019_factor, jv_carab2_2019_factor),
                plain.ascii = FALSE,
@@ -113,7 +108,7 @@ El sentido de injusticia se mide en base a la Evaluación de Justicia ($J$) prop
 
 <div style="text-align: justify">
 
-A fin de facilitar la interpretación de las variables independientes, se efectúa un proceso de recodificación para que las tres variables compartan una escala común. Siguiendo los trabajos previos que han utilizado esta variable [@Resh2017; @Sabbagh2018], se calcula el valor absoluto de las evaluaciones de justicia para el entrevistado ($|J_{entrevistado}|$) y para el obrero ($|J_{obrero}|$). Esta recodificación permite interpretar todos los valores de la misma manera, donde a mayor valor en el indicador, más injusticia representa. La única diferencia es que, en el caso de la evaluación de injusticia del gerente, esta injusticia se debe a la sobrerecompensa, en cambio, en las evaluaciones para el entrevistado y el obrero, la injusticia se debe a la subrecompensa. En síntesis, las variables que se analizarán son: $J_{gerente}$, $|J_{obrero}|$ y $|J_{entrevistado}|$, donde a mayor valor de $J$, mayor es la injusticia que se evalúa.
+A fin de facilitar la interpretación de las variables independientes, se efectúa un proceso de recodificación para que las tres variables compartan una escala común. Primero, siguiendo los trabajos previos que han utilizado esta variable [@Resh2017; @Sabbagh2018], se multiplican por -1 las evaluaciones de justicia para el entrevistado ($J_{entrevistado}*-1$) y para el obrero ($J_{obrero}*-1$). Esta recodificación permite interpretar todos los valores de la misma manera, donde a mayor valor en el indicador, más injusticia representa. La única diferencia es que, en el caso de la evaluación de injusticia del gerente, esta injusticia se debe a la sobrerecompensa, en cambio, en las evaluaciones para el entrevistado y el obrero, la injusticia se debe a la subrecompensa. Segundo, los valores menores a 0 fueron recodificados a 0. En términos sustantivos, esto implica que se agrupan los casos que evalúan justicia perfecta y los casos que se evalúan a si mismos o los obreros como injustamente sobrerecompensados ($J_{obrero}*-1<0$ y $J_{entrevistado}*-1<0$) o a los gerentes como injustamente subrecompensados ($J_{gerente}<0$). Esta agrupación se justifica en la medida que estos casos corresponden a menos del 3% de la muestra (ver Anexos). En síntesis, las variables que se analizarán son: $J_{gerente}$, $J_{obrero}*-1$ y $J_{entrevistado}*-1$, donde a mayor valor de $J$, mayor es la injusticia que se evalúa.
 
 
 \begin{center}
