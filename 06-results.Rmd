@@ -23,7 +23,7 @@ load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/ra
 
 if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
 if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
-pacman::p_load(knitr, kableExtra, dplyr, lavaan, sjPlot, ordinal, sjmisc, sjlabelled, ggrepel) # librerias
+pacman::p_load(knitr, kableExtra, dplyr, lavaan, sjPlot, ordinal, sjmisc, sjlabelled, ggrepel, readxl, MASS, brant) # librerias
 knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
                       message = FALSE,  # mensajes/avisos de librerias  
                       cache = FALSE,    # cache de los chunks,usar analisis pesados
@@ -50,7 +50,7 @@ options(knitr.kable.NA = '') # NA en kable = ''
                                                                          hjust = 1)))
   #Plot : Perception of meritocracy student and family
   
-  data_plot <- select(procjv_nums_nona, 
+  data_plot <- dplyr::select(procjv_nums_nona, 
                       jv_est_2019,
                       jv_carab1_2019,
                       jv_carab2_2019)
@@ -66,7 +66,7 @@ options(knitr.kable.NA = '') # NA en kable = ''
   
   pjv<-
     data_plot%>%
-    select(jv_est_2019,
+    dplyr::select(jv_est_2019,
            jv_carab1_2019,
            jv_carab2_2019) %>%
     sjPlot::plot_likert(geom.colors = "PuBu",
@@ -1037,6 +1037,106 @@ plot_it3 + theme_classic() +
 Los resultados de los efectos de interacción para los ingresos muestran evidencia contraria a lo propuesto en la hipótesis **H2b**. En la Figura \@ref(fig:intingreso) se observa que el efecto positivo entre ingresos y justificación de la violencia por el control social se atenúa e incluso se invierte a medida que aumentan las evaluaciones de injusticia. En detalle, en individuos con evaluaciones de injusticia para los obreros bajo la media (*Media-DE, linea roja*) las probabilidades de responder que *Nunca se justifica* que carabineros desalojen tomas a la fuerza aumentan en la medida que disminuyen los ingresos. Sin embargo, en individuos con evaluaciones de injusticia medias esta relación se atenúa considerablemente (*Media, linea azul*) y en individuos con evaluaciones de injusticia sobre la media la relación se invierte (*Media+DE, linea verde*). Es decir, individuos que evalúan alta injusticia distributiva tienen menos probabilidades de responder que *Nunca se justifica* que carabineros use la fuerza para desalojar liceos en toma. A modo de ilustración, las probabilidades de que un individuo con el salario mínimo al año 2019 (i.e. aproximadamente 300.000 pesos) nunca justifique esta situación es de: 87% cuando evalúan injusticia bajo la media, 74% cuando evalúan injusticia media y 53% cuando evalúan injusticia sobre la media. En términos sustantivos esto implica que, si se califica a un individuo como perteneciente a grupos desaventajados a partir de sus ingresos, entonces las evaluaciones de injusticia distributiva atenúan que aquellos que pertenecen a grupos desaventajados tiendan a justificar menos la violencia por el control social.
 
 ### Chequeo de Supuestos
+
+```{r}
+round_df <- function(x, digits) {
+    # round all numeric variables
+    # x: data frame 
+    # digits: number of digits to round
+    numeric_columns <- sapply(x, mode) == 'numeric'
+    x[numeric_columns] <-  round(x[numeric_columns], digits)
+    x
+}
+```
+
+Los modelos ordinales itenen el supeusto de...
+
+Se debe chequear por  que...
+
+```{r}
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+
+jv_est_2019.modelmulpub1.test <- polr(jv_est_2019_factor ~ 
+                                  sj_ceo_rec + 
+                                  sj_obrero_rec + 
+                                  sj_entrevistado, 
+                                data = procjv_analysis_nona, Hess = TRUE)
+
+bt_est_1 <- brant(jv_est_2019.modelmulpub1.test)
+
+bt_est_1 <- as.data.frame(bt_est_1)
+
+rownames(bt_est_1) <- c("Modelo", "J Gerente", "J Obrero", "J Entrevistado")
+
+bt_est_1$Indicador <- rownames(bt_est_1)
+
+bt_est_1 <- bt_est_1 %>% dplyr::rename(gl = df,
+                                       Probabilidad = probability)
+
+bt_est_1 <- round_df(bt_est_1, 3)
+
+bt_est_1 <- bt_est_1[,c(4,1,2,3)]
+
+kable(bt_est_1,table_format,booktabs = T, linesep = "", caption = "ola") %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 12,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  column_spec(column = 4,width = "4 cm")
+```
+
+
+
+
+```{r tab-compm1, echo=FALSE}
+
+# cnames <- c("Codificacion","Indicador", "Categorías de respuesta")
+compm1  <- read_xlsx("input/data/tab.xlsx", sheet = 5)
+kable(compm1,table_format,booktabs = T, linesep = "", caption = "Log-Odds del Sentido de Injusticia por Codificaciones de Justificación de la Violencia (Modelo 1)") %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 12,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  column_spec(column = 4,width = "4 cm") %>%
+    column_spec(column = 5,width = "4 cm") %>%
+    column_spec(column = 6,width = "4 cm")
+```
+
+la tabla dice que
+
+```{r tab-compm4, echo=FALSE}
+
+# cnames <- c("Codificacion","Indicador", "Categorías de respuesta")
+compm4  <- read_xlsx("input/data/tab.xlsx", sheet = 4)
+kable(compm4,table_format,booktabs = T, linesep = "", caption = "Log-Odds del Sentido de Injusticia por Codificaciones de Justificación de la Violencia (Modelo 4)") %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 12,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  column_spec(column = 4,width = "4 cm") %>%
+    column_spec(column = 5,width = "4 cm") %>%
+    column_spec(column = 6,width = "4 cm")
+```
+
+esta otra tabka señala que
+
+
 
 ### Síntesis
 
