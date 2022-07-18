@@ -1019,7 +1019,7 @@ plot_it3$data$group_col <- factor(plot_it3$data$group_col, levels = c(0.22, 0.64
 
 plot_it3 + theme_classic() +
     labs(caption =
-           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")")) + scale_x_reverse()
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],"). Nota: El eje X fue invertido para que la interpretación sea de mayores a menores ingresos.")) + scale_x_reverse()
 
 ```
 
@@ -1036,49 +1036,57 @@ plot_it3 + theme_classic() +
 
 Los resultados de los efectos de interacción para los ingresos muestran evidencia contraria a lo propuesto en la hipótesis **H2b**. En la Figura \@ref(fig:intingreso) se observa que el efecto positivo entre ingresos y justificación de la violencia por el control social se atenúa e incluso se invierte a medida que aumentan las evaluaciones de injusticia. En detalle, en individuos con evaluaciones de injusticia para los obreros bajo la media (*Media-DE, linea roja*) las probabilidades de responder que *Nunca se justifica* que carabineros desalojen tomas a la fuerza aumentan en la medida que disminuyen los ingresos. Sin embargo, en individuos con evaluaciones de injusticia medias esta relación se atenúa considerablemente (*Media, linea azul*) y en individuos con evaluaciones de injusticia sobre la media la relación se invierte (*Media+DE, linea verde*). Es decir, individuos que evalúan alta injusticia distributiva tienen menos probabilidades de responder que *Nunca se justifica* que carabineros use la fuerza para desalojar liceos en toma. A modo de ilustración, las probabilidades de que un individuo con el salario mínimo al año 2019 (i.e. aproximadamente 300.000 pesos) nunca justifique esta situación es de: 87% cuando evalúan injusticia bajo la media, 74% cuando evalúan injusticia media y 53% cuando evalúan injusticia sobre la media. En términos sustantivos esto implica que, si se califica a un individuo como perteneciente a grupos desaventajados a partir de sus ingresos, entonces las evaluaciones de injusticia distributiva atenúan que aquellos que pertenecen a grupos desaventajados tiendan a justificar menos la violencia por el control social.
 
-### Chequeo de Supuestos
+### Chequeo de Supuesto
 
-```{r}
-round_df <- function(x, digits) {
-    # round all numeric variables
-    # x: data frame 
-    # digits: number of digits to round
-    numeric_columns <- sapply(x, mode) == 'numeric'
-    x[numeric_columns] <-  round(x[numeric_columns], digits)
-    x
-}
-```
+Los modelos de regresión logística ordinal se caracterizan por el uso de variables ordinales como dependientes, aproximando las interpretaciones a las de una regresión lineal (i.e. OLS), facilitando así la lectura de los resultados. Sin embargo, para poder funcionar, los modelos deben cumplir con un supuesto base denominado supuesto de proporcionalidad o de lineas paralelas [@Williams2006]. Este supuesto plantea que el efecto de las variables independientes del modelo (i.e. Log-Odds) es similar a través de todas las categorías de la variable dependiente, lo que se conoce como un efecto simetrico [@Williams2016]. Por ejemplo, en el caso de la justificación de la violencia, esto implica que las probabilidades de que un individuo responda *Siempre* (en comparación a las demás categorías), en función de una variable independiente, son las mismas a que responda *Siempre* o *Muchas veces* (en comparación a las demás categorías) y así sucesivamente. A fin de probar la robustez de los modelos presentados en este trabajo, se pondrá a prueba el supuesto de proporcionalidad.
 
-Los modelos ordinales itenen el supeusto de...
+Existen distintas formas de poner a prueba el supuesto de proporcionalidad y en este trabajo se utilizarán dos. La primera es a través de pruebas de hipótesis formales, donde al más conocida es la Prueba de Brant [@Brant1990]. En esta prueba, la hipótesis nula (i.e. H0) implica que se mantiene el supuesto de proporcionalidad, tanto para cada variable independiente, como para el modelo en total. Si el p-valor es menor a 0.05 esto implica que el efecto de una (o todas) las variables independientes no es el mismo a través de todas categorías de respuesta. La segunda es a través del ejercicio propuesto por @Williams2016, donde se calculan modelos de regresión logística binaria para cada posibilidad de combinación de las categorías de respuesta y se analiza si los Log-Odds de las variables de interés cambian en magnitud y sentido a través de los distintos modelos. Se utilizarán ambas formas para diagnosticar el cumplimiento del supuesto en los modelos presentados en este trabajo.
 
-Se debe chequear por  que...
+En lo que respecta a la Prueba de Brant, en las Tablas \@ref(tab:brant-est), \@ref(tab:brant-carab1) y \@ref(tab:brant-carab2) se presentan los resultados para el análisis de las tres variables dependientes del estudio: justificación de que estudiantes tiren piedras, justificación de que carabineros repriman marchas y justificación de que carabineros desalojen tomas. Se puede observar que el supuesto se cumple para el Modelo 1 de la justificación de que carabineros repriman marchas (*J Gerente p > 0.05, J' Obrero p > 0.05 y J' Entrevistado p > 0.05*) y para la justificación de que carabineros desalojen tomas (*J Gerente p > 0.05, J' Obrero p > 0.05 y J' Entrevistado p > 0.05*). Sin embargo, en el caso del la justificación de que estudiantes tiren piedras, el supuesto de proporcionalidad no se cumple para el predictor del sentido de injusticia gerente  (*J Gerente p < 0.05*). Siguiendo a @Williams2016, una violación del supuesto de proporcionalidad no necesariamente implica una invalidez de los resultados, sino que se puede considerar como una oportunidad para la reflexión sustantiva sobre el efecto asimétrico. A modo de abordar sustantivamente esta violación del supuesto y según lo propuesto por @Williams2016, se profundizará con el análisis de los Log-Odds anteriormente señalado y se sintetizará con una interpretación de los gráficos de probabilidades predichas.
 
-```{r}
+```{r brant-est}
 load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
 
 
-jv_est_2019.modelmulpub1.test <- polr(jv_est_2019_factor ~ 
-                                  sj_ceo_rec + 
-                                  sj_obrero_rec + 
-                                  sj_entrevistado, 
-                                data = procjv_analysis_nona, Hess = TRUE)
+bt_est_1 <- readxl::read_xlsx("input/data/tab_brant.xlsx", sheet = 1)
+kable(bt_est_1,booktabs = T, linesep = "", caption = "Prueba de Proporcionalidad de Brant para Justificación de que Estudiantes Tiren Piedras (Modelo 1)") %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 12,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  column_spec(column = 4,width = "4 cm")
+```
 
-bt_est_1 <- brant(jv_est_2019.modelmulpub1.test)
+```{r brant-carab1}
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
 
-bt_est_1 <- as.data.frame(bt_est_1)
 
-rownames(bt_est_1) <- c("Modelo", "J Gerente", "J Obrero", "J Entrevistado")
+bt_est_1 <- readxl::read_xlsx("input/data/tab_brant.xlsx", sheet = 2)
+kable(bt_est_1,booktabs = T, linesep = "", caption = "Prueba de Proporcionalidad de Brant para Justificación de que Carabineros Repriman Marchas Pacificas (Modelo 1)") %>%
+  kable_styling(
+    full_width = T,
+    latex_options = c("hold_position"),
+    position = "center",
+    font_size = 12,
+    bootstrap_options=c("striped", "bordered")) %>%
+  column_spec(column = 1, width = "2 cm", ) %>%
+  column_spec(column = 2,width = "7 cm") %>%
+  column_spec(column = 3,width = "4 cm") %>%
+  column_spec(column = 4,width = "4 cm")
+```
 
-bt_est_1$Indicador <- rownames(bt_est_1)
 
-bt_est_1 <- bt_est_1 %>% dplyr::rename(gl = df,
-                                       Probabilidad = probability)
+```{r brant-carab2}
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
 
-bt_est_1 <- round_df(bt_est_1, 3)
 
-bt_est_1 <- bt_est_1[,c(4,1,2,3)]
-
-kable(bt_est_1,table_format,booktabs = T, linesep = "", caption = "ola") %>%
+bt_est_1 <- readxl::read_xlsx("input/data/tab_brant.xlsx", sheet = 3)
+kable(bt_est_1,booktabs = T, linesep = "", caption = "Prueba de Proporcionalidad de Brant para Justificación de que Carabineros Desalojen Tomas (Modelo 1)") %>%
   kable_styling(
     full_width = T,
     latex_options = c("hold_position"),
@@ -1094,7 +1102,7 @@ kable(bt_est_1,table_format,booktabs = T, linesep = "", caption = "ola") %>%
 
 
 
-```{r tab-compm1, echo=FALSE}
+```{r tab-comp1, echo=FALSE}
 
 # cnames <- c("Codificacion","Indicador", "Categorías de respuesta")
 compm1  <- read_xlsx("input/data/tab.xlsx", sheet = 5)
@@ -1110,12 +1118,22 @@ kable(compm1,table_format,booktabs = T, linesep = "", caption = "Log-Odds del Se
   column_spec(column = 3,width = "4 cm") %>%
   column_spec(column = 4,width = "4 cm") %>%
     column_spec(column = 5,width = "4 cm") %>%
-    column_spec(column = 6,width = "4 cm")
+    column_spec(column = 6,width = "4 cm") %>% 
+  
+    footnote(general = "Las columnas representan el cálculo de modelos de regresión logística a partir de distintas formas de codificación de la variable dependiente",
+           alphabet = c("**Ordinal** se refiere al uso de la variable dependiente en forma ordinal.", 
+                        "**5 vs 1 2 3 4** compara la categoría *Siempre* con las demás.",
+                        "**4 5 vs 1 2 3** compara las categorías *Muchas veces* y *Siempre* con las demás.",
+                        "**3 4 5 vs 1 2** compara las categorías *Algunas veces*, *Muchas veces* y *Siempre* con las demás.",
+                        "**2 3 4 5 vs 1** compara las categorías *Pocas veces*, *Algunas veces*, *Muchas veces* y *Siempre* con *Nunca*.",
+                        "\\item *** p < 0.001; ** p < 0.01; * p < 0.05.\\item")
+           )
+    
 ```
 
-la tabla dice que
+En la Tabla \@ref(tab:tab-comp1) se muestra...
 
-```{r tab-compm4, echo=FALSE}
+```{r tab-comp4, echo=FALSE}
 
 # cnames <- c("Codificacion","Indicador", "Categorías de respuesta")
 compm4  <- read_xlsx("input/data/tab.xlsx", sheet = 4)
@@ -1131,11 +1149,126 @@ kable(compm4,table_format,booktabs = T, linesep = "", caption = "Log-Odds del Se
   column_spec(column = 3,width = "4 cm") %>%
   column_spec(column = 4,width = "4 cm") %>%
     column_spec(column = 5,width = "4 cm") %>%
-    column_spec(column = 6,width = "4 cm")
+    column_spec(column = 6,width = "4 cm") %>% 
+
+  footnote(general = "Las columnas representan el cálculo de modelos de regresión logística a partir de distintas formas de codificación de la variable dependiente",
+           alphabet = c("**Ordinal** se refiere al uso de la variable dependiente en forma ordinal.", 
+                        "**5 vs 1 2 3 4** compara la categoría *Siempre* con las demás.",
+                        "**4 5 vs 1 2 3** compara las categorías *Muchas veces* y *Siempre* con las demás.",
+                        "**3 4 5 vs 1 2** compara las categorías *Algunas veces*, *Muchas veces* y *Siempre* con las demás.",
+                        "**2 3 4 5 vs 1** compara las categorías *Pocas veces*, *Algunas veces*, *Muchas veces* y *Siempre* con *Nunca*.",
+                        "\\item *** p < 0.001; ** p < 0.01; * p < 0.05.\\item")
+           )
 ```
 
-esta otra tabka señala que
+En la Tabla \@ref(tab:tab-comp4) se muestra...
 
+
+```{r predest4, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Probabilidades Predichas para la Justificación de que Estudiantes Tiren Piedras según Sentido de Injusticia Gerente (Modelo 4)"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+jv_est_2019.modelmulpub4<- clm(jv_est_2019_factor ~ 
+                                 sj_ceo_rec + 
+                                 sj_obrero_rec + 
+                                 sj_entrevistado + 
+                                 ingreso + 
+                                 sexo_factor + 
+                                 ingreso_satisfact_factor + 
+                                 educ_rec_factor + 
+                                 indigena_rec_factor + 
+                                 sdo_indice + 
+                                 rwa_indice + 
+                                 trato_salud_factor + 
+                                 trato_carab_factor, 
+                               data = procjv_analysis_nona)
+
+plot_pred_jvest_4 <- plot_model(jv_est_2019.modelmulpub4, type = "pred", terms = c("sj_ceo_rec[all]"), title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha")
+
+plot_pred_jvest_4$data$response.level[plot_pred_jvest_4$data$response.level == 1] <- "1. Nunca"
+plot_pred_jvest_4$data$response.level[plot_pred_jvest_4$data$response.level == 2] <- "2. Pocas veces"
+plot_pred_jvest_4$data$response.level[plot_pred_jvest_4$data$response.level == 3] <- "3. Algunas veces"
+plot_pred_jvest_4$data$response.level[plot_pred_jvest_4$data$response.level == 4] <- "4. Muchas veces"
+plot_pred_jvest_4$data$response.level[plot_pred_jvest_4$data$response.level == 5] <- "5. Siempre"
+
+plot_pred_jvest_4  + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+
+
+```
+
+En la Figura \@ref(fig:predest4) se muestra...
+
+
+```{r predcarab12, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Probabilidades Predichas para la Justificación de que Carabineros Reprima Marchas Pacificas según Sentido de Injusticia Obrero (Modelo 2)"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+
+ jv_carab1_2019.modelmulpub2<- clm(jv_carab1_2019_factor ~ 
+                                     sj_ceo_rec + 
+                                     sj_obrero_rec + 
+                                     sj_entrevistado + 
+                                     ingreso + 
+                                     sexo_factor + 
+                                     ingreso_satisfact_factor + 
+                                     educ_rec_factor + 
+                                     indigena_rec_factor, 
+                                   data = procjv_analysis_nona)
+
+plot_pred_carab1_2 <- plot_model(jv_carab1_2019.modelmulpub2, type = "pred", terms = c("sj_obrero_rec[all]"), title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha")
+
+plot_pred_carab1_2$data$response.level[plot_pred_carab1_2$data$response.level == 1] <- "1. Nunca"
+plot_pred_carab1_2$data$response.level[plot_pred_carab1_2$data$response.level == 2] <- "2. Pocas veces"
+plot_pred_carab1_2$data$response.level[plot_pred_carab1_2$data$response.level == 3] <- "3. Algunas veces"
+plot_pred_carab1_2$data$response.level[plot_pred_carab1_2$data$response.level == 4] <- "4. Muchas veces"
+plot_pred_carab1_2$data$response.level[plot_pred_carab1_2$data$response.level == 5] <- "5. Siempre"
+
+plot_pred_carab1_2 + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+
+
+```
+
+En la Figura \@ref(fig:predcarab12) se muestra...
+
+
+```{r predcarab24, fig.width=11, fig.height=6, out.width = "300%", out.height= "300%", fig.cap="Probabilidades Predichas para la Justificación de que Carabineros Desaloje Liceos en Toma según Sentido de Injusticia Obrero (Modelo 4)"}
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+
+jv_carab2_2019.modelmulpub1<- clm(jv_carab2_2019_factor ~ 
+                                    sj_ceo_rec + 
+                                    sj_obrero_rec +
+                                    sj_entrevistado_rec + 
+                                    ingreso +
+                                    sexo_factor + 
+                                    ingreso_satisfact_factor + 
+                                    educ_rec_factor +
+                                    indigena_rec_factor +
+                                    sdo_indice + 
+                                    rwa_indice + 
+                                    trato_salud_factor +
+                                    trato_carab_factor, 
+                                  data = procjv_analysis_nona)
+
+plot_pred_carab2_4 <- plot_model(jv_carab2_2019.modelmulpub4, type = "pred", terms = c("sj_obrero_rec[all]"), title = "")  + geom_line() + theme(legend.position="bottom") + ylab("Probabilidad Predicha")
+
+plot_pred_carab2_4$data$response.level[plot_pred_carab2_4$data$response.level == 1] <- "1. Nunca"
+plot_pred_carab2_4$data$response.level[plot_pred_carab2_4$data$response.level == 2] <- "2. Pocas veces"
+plot_pred_carab2_4$data$response.level[plot_pred_carab2_4$data$response.level == 3] <- "3. Algunas veces"
+plot_pred_carab2_4$data$response.level[plot_pred_carab2_4$data$response.level == 4] <- "4. Muchas veces"
+plot_pred_carab2_4$data$response.level[plot_pred_carab2_4$data$response.level == 5] <- "5. Siempre"
+
+plot_pred_carab2_4 + theme_classic() +
+    labs(caption =
+           paste0("Fuente: Elaboración propia a partir de ELSOC 2019"," (n=",dim(na.omit(procjv_analysis_nona))[1],")"))
+```
+
+En la Figura \@ref(fig:predcarab24) se muestra...
 
 
 ### Síntesis
