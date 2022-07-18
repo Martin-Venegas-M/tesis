@@ -29,10 +29,7 @@ tab:brant-est
 tab:brant-carab1
 tab:brant-carab2
 tab:tab-comp1
-tab:tab-comp4
 fig:predest4
-fig:predcarab12
-fig:predcarab24
 introducción
 preguntas-y-objetivos-de-investigación
 antecedentes-conceptuales-y-empíricos

@@ -182,7 +182,7 @@ div.csl-indent {
 <h2><span class="header-section-number">6.2</span> Multivariados<a href="multivariados.html#multivariados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div style="text-align: justify">
 
-<p>En la sección de análisis multivariados se busca poner a prueba las hipótesis del estudio controlando los hallazgos que han sido presentados la sección descriptiva, con las variables que han demostrado ser predicadores relevantes según la literatura. A fin de contrastar las hipótesis, se separa el análisis de resultados mulivariados en tres secciones. En la sección de <em>Efectos Directos</em> se presentan tres tablas de regresión logística ordinal, una para cada variable dependiente (i.e. JV Piedras, JV Represión y JV Desalojo). Estas tablas se utilizarán para poner a prueba las hipótesis <strong>H1a</strong> y <strong>H1b</strong>. En la sección de <em>Efectos de Interacción</em> se graficarán los modelos que presenten efectos de interacción significativos, con el fin de poner a prueba las hipóitesis <strong>H2a</strong> y <strong>H2b</strong>. En la sección de <em>Chequeo de Supuestos</em> se pondrán a prueba los modelos, para entregar evidencia respecto a la robustez de los modelos.</p>
+<p>En la sección de análisis multivariados se busca poner a prueba las hipótesis del estudio controlando los hallazgos que han sido presentados la sección descriptiva, con las variables que han demostrado ser predicadores relevantes según la literatura. A fin de contrastar las hipótesis, se separa el análisis de resultados mulivariados en tres secciones. En la sección de <em>Efectos Directos</em> se presentan tres tablas de regresión logística ordinal, una para cada variable dependiente (i.e. JV Piedras, JV Represión y JV Desalojo). Estas tablas se utilizarán para poner a prueba las hipótesis <strong>H1a</strong> y <strong>H1b</strong>. En la sección de <em>Efectos de Interacción</em> se graficarán los modelos que presenten efectos de interacción significativos, con el fin de poner a prueba las hipóitesis <strong>H2a</strong> y <strong>H2b</strong>. En la sección de <em>Chequeo de Supuesto</em> se pondrán a prueba los modelos, para entregar evidencia respecto a su robustez.</p>
 <div id="efectos-directos" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Efectos Directos<a href="multivariados.html#efectos-directos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table class="texreg" style="margin: 10px auto;border-collapse: collapse;border-spacing: 0px;color: #000000;border-top: 2px solid #000000;">
@@ -2863,9 +2863,8 @@ Figura 6.8: Interacción entre Justificación de Violencia por el Control Social
 </div>
 <div id="chequeo-de-supuesto" class="section level3 hasAnchor" number="6.2.3">
 <h3><span class="header-section-number">6.2.3</span> Chequeo de Supuesto<a href="multivariados.html#chequeo-de-supuesto" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Los modelos de regresión logística ordinal se caracterizan por el uso de variables ordinales como dependientes, aproximando las interpretaciones a las de una regresión lineal (i.e. OLS), facilitando así la lectura de los resultados. Sin embargo, para poder funcionar, los modelos deben cumplir con un supuesto base denominado supuesto de proporcionalidad o de lineas paralelas <span class="citation">(<a href="#ref-Williams2006" role="doc-biblioref">Williams, 2006</a>)</span>. Este supuesto plantea que el efecto de las variables independientes del modelo (i.e. Log-Odds) es similar a través de todas las categorías de la variable dependiente, lo que se conoce como un efecto simetrico <span class="citation">(<a href="#ref-Williams2016" role="doc-biblioref">Williams, 2016</a>)</span>. Por ejemplo, en el caso de la justificación de la violencia, esto implica que las probabilidades de que un individuo responda <em>Siempre</em> (en comparación a las demás categorías), en función de una variable independiente, son las mismas a que responda <em>Siempre</em> o <em>Muchas veces</em> (en comparación a las demás categorías) y así sucesivamente. A fin de probar la robustez de los modelos presentados en este trabajo, se pondrá a prueba el supuesto de proporcionalidad.</p>
-<p>Existen distintas formas de poner a prueba el supuesto de proporcionalidad y en este trabajo se utilizarán dos. La primera es a través de pruebas de hipótesis formales, donde al más conocida es la Prueba de Brant <span class="citation">(<a href="#ref-Brant1990" role="doc-biblioref">Brant, 1990</a>)</span>. En esta prueba, la hipótesis nula (i.e. H0) implica que se mantiene el supuesto de proporcionalidad, tanto para cada variable independiente, como para el modelo en total. Si el p-valor es menor a 0.05 esto implica que el efecto de una (o todas) las variables independientes no es el mismo a través de todas categorías de respuesta. La segunda es a través del ejercicio propuesto por <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, donde se calculan modelos de regresión logística binaria para cada posibilidad de combinación de las categorías de respuesta y se analiza si los Log-Odds de las variables de interés cambian en magnitud y sentido a través de los distintos modelos. Se utilizarán ambas formas para diagnosticar el cumplimiento del supuesto en los modelos presentados en este trabajo.</p>
-<p>En lo que respecta a la Prueba de Brant, en las Tablas <a href="multivariados.html#tab:brant-est">6.5</a>, <a href="multivariados.html#tab:brant-carab1">6.6</a> y <a href="multivariados.html#tab:brant-carab2">6.7</a> se presentan los resultados para el análisis de las tres variables dependientes del estudio: justificación de que estudiantes tiren piedras, justificación de que carabineros repriman marchas y justificación de que carabineros desalojen tomas. Se puede observar que el supuesto se cumple para el Modelo 1 de la justificación de que carabineros repriman marchas (<em>J Gerente p &gt; 0.05, J’ Obrero p &gt; 0.05 y J’ Entrevistado p &gt; 0.05</em>) y para la justificación de que carabineros desalojen tomas (<em>J Gerente p &gt; 0.05, J’ Obrero p &gt; 0.05 y J’ Entrevistado p &gt; 0.05</em>). Sin embargo, en el caso del la justificación de que estudiantes tiren piedras, el supuesto de proporcionalidad no se cumple para el predictor del sentido de injusticia gerente (<em>J Gerente p &lt; 0.05</em>). Siguiendo a <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, una violación del supuesto de proporcionalidad no necesariamente implica una invalidez de los resultados, sino que se puede considerar como una oportunidad para la reflexión sustantiva sobre el efecto asimétrico. A modo de abordar sustantivamente esta violación del supuesto y según lo propuesto por <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, se profundizará con el análisis de los Log-Odds anteriormente señalado y se sintetizará con una interpretación de los gráficos de probabilidades predichas.</p>
+<p>Los modelos de regresión logística ordinal se caracterizan por el uso de variables ordinales como dependientes, aproximando las interpretaciones a las de una regresión lineal (i.e. OLS), facilitando así la lectura de los resultados. Sin embargo, para poder funcionar, los modelos deben cumplir con un supuesto base denominado supuesto de proporcionalidad o de lineas paralelas <span class="citation">(<a href="#ref-Williams2006" role="doc-biblioref">Williams, 2006</a>)</span>. Este supuesto plantea que el efecto de las variables independientes del modelo (i.e. Log-Odds) es similar a través de todas las categorías de la variable dependiente, lo que se conoce como un efecto simétrico <span class="citation">(<a href="#ref-Williams2016" role="doc-biblioref">Williams, 2016</a>)</span>. Por ejemplo, en el caso de la justificación de la violencia, esto implica que las probabilidades de que un individuo responda <em>Siempre</em> (en comparación a las demás categorías), en función de una variable independiente, son similares a que responda <em>Siempre</em> o <em>Muchas veces</em> (en comparación a las demás categorías) y así sucesivamente. A fin de probar la robustez de los modelos presentados en este trabajo, se pondrá a prueba el supuesto de proporcionalidad.</p>
+<p>Existen distintas formas de poner a prueba el supuesto de proporcionalidad y en este trabajo se utilizarán dos. La primera es a través de pruebas de hipótesis formales, donde la más comunmente utilizada es la Prueba de Brant <span class="citation">(<a href="#ref-Brant1990" role="doc-biblioref">Brant, 1990</a>)</span>. En esta prueba, la hipótesis nula (i.e. H0) implica que se mantiene el supuesto de proporcionalidad, tanto para cada variable independiente, como para el modelo en total. Si el p-valor es menor a 0.05 esto implica que el efecto de una (o todas) las variables independientes no es el mismo a través de todas categorías de respuesta. La segunda es a través del ejercicio propuesto por <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, donde se calculan modelos de regresión logística binaria para cada posibilidad de combinación de las categorías de respuesta y se analiza si los Log-Odds de las variables de interés cambian en magnitud y sentido a través de los distintos modelos. Se utilizarán ambas formas para diagnosticar el cumplimiento del supuesto en los modelos presentados en este trabajo.</p>
 <table class="table table-striped table-bordered" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">
 <span id="tab:brant-est">Tabla 6.5: </span>Prueba de Proporcionalidad de Brant para Justificación de que Estudiantes Tiren Piedras (Modelo 1)
@@ -3103,6 +3102,7 @@ J’ Entrevistado
 </tr>
 </tbody>
 </table>
+<p>En lo que respecta a la Prueba de Brant, en las Tablas <a href="multivariados.html#tab:brant-est">6.5</a>, <a href="multivariados.html#tab:brant-carab1">6.6</a> y <a href="multivariados.html#tab:brant-carab2">6.7</a> se presentan los resultados para el análisis de las tres variables dependientes del estudio: justificación de que estudiantes tiren piedras, justificación de que carabineros repriman marchas y justificación de que carabineros desalojen tomas. Se puede observar que el supuesto se cumple para el Modelo 1 de la justificación de que carabineros repriman marchas (<em>J Gerente p &gt; 0.05, J’ Obrero p &gt; 0.05 y J’ Entrevistado p &gt; 0.05</em>) y para la justificación de que carabineros desalojen tomas (<em>J Gerente p &gt; 0.05, J’ Obrero p &gt; 0.05 y J’ Entrevistado p &gt; 0.05</em>). Sin embargo, en el caso del la justificación de que estudiantes tiren piedras, el supuesto de proporcionalidad no se cumple para el predictor del sentido de injusticia gerente (<em>J Gerente p &lt; 0.05</em>). Siguiendo a <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, una violación del supuesto de proporcionalidad no necesariamente implica una invalidez de los resultados, sino que se puede considerar como una oportunidad para la reflexión sustantiva sobre el efecto asimétrico. A modo de abordar sustantivamente esta violación del supuesto y según lo propuesto por <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span>, se profundizará con el análisis de los Log-Odds anteriormente señalado y se sintetizará con una interpretación de los gráficos de probabilidades predichas.</p>
 <table class="table table-striped table-bordered" style="font-size: 12px; margin-left: auto; margin-right: auto;border-bottom: 0;">
 <caption style="font-size: initial !important;">
 <span id="tab:tab-comp1">Tabla 6.8: </span>Log-Odds del Sentido de Injusticia por Codificaciones de Justificación de la Violencia (Modelo 1)
@@ -3196,7 +3196,7 @@ J’ Obrero (JV Desalojo)
 </tr>
 <tr>
 <td style="padding: 0; " colspan="100%">
-<sup></sup> Las columnas representan el cálculo de modelos de regresión logística a partir de distintas formas de codificación de la variable dependiente
+<sup></sup> Las columnas representan el cálculo de modelos de regresión logística binaria a partir de distintas formas de codificación de la variable dependiente
 </td>
 </tr>
 <tr>
@@ -3232,158 +3232,19 @@ J’ Obrero (JV Desalojo)
 </tr>
 </tfoot>
 </table>
-<p>En la Tabla <a href="multivariados.html#tab:tab-comp1">6.8</a> se muestra…</p>
-<table class="table table-striped table-bordered" style="font-size: 12px; margin-left: auto; margin-right: auto;border-bottom: 0;">
-<caption style="font-size: initial !important;">
-<span id="tab:tab-comp4">Tabla 6.9: </span>Log-Odds del Sentido de Injusticia por Codificaciones de Justificación de la Violencia (Modelo 4)
-</caption>
-<thead>
-<tr>
-<th style="text-align:left;">
-Indicador/Codificacion
-</th>
-<th style="text-align:left;">
-Ordinal
-</th>
-<th style="text-align:left;">
-5 vs 1 2 3 4
-</th>
-<th style="text-align:left;">
-4 5 vs 1 2 3
-</th>
-<th style="text-align:left;">
-3 4 5 vs 1 2
-</th>
-<th style="text-align:left;">
-2 3 4 5 vs 1
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;width: 2 cm; ">
-J Gerente (JV Piedras)
-</td>
-<td style="text-align:left;width: 7 cm; ">
-0.22*
-</td>
-<td style="text-align:left;width: 4 cm; ">
-0.59*
-</td>
-<td style="text-align:left;width: 4 cm; ">
-0.47**
-</td>
-<td style="text-align:left;width: 4 cm; ">
-0.37***
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2 cm; ">
-J’ Obrero (JV Represión)
-</td>
-<td style="text-align:left;width: 7 cm; ">
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-</tr>
-<tr>
-<td style="text-align:left;width: 2 cm; ">
-J’ Obrero (JV Desalojo)
-</td>
-<td style="text-align:left;width: 7 cm; ">
--0.59*
-</td>
-<td style="text-align:left;width: 4 cm; ">
-</td>
-<td style="text-align:left;width: 4 cm; ">
--1.12*
-</td>
-<td style="text-align:left;width: 4 cm; ">
--0.71*
-</td>
-<td style="text-align:left;width: 4 cm; ">
--0.59*
-</td>
-</tr>
-</tbody>
-<tfoot>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<span style="font-style: italic;">Note: </span>
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup></sup> Las columnas representan el cálculo de modelos de regresión logística a partir de distintas formas de codificación de la variable dependiente
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>a</sup> <strong>Ordinal</strong> se refiere al uso de la variable dependiente en forma ordinal.
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>b</sup> <strong>5 vs 1 2 3 4</strong> compara la categoría <em>Siempre</em> con las demás.
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>c</sup> <strong>4 5 vs 1 2 3</strong> compara las categorías <em>Muchas veces</em> y <em>Siempre</em> con las demás.
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>d</sup> <strong>3 4 5 vs 1 2</strong> compara las categorías <em>Algunas veces</em>, <em>Muchas veces</em> y <em>Siempre</em> con las demás.
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>e</sup> <strong>2 3 4 5 vs 1</strong> compara las categorías <em>Pocas veces</em>, <em>Algunas veces</em>, <em>Muchas veces</em> y <em>Siempre</em> con <em>Nunca</em>.
-</td>
-</tr>
-<tr>
-<td style="padding: 0; " colspan="100%">
-<sup>f</sup>
-** p &lt; 0.001; ** p &lt; 0.01; * p &lt; 0.05.
-</td>
-</tr>
-</tfoot>
-</table>
-<p>En la Tabla <a href="multivariados.html#tab:tab-comp4">6.9</a> se muestra…</p>
+<p>En la Tabla <a href="multivariados.html#tab:tab-comp1">6.8</a> se presentan los Los-Odds del cálculo de modelos de regresión logística binaria para cada posible codificación de las variables dependientes. Se observa que los Log-Odds del efecto del sentido de injusticia en los gerentes (i.e. <em>J Gerente</em>) para la justificación de que estudiantes tiren piedras (i.e. <em>JV Piedras</em>) aumenta cuando las categorías de respuesta que se comparan son las más altas. Por ejemplo, el Log-Odds de <em>J Gerente</em> son mayores cuando se calculan las chances de responder <em>Siempre</em> en contraste a las demás categorías (<em>‘5 vs 1234’: Log-Odds = .60</em>) que cuando se comparan las chances de responder cualquier categoría que implique algún grado de justificación en contraste a <em>Nunca</em> (<em>‘2345 vs 1’: Log-Odds = .17</em>). Estos resultados van en la linea con el incumplimiento del supuesto, ya que los Log-Odds de responder la categoría más alta son aproximadamente 3 veces más que los Log-Odds de responder todas las categorías que impliquen un grado de justificación. Sin embargo, este ejercicio permite extraer dos resultados sustantivos. El primero es que, pese a la violación del supuesto, el sentido positivo del efecto del sentido de injusticia en la justificación de la violencia por el cambio social sigue la hipótesis planteada. Es decir, independiente del las categorías que se estén comparando, una mayor evaluación de injusticia implica una mayor justificación de la violencia por el cambio social. El segundo resultado es que efectivamente existen diferencias en los efectos del sentido de injusticia de acuerdo a la categoría de respuesta a la pregunta por la justificación de la violencia. A fin de determinar la magnitud de estas diferencias se presentará un gráfico de probabilidades predichas.</p>
 <div class="figure"><span style="display:block;" id="fig:predest4"></span>
 <img src="tesis_files/figure-html/predest4-1.png" alt="Probabilidades Predichas para la Justificación de que Estudiantes Tiren Piedras según Sentido de Injusticia Gerente (Modelo 4)" width="300%" height="300%"  />
 <p class="caption">
 Figura 6.9: Probabilidades Predichas para la Justificación de que Estudiantes Tiren Piedras según Sentido de Injusticia Gerente (Modelo 4)
 </p>
 </div>
-<p>En la Figura <a href="multivariados.html#fig:predest4">6.9</a> se muestra…</p>
-<div class="figure"><span style="display:block;" id="fig:predcarab12"></span>
-<img src="tesis_files/figure-html/predcarab12-1.png" alt="Probabilidades Predichas para la Justificación de que Carabineros Reprima Marchas Pacificas según Sentido de Injusticia Obrero (Modelo 2)" width="300%" height="300%"  />
-<p class="caption">
-Figura 6.10: Probabilidades Predichas para la Justificación de que Carabineros Reprima Marchas Pacificas según Sentido de Injusticia Obrero (Modelo 2)
-</p>
-</div>
-<p>En la Figura <a href="multivariados.html#fig:predcarab12">6.10</a> se muestra…</p>
-<div class="figure"><span style="display:block;" id="fig:predcarab24"></span>
-<img src="tesis_files/figure-html/predcarab24-1.png" alt="Probabilidades Predichas para la Justificación de que Carabineros Desaloje Liceos en Toma según Sentido de Injusticia Obrero (Modelo 4)" width="300%" height="300%"  />
-<p class="caption">
-Figura 6.11: Probabilidades Predichas para la Justificación de que Carabineros Desaloje Liceos en Toma según Sentido de Injusticia Obrero (Modelo 4)
-</p>
-</div>
-<p>En la Figura <a href="multivariados.html#fig:predcarab24">6.11</a> se muestra…</p>
+<p>En la Figura <a href="multivariados.html#fig:predest4">6.9</a> se presentan las probabilidades predichas de que se justifique que estudiantes tiren piedras a carabineros en función de sus evaluaciones de injusticia en la situación de los gerentes. En general, se observa que en la medida que se evalúa una mayor injusticia distributiva las probabilidades de justificar que estudiantes tiren piedras aumenta. Por ejemplo, las probabilidades que se responda que <em>Nunca</em> se justifica este acto de violencia pasa del 75% al 25% aproximadamente, a medida que aumenta la evaluación de injusticia. En la misma linea, las probabilidades de que se responda que <em>Muchas veces</em> se justifica este acto de violencia pasa del 0% al 15% aproximadamente, a medida que aumenta la evaluación de injusticia. Sin perjuicio de lo anterior, el resultado que más destaca en la Figura <a href="multivariados.html#fig:predest4">6.9</a> es que las probabilidades de que se respondan categorías más altas es menor a que se respondan categorías más bajas, independiente del sentido de la relación. En términos sustantivos, las probabilidades de responder categorías que reflejen altos grados de justificación de la violencia es menor a las probabilidades de responder categorías que representen un menos grado de justificación.</p>
+<p>En suma, a fin de diagnosticar los modelos elaborados en el presente trabajo, se puso a prueba que cumplieran el supuesto basal de la técnica: el supuesto de proporcionalidad. Este es el supuesto que permite interpretar los resultados de forma más o menos similar a los de una regresión lineal. A partir de la Prueba de Brant <span class="citation">(<a href="#ref-Brant1990" role="doc-biblioref">Brant, 1990</a>)</span>, se observó que los modelos para la violencia por el control social cumplían con el supuesto, no así el modelo para la violencia por el cambio social. Sin embargo, a partir del ejercicio propuesto por <span class="citation">Williams (<a href="#ref-Williams2016" role="doc-biblioref">2016</a>)</span> y a partir de los gráficos de probabilidades predichas, se pueden plantear dos resultados sustantivos. El primero es que el sentido de la hipótesis <em>H1a</em> se mantiene, pese a que no se cumpla el supuesto del modelo. El segundo es que las probabilidades de responder categorías que representen un alto grado de justificación de la violencia es mayor a responder categorías que representen un grado menor se justificación.</p>
 </div>
 <div id="síntesis" class="section level3 hasAnchor" number="6.2.4">
 <h3><span class="header-section-number">6.2.4</span> Síntesis<a href="multivariados.html#síntesis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>En síntesis, los resultados multivariados muestran evidencia para las hipótesis <strong>H1a</strong> y <strong>H1b</strong> y evidencia contraria para las hipótesis <strong>H2a</strong> y <strong>H2b</strong>. Para la hipótesis <strong>H1a</strong> se encontró una relación significativa del sentido de injusticia para gerentes en la justificación de la violencia por el cambio social, la cual mantiene el efecto al controlar por las variables relevantes por literatura. Para la hipótesis <strong>H1b</strong>, se encuentra una relación significativa del sentido de injusticia para el obrero en ambos indicadores de la justificación de la violencia por el control social. No obstante, existe una diferencia del efecto que tienen los controles en cada indicador: cuando la situación de violencia corresponde a la represión de marchas pacificas, el efecto desaparece una vez que se introducen variables de ideología, en cambio, cuando la situación de violencia corresponde al desalojo de una toma estudiantil, el efecto del sentido de injusticia para obrero se mantiene pese a controlarse por las variables relevantes de la literatura. En el caso de la hipótesis <strong>H2a</strong>, se encontró que una mayor evaluación de injusticia 1) atenuaba el efecto positivo de la insatisfacción con los ingresos en las justificaciones de la violencia por el cambio social y 2) acrecentaba el efecto negativo del sexo en las mismas justificaciones. Para la hipótesis <strong>H2b</strong> no se encontró un efecto significativo en el caso de que carabineros reprima marchas pacificas, pero si en el caso que carabineros desaloje liceos en toma. En esta situación, se encontró que una mayor evaluación de injusticia tenía un efecto atenuante (e incluso reversivo) en el efecto positivo entre ingresos y justificación de la violencia por el control social. Todos los hallazgos serán abordados en la sección de discusión.</p>
+<p>En síntesis, los resultados multivariados muestran evidencia para las hipótesis <strong>H1a</strong> y <strong>H1b</strong> y evidencia contraria para las hipótesis <strong>H2a</strong> y <strong>H2b</strong>. Para la hipótesis <strong>H1a</strong> se encontró una relación significativa del sentido de injusticia para gerentes en la justificación de la violencia por el cambio social, la cual mantiene el efecto al controlar por las variables relevantes por literatura. Si bien el supuesto del modelo no se cumple, a partir del diagnostico de supuestos se sostiene que el sentido de la hipótesis sigue siendo valido. Para la hipótesis <strong>H1b</strong>, se encuentra una relación significativa del sentido de injusticia para el obrero en ambos indicadores de la justificación de la violencia por el control social. No obstante, existe una diferencia del efecto que tienen los controles en cada indicador: cuando la situación de violencia corresponde a la represión de marchas pacificas, el efecto desaparece una vez que se introducen variables de ideología, en cambio, cuando la situación de violencia corresponde al desalojo de una toma estudiantil, el efecto del sentido de injusticia para obrero se mantiene pese a controlarse por las variables relevantes de la literatura. En el caso de la hipótesis <strong>H2a</strong>, se encontró que una mayor evaluación de injusticia 1) atenuaba el efecto positivo de la insatisfacción con los ingresos en las justificaciones de la violencia por el cambio social y 2) acrecentaba el efecto negativo del sexo en las mismas justificaciones. Para la hipótesis <strong>H2b</strong> no se encontró un efecto significativo en el caso de que carabineros reprima marchas pacificas, pero si en el caso que carabineros desaloje liceos en toma. En esta situación, se encontró que una mayor evaluación de injusticia tenía un efecto atenuante (e incluso reversivo) en el efecto positivo entre ingresos y justificación de la violencia por el control social. Todos los hallazgos serán abordados en la sección de discusión.</p>
 
 </div>
 </div>
