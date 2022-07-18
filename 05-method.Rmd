@@ -15,7 +15,9 @@ table_format2 = if(is_html_output()) {
 }
 ```
 
-# Metodología
+# Método
+
+En la sección de método se detallarán las características de los datos utilizados, las variables que componen el estudio, asi como sus recodificaciones y, por último, las técnicas de análisis que se emplearán para ponera prueba las hipótesis.
 
 ## Datos
 
@@ -49,6 +51,7 @@ load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/ra
 
 procjv_analysis_nona_lab <- procjv_analysis_nona
 
+
 procjv_analysis_nona_lab$jv_est_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_est_2019_factor, label = "Que estudiantes tiren piedras a Carabineros en una marcha por la educación del país")
 
 
@@ -56,6 +59,27 @@ procjv_analysis_nona_lab$jv_carab1_2019_factor <- sjlabelled::set_label(procjv_a
 
 
 procjv_analysis_nona_lab$jv_carab2_2019_factor <- sjlabelled::set_label(procjv_analysis_nona$jv_carab2_2019_factor, label = "Que Carabineros desaloje a la fuerza a los estudiantes de un liceo en toma")
+
+
+levels(procjv_analysis_nona_lab$jv_est_2019_factor)[levels(procjv_analysis_nona_lab$jv_est_2019_factor) == "Nunca se justifica"] <- "Nunca"
+levels(procjv_analysis_nona_lab$jv_est_2019_factor)[levels(procjv_analysis_nona_lab$jv_est_2019_factor) == "Pocas veces se justifica"] <- "Pocas veces"
+levels(procjv_analysis_nona_lab$jv_est_2019_factor)[levels(procjv_analysis_nona_lab$jv_est_2019_factor) == "Algunas veces se justifica"] <- "Algunas veces"
+levels(procjv_analysis_nona_lab$jv_est_2019_factor)[levels(procjv_analysis_nona_lab$jv_est_2019_factor) == "Muchas veces se justifica"] <- "Muchas veces"
+levels(procjv_analysis_nona_lab$jv_est_2019_factor)[levels(procjv_analysis_nona_lab$jv_est_2019_factor) == "Siempre se justifica"] <- "Siempre"
+
+levels(procjv_analysis_nona_lab$jv_carab1_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab1_2019_factor) == "Nunca se justifica"] <- "Nunca"
+levels(procjv_analysis_nona_lab$jv_carab1_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab1_2019_factor) == "Pocas veces se justifica"] <- "Pocas veces"
+levels(procjv_analysis_nona_lab$jv_carab1_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab1_2019_factor) == "Algunas veces se justifica"] <- "Algunas veces"
+levels(procjv_analysis_nona_lab$jv_carab1_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab1_2019_factor) == "Muchas veces se justifica"] <- "Muchas veces"
+levels(procjv_analysis_nona_lab$jv_carab1_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab1_2019_factor) == "Siempre se justifica"] <- "Siempre"
+
+
+levels(procjv_analysis_nona_lab$jv_carab2_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab2_2019_factor) == "Nunca se justifica"] <- "Nunca"
+levels(procjv_analysis_nona_lab$jv_carab2_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab2_2019_factor) == "Pocas veces se justifica"] <- "Pocas veces"
+levels(procjv_analysis_nona_lab$jv_carab2_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab2_2019_factor) == "Algunas veces se justifica"] <- "Algunas veces"
+levels(procjv_analysis_nona_lab$jv_carab2_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab2_2019_factor) == "Muchas veces se justifica"] <- "Muchas veces"
+levels(procjv_analysis_nona_lab$jv_carab2_2019_factor)[levels(procjv_analysis_nona_lab$jv_carab2_2019_factor) == "Siempre se justifica"] <- "Siempre"
+
 
 
 df_vdep<- dfSummary(dplyr::select(procjv_analysis_nona_lab, jv_est_2019_factor, jv_carab1_2019_factor, jv_carab2_2019_factor),
@@ -71,7 +95,7 @@ df_vdep<- dfSummary(dplyr::select(procjv_analysis_nona_lab, jv_est_2019_factor, 
                valid.col = F, # n valido
                col.widths = c(1000,10,10,10,10)
                )
-df_vdep$Variable <- c("Violencia por el Cambio Social", "Violencia por el Control Social", "Violencia por el Control Social")
+df_vdep$Variable <- c("Violencia Cambio Social", "Violencia Control Social", "Violencia Control Social")
 
 df_vdep <- rename(df_vdep,
                  Concept = Variable,
@@ -89,11 +113,54 @@ kable(print(df_vdep), caption = "Variables Dependientes")
 
 El sentido de injusticia se mide en base a la Evaluación de Justicia ($J$) propuesta por @Jasso1980. La evaluación de justicia consiste en el logaritmo natural de la proporción entre la recompensa existente y la recompensa justa (ver Ecuación \@ref(eq:jef)). Estas evaluaciones pueden ser reflexivas (e.g. cuando un observador evalúa la justicia de sus ingresos) o pueden ser no reflexivas (e.g. cuando un observador evalúa la justicia en los ingresos de otra persona). En este estudio se incorporarán ambos tipos de evaluaciones. Por un lado, está la evaluación del observador respecto a sus propios ingresos (ver Ecuación \@ref(eq:jen)). Esta variable se construye a partir de dos indicadores: los ingresos que recibe el entrevistado y los ingresos que considera que sería justo que recibiera (ver Tabla \@ref(tab:tab-indep)). Por otro lado, están las evaluaciones del observador respecto a los ingresos de un obrero no calificado (ver Ecuación \@ref(eq:job) y un gerente de una gran empresa (ver Ecuación \@ref(eq:jge). Ambas variables se construyen preguntándole a los entrevistados cuánto creen que gana y cuánto debería ganar cada ocupación (ver Tabla \@ref(tab:tab-indep)). Los valores de $J$ se leen de la siguiente manera: valores negativos representan una situación de injusticia por subrecompensa, valores iguales a 0 representan una situación de justicia perfecta y valores positivos representan una situación de injusticia por sobrerecompensa. En una suma, el presente estudio cuenta con tres variables independientes de hipótesis: las evaluaciones de justicia del entrevistado ($J_{entrevistado}$), las evaluaciones de justicia para un obrero no calificado ($J_{obrero}$) y las evaluaciones de justicia para un gerente de una gran empresa ($J_{gerente}$).
 
+```{r tab-indep, results='asis'}
+
+if (!require("pacman")) install.packages("pacman")  #si falta pacman, instalar
+if (!require("tinytex")) install.packages("tinytex")#si falta tinytex, instalar
+pacman::p_load(knitr, kableExtra, dplyr, lavaan, sjPlot, ordinal, sjmisc, sjlabelled, ggrepel, summarytools) # librerias
+knitr::opts_chunk$set(warning = FALSE,  # mensaje de warning
+                      message = FALSE,  # mensajes/avisos de librerias  
+                      cache = FALSE,    # cache de los chunks,usar analisis pesados
+                      # out.width = '50%',# largo de imagen en %
+                      fig.pos= "H",     # posicion figuras H = HERE
+                      echo = FALSE      # incluir chunk en output
+)
+
+
+load(url("https://github.com/thesis-justification-of-violence/thesis-analysis/raw/main/input/data/procjv_analysis_nona.RData"))
+
+ df_indep <- dfSummary(dplyr::select(procjv_analysis_nona, salario_perc_ceo, salario_just_ceo, salario_perc_obrero, salario_just_obrero, ingreso, ingreso_justo),
+               plain.ascii = FALSE,
+               style = "grid",
+               tmp.img.dir = "tmp",
+               graph.magnif = TRUE,
+               headings = F,  # encabezado
+               varnumbers = F, # num variable
+               labels.col = T, # etiquetas
+               na.col = F,    # missing
+               graph.col = T, # plot
+               valid.col = F, # n valido
+               col.widths = c(1000,10,10,10,10)
+               )
+# df_indep$Variable <- c("J Gerente",
+#                        "J Gerente",
+#                        "J Obrero",
+#                        "J Obrero",
+#                        "J Entrevistado",
+#                        "J Entrevistado")
+ 
+ df_indep$Variable <- NULL
+
+df_indep <- rename(df_indep,
+                 Indicator = Label)
+kable(print(df_indep), caption = "Indicadores para construir Sentido de Injusticia")
+```
+
 
 
 \begin{equation}
-  J_{entrevistado}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
-  (\#eq:jen)
+  J_{gerente}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
+  (\#eq:jge)
 \end{equation}
 
 \begin{equation}
@@ -102,9 +169,10 @@ El sentido de injusticia se mide en base a la Evaluación de Justicia ($J$) prop
 \end{equation}
 
 \begin{equation}
-  J_{gerente}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
-  (\#eq:jge)
+  J_{entrevistado}=ln(\frac{\text{Ingresos Reales}}{\text{Ingresos Justos}}) 
+  (\#eq:jen)
 \end{equation}
+
 
 <div style="text-align: justify">
 
@@ -133,7 +201,7 @@ A fin de entender mejor el rol de las variables de control, se separan en dos ti
 
 <div style="text-align: justify">
 
-La mayoría de las variables de control se utilizarán en su nivel de medición original, a excepción de tres. Primero, se calcularon dos indices a partir de los indicadores de ideología: uno para medir SDO y otro para medir RWA. Ambos indices tienen como valor mínimo 0 y valor máximo 1, donde a mayor valor mayor es la presencia de ideología SDO o RWA. Segundo, el nivel educacional fue recodificado en base a categorías CINE 2011. Tercero, la pertenencia a pueblos indigenas fue recodfificada a _(1) Pertenece a pueblo Mapuche, (2) Pertenece a otro pueblo - (3) No pertenece a ningún pueblo_, tal y como se observa en la Tabla \@ref(tab:tab-controls).
+La mayoría de las variables de control se utilizarán en su nivel de medición original, a excepción de tres. Primero, se calcularon dos indices a partir de los indicadores de ideología: uno para medir SDO y otro para medir RWA. Ambos indices tienen como valor mínimo 0 y valor máximo 1, donde a mayor valor mayor es la presencia de ideología SDO o RWA. Segundo, el nivel educacional fue recodificado en base a categorías CINE 2011. Tercero, la pertenencia a pueblos indígenas fue recodfificada a _(1) No pertenece a ningún pueblo, (2) Pertenece a otro pueblo - (3) Pertenece a pueblo Mapuche_, tal y como se observa en la Tabla \@ref(tab:tab-controls).
 
 
 ```{r tab-controls, results='asis'}
@@ -182,9 +250,58 @@ kable(print(df_con), caption = "Variables de Control")
 
 <div style="text-align: justify">
 
-A fin de responder los objetivos de investigación y probar las hipótesis plateadas en el presente estudio se emplearán dos tipos de análisis. En primer lugar, se realizarán análisis descriptivos como tablas uni y bivariadas de las variables principales, asi como también correlaciones para analizar el comportamiento de las variables a nivel muestral. En segundo lugar, considerando la naturaleza de las variables dependientes (i.e. ordinales) se efectuará un análisis multivariado empleando como técnica principal de análisis modelos de regresión logística ordinal.  Estos modelos permiten calcular la probabilidad acumulada de que un individuo responda hasta $C$ en los indicadores justificación de la violencia, siendo $Y_{ci}$ una respuesta categórica ordenada de un individuo $i^{th}$ con $C$ categorías ordenadas, codificadas como $C = 1,2,3,4,5$. Esta probabilidad se calculará en función de: el intercepto por cada categoría $a_c$, los coeficientes $\gamma_1$ y $\gamma_2$ para $J_{entrevistado}$, $J_{obrero}$ y $J_{gerente}$ respectivamente y $\gamma_n$ para las variables de control y $e_{i}$ como error de la estimación para el individuo $i$.
+En el presente estudio se emplearán dos tipos de análisis. En primer lugar, se realizarán análisis descriptivos como gráficos univariados y bivariados de los indicadores principales, así como también correlaciones para analizar el comportamiento de las variables a nivel muestral. Estos análisis entregarán un panorama previo respecto al cumplimiento de las hipótesis. En segundo lugar, considerando la naturaleza de las variables dependientes (i.e. ordinales) se efectuará un análisis multivariado empleando como técnica principal modelos de regresión logística ordinal. Estos modelos permiten interpretar el efecto de una variable independiente (X) en una variable independiente ordinal (Y), controlando por el efecto de otras variables. Las interpretaciones se efectúan términos de chances, por ejemplo, una interpretación para un efecto positivo de X sería la siguiente: *a mayor valor de X, las chances de que se justifique más la violencia (en comparación a que se justifique menos) son mayores*. Sin embargo, un beneficio de esta técnica es que permiten aproximar la interpretación a la de una regresión lineal (i.e. OLS.). Por ende, a fin de facilitar la comunicación de los resultados, en este estudio se interpretarán los coeficientes siguiendo una lógica aproximativa a las regresiones lineales, por ejemplo: *a mayor valor de X, más se tiende a justificar la violencia*. De todos modos, se formalizarán los modelos para especificar la estrategia de análisis a seguir.
 
-A fin de generar la evidencia necesaria para corroborar las hipótesis, se calculan seis modelos. El primer modelo corresponde a las variables de sentido de injusticia. El segundo modelo incorpora las variables de control correspondientes a la pertenencia a grupos desaventajados. El tercer modelo incorpora las variables de ideología (SDO y RWA). El cuarto modelo incorpora las variables sobre justicia en el trato. El quinto modelo incorpora los efectos de interacción entre la pertenencia a grupos desaventajados y el sentido de injusticia. El sexto y último modelo incorpora las variables de control exploratorias. Se calcularán estos seis modelos para las tres variables dependientes del estudio, a saber: la justificación de que estudiantes lancen piedras a carabineros, la justificación de que carabineros repriman marchas pacificas y la justificación de que carabineros desalojen liceos en toma. En suma, se sigue una estrategia de complejidad creciente para el calculo de los modelos, identificando si existe un efecto del sentido de injusticia en las distintas formas de justificación de la violencia y si estas relaciones se mantienen a medida que se van incorporando distintos determinantes de la justificación de la violencia.
+En términos formales, estos modelos permiten calcular la probabilidad acumulada de que un individuo responda hasta $C$ en los indicadores justificación de la violencia, siendo $Y_{c}$ una respuesta categórica ordenada con $C$ categorías ordenadas, codificadas como $C = 1,2,3,4,5$. Esta probabilidad se calcula en función del intercepto por cada categoría $a_c$ y $n$ coeficientes $\beta$, siendo $n$ la cantidad de predictores a introducir en el modelo (ver Ecuación \@ref(eq:m) y \@ref(eq:mg)).
+
+\begin{equation}
+ log(\frac{P(Y≤c)}{1 - P(Y≤c)}) = F(P)
+  (\#eq:m)
+\end{equation}
+
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_1x_{1} + \beta_2x_{2} ... \beta_nx_{n}) 
+  (\#eq:mg)
+\end{equation}
+
+
+A fin de generar la evidencia necesaria para corroborar las hipótesis, se calculan cinco modelos. El primer modelo corresponde a las variables de sentido de injusticia (ver Ecuación \@ref(eq:m1). Los modelos siguientes incluyen progresivamente las variables de control relevantes por literatura, siendo $n$ la cantidad de variables de control con $r$ cantidad de categorías en el caso de que las variables sean nominales u ordinales. El segundo modelo incorpora las variables de control correspondientes a la pertenencia a grupos desaventajados (ver Ecuación \@ref(eq:m2). El tercer modelo incorpora las variables de ideología (SDO y RWA) (ver Ecuación \@ref(eq:m3). El cuarto modelo incorpora las variables sobre justicia en el trato (ver Ecuación \@ref(eq:m4). El quinto modelo incorpora los efectos de interacción entre la pertenencia a grupos desaventajados y el sentido de injusticia (ver Ecuación \@ref(eq:m5). En este último modelo se incluyen $g$ efectos de interacción, donde la cantidad dependerá de la significancia de los controles de los predictores sobre grupos desaventajados. En el caso que las variables sean categóricas, la cantidad de efectos de interacción $g$ se multiplicará por $r$ categorías. Se calcularán estos cinco modelos para las tres variables dependientes del estudio, a saber: la justificación de que estudiantes lancen piedras a carabineros, la justificación de que carabineros repriman marchas pacificas y la justificación de que carabineros desalojen liceos en toma. En suma, se sigue una estrategia de complejidad creciente para el calculo de los modelos, identificando si existe un efecto del sentido de injusticia en las distintas formas de justificación de la violencia y si estas relaciones se mantienen a medida que se van incorporando distintos determinantes de la justificación de la violencia.
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_{1}Jgerente + \beta_{2}J'Obrero + \beta_{3}J'entrevistado)
+  (\#eq:m1)
+\end{equation}
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_{1}Jgerente + \beta_{2}J'Obrero + \beta_{3}J'entrevistado + \beta_{4nr}Desv) 
+  (\#eq:m2)
+\end{equation}
+
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_{1}Jgerente + \beta_{2}J'Obrero + \beta_{3}J'entrevistado + \beta_{4nr}Desv + \beta_{5nr}Ideol)
+  (\#eq:m3)
+\end{equation}
+
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_{1}Jgerente + \beta_{2}J'Obrero + \beta_{3}J'entrevistado + \beta_{4nr}Desv + \beta_{5nr}Ideol + \beta_{6nr}Trato)
+  (\#eq:m4)
+\end{equation}
+
+
+\begin{equation}
+  F(P) = a_{c} -(\beta_{1}Jgerente + \beta_{2}J'Obrero + \beta_{3}J'entrevistado + \beta_{4nr}Desv + \beta_{5nr}Ideol + \beta_{6nr}Trato + \beta_{7gr}Interact)
+  (\#eq:m5)
+\end{equation}
+
+
+
+
+
+
+
 
 
 \pagebreak
