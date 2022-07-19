@@ -74,7 +74,7 @@ La explicación que se puede entregar para estos efectos contrarios es que las c
 En el caso de la hipótesis H2b, se esperaba que a medida que disminuyeran los ingresos de los entrevistados, menos se justificaría la violencia por el control social (i.e. desalojo de liceos en toma), relación que se vería acrecentada a medida que aumentaran las evaluaciones de injusticia. No obstante, se encontró que las evaluaciones de injusticia atenúan esta relación. Este hallazgo se puede explicar, especulativamente hasta este punto, considerando la poca coincidencia de los actores insertos en los indicadores. Sustantivamente, el indicador del sentido de injusticia para los obreros representa que tan injusta se considera que es la distribución de ingresos de los obreros. En cambio, el indicador de violencia por el control social representa qué tanto se justifica que carabineros desaloje tomas estudiantiles a la fuerza. Si se toman en consideración a los actores en cada situación, tiene lógica que un individuo de bajos ingresos que evalúa alta injusticia en la situación de los obreros no necesariamente apoya una toma estudiantil, ya que no hay una identificación asegurada entre obreros y estudiantes. Esto se sustenta en los hallazgos en la agenda que plantean que las justificaciones de violencia de ciertos individuos se ven mediadas por la identificación con su grupo [@Gerber2017a; @Gerber2021]. Por ende, se podría proponer que si la situación de violencia si permitiera una identificación entre grupos (e.g. que la situación de violencia favorece o no a obreros), el sentido de injusticia podría seguir el rol esperado. Estudios futuros pueden profundizar y afinar las mediciones, considerando la coincidencia entre actores, y así poder esclarecer estos efectos contrarios
 
 
-## Limitaciones del estudio
+## Limitaciones del Estudio
 
 <div style="text-align: justify">
 
@@ -89,7 +89,7 @@ Las interpretaciones del presente estudio tienen limitaciones respecto a sus alc
  En lo que respecta a la medición de las variables independientes, la limitante se encuentra en que los indicadores utilizados para medir la ideología y la percepción de trato justo no siguen la misma estrategia que los trabajos previos en la literatura. Generalmente, para medir ambos constructos se utilizan técnicas para variables latentes [@Gerber2017b; @Farago2019] las cuales, además de considerar múltiples indicadores, abordan el posible error de medición. Sin embargo, en este trabajo se han utilizado dos indicadores a modo de _proxy_ de la percepción de trato justo y se han elaborado dos índices para medir la ideología autoritaria y la dominancia social. Ambas estrategias asumen que, por un lado, los indicadores escogidos representan la percepción de trato justo y, por otro lado, que los indicadores utilizados para medir la ideología no tienen error de medición. Esto implica que, una medición más precisa de la percepción de trato justo y de las ideologías podrían tener un efecto distinto al utilizarse como controles de las hipótesis que se han puesto a prueba en este estudio.
 
 
-## Proyecciones de investigación
+## Proyecciones de Investigación
 
 <div style="text-align: justify">
 
