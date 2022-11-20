@@ -552,25 +552,6 @@ jv_carab1_2019.modelmulpub5<- clm(jv_carab1_2019_factor ~
                                     educ_rec_factor*sj_obrero_rec, 
                                   data = procjv_analysis_nona)
 
-jv_carab1_2019.modelmulpub6<- clm(jv_carab1_2019_factor ~ 
-                                    sj_ceo + 
-                                    sj_obrero_rec + 
-                                    sj_entrevistado + 
-                                    ingreso + 
-                                    sexo_factor + 
-                                    ingreso_satisfact_factor + 
-                                    educ_rec_factor + 
-                                    indigena_rec_factor + 
-                                    sdo_indice + 
-                                    rwa_indice + 
-                                    trato_salud_factor + 
-                                    trato_carab_factor + 
-                                    educ_rec_factor*sj_obrero_rec + 
-                                    pos_pol_rec_factor + 
-                                    frec_marcha_factor + 
-                                    conf_carab_factor, 
-                                  data = procjv_analysis_nona)
-
                    
 omit_coef="(Intercept)|(ingreso)|(sexo_factor)|(ingreso_satisfact_factor)|(indigena_rec_factor)|(trato_salud_factor)|(trato_carab_factor)"
 
